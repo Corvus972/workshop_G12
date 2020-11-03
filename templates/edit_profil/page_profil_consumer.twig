@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<div class="row justify-content-center">
+    <div class=" mt-1 p-3 mb-3 bg-white rounded p-center">
+        <div class="col">
+            <h3>INFORMATION PERSONELLE
+                <a class="btn" href="{{path('edit_profil')}}"><img src="https://img.icons8.com/officel/40/000000/edit.png"></a>
+            </h3>
+        </div>
+        <hr>
+    </div>
+</div>
+{# Information personnelle #}
+<div class="container">
+    <div class="row offset-2 ">
+        <div class="col">
+            <div class="row ">
+                <div class="col mb-1">
+                    <h5>
+                        <strong>Nom :</strong>
+                    </h5>
+                    {{user.lastname}}
+                </div>
+                <div class="col mb-1">
+                    <h5>
+                        <strong>Prénom :</strong>
+                    </h5>
+                    {{user.firstname}}
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col mb-1">
+                    <h5>
+                        <strong>E-mail :</strong>
+                    </h5>
+                    {{user.email}}
+                </div>
+
+                <div class="col mb-1 ">
+                    <h5>
+                        <strong>Adresse 1 :</strong>
+                    </h5>
+                    {{ user.addressline1 }}
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col mb-3 ">
+                    <h5>
+                        <strong>Code postal :</strong>
+                    </h5>
+                    {{ user.zipcode }}
+                </div>
+                <div class="col mb-3 ">
+                    <h5>
+                        <strong>Adresse 2 :</strong>
+                    </h5>
+                    {{ user.addressline2 }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mb-3 ">
+                    <h5>
+                        <strong>Ville :</strong>
+                    </h5>
+                    {{user.city}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class=" mt-1 p-3 mb-3 bg-white rounded p-center">
+            <div class="col">
+                <h3>MES COMMANDES
+                    <a class="btn" href="{{path('edit_profil')}}"><img src="https://img.icons8.com/officel/40/000000/edit.png"></a>
+                </h3>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+{% endblock %}
