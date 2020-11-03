@@ -40,9 +40,9 @@ class Product
     private $image;
 
     /**
-     * @ORM\ManyToOne(targetEntity=category::class, inversedBy="products")
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="products")
      */
-    private $Category;
+    private $category;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="products")
@@ -120,12 +120,12 @@ class Product
 
     public function getCategory(): ?category
     {
-        return $this->Category;
+        return $this->category;
     }
 
-    public function setCategory(?category $Category): self
+    public function setCategory(?category $category): self
     {
-        $this->Category = $Category;
+        $this->category = $category;
 
         return $this;
     }
