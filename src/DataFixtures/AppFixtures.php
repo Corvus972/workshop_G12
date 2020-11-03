@@ -23,7 +23,7 @@ class AppFixtures extends Fixture
                 $prod[$i] = new Product();
                 $prod[$i]->setName("Product_".$i)
                     ->setImage("https://picsum.photos/id/".$i."/200/300")
-                    ->setProductRef("")
+                    ->setProductRef("#ref".$i.rand(1, 100000))
                     ->setQuantity(($i +1) * 4)
                     ->setUnit("par 6")
                     ->setCategory($cat);
