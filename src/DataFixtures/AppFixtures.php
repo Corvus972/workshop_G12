@@ -23,11 +23,11 @@ class AppFixtures extends Fixture
             $user->setEmail('admin'.$count.'@admin.com');
             $user->setFirstname('Zozo_'.$count);
             $user->setRoles(array('ROLE_ADMIN', 'ROLE_USER'));
-            $user->setAddressLine1("");
-            $user->setAddressLine2("");
-            $user->setZipCode("");
-            $user->setRegion("");
-            $user->setCity("Ville");
+            $user->setAddressLine1("line one of the address");
+            $user->setAddressLine2("line two of the address");
+            $user->setZipCode("34000");
+            $user->setRegion("34");
+            $user->setCity("Montpellier");
             $encoder = $factory->getEncoder($user);
             $password = $encoder->encodePassword($test_password, $user->getSalt());
             $user->setPassword($password);
