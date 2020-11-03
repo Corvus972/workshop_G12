@@ -9,12 +9,24 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class RegistrationType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+        ->add('type', ChoiceType::class,
+        [
+            'label' => 'Vous êtes ?',
+            'choices' => [
+                'Producteur' => 'producer',
+                'Consommateur' => 'consumer'
+            ],
+            'attr' => array(
+                'class' => 'input100'
+            )
+        ])
         ->add('firstName', TextType::class, 
         [
             'label' => 'Prénom',

@@ -26,8 +26,12 @@ class RegistrationController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()){ 
             $hash = $encoder->encodePassword($user, $user->getPassword()); 
-            $user->setPassword($hash);   
-            $user->setRoles(["ROLE_USER"]);
+            $user->setPassword($hash);
+            if($user->getType() === 'consumer'){
+                $user->setRoles(["ROLE_USER"]);
+            }else{
+                $user->setRoles(["ROLE_PRODUCER"]);
+            }
             $manager->persist($user);
             
             $manager->flush();
