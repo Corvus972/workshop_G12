@@ -19,11 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43130382-7c4a-4e6e-b942-6f2df4fc485c" name="Default Changelist" comment="products done">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="43130382-7c4a-4e6e-b942-6f2df4fc485c" name="Default Changelist" comment="ok" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -175,7 +171,7 @@
       <workItem from="1604407453329" duration="641000" />
       <workItem from="1604408121686" duration="12757000" />
       <workItem from="1604426837864" duration="124000" />
-      <workItem from="1604429905227" duration="1346000" />
+      <workItem from="1604429905227" duration="1441000" />
     </task>
     <task id="LOCAL-00001" summary="starting fixtures">
       <created>1604410489073</created>
@@ -212,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604416287655</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="ok">
+      <created>1604431297363</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1604431297363</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,7 +240,8 @@
     <MESSAGE value="done except for user fk in product" />
     <MESSAGE value="conflicts resolved" />
     <MESSAGE value="products done" />
-    <option name="LAST_COMMIT_MESSAGE" value="products done" />
+    <MESSAGE value="ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="ok" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2104" y="87" key="MergeDialog" timestamp="1604416211817">
@@ -256,9 +260,10 @@
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="2572" y="283" key="Vcs.Multiple.Commit.Info.Dialog.Key/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604416032686" />
-    <state x="2472" y="245" key="Vcs.Push.Dialog.v2" timestamp="1604416289924">
-      <screen x="1920" y="0" width="1920" height="1050" />
+    <state x="552" y="245" key="Vcs.Push.Dialog.v2" timestamp="1604431300052">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="2472" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604416289924" />
+    <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1604431300052" />
   </component>
 </project>
