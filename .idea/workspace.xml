@@ -1,26 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
+    <expand />
+    <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43130382-7c4a-4e6e-b942-6f2df4fc485c" name="Default Changelist" comment="resolve conflicts">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="43130382-7c4a-4e6e-b942-6f2df4fc485c" name="Default Changelist" comment="edit page consumer and producer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -144,6 +134,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/dotenv" />
       <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/twbs/bootstrap" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jmRnvhdLhenc0aACpcJ0zRIMOC" />
@@ -227,7 +218,21 @@
       <option name="project" value="LOCAL" />
       <updated>1604431748204</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="remove blockstylesheets">
+      <created>1604473767100</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1604473767100</updated>
+    </task>
+    <task id="LOCAL-00009" summary="edit page consumer and producer">
+      <created>1604475090652</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1604475090652</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,7 +259,10 @@
     <MESSAGE value="products done" />
     <MESSAGE value="ok" />
     <MESSAGE value="resolve conflicts" />
-    <option name="LAST_COMMIT_MESSAGE" value="resolve conflicts" />
+    <MESSAGE value="remove dump" />
+    <MESSAGE value="remove blockstylesheets" />
+    <MESSAGE value="edit page consumer and producer" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit page consumer and producer" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="87" key="MergeDialog" timestamp="1604431581725">
@@ -275,11 +283,16 @@
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="2572" y="283" key="Vcs.Multiple.Commit.Info.Dialog.Key/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604416032686" />
-    <state x="552" y="245" key="Vcs.Push.Dialog.v2" timestamp="1604431751182">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="2472" y="243" key="Vcs.Push.Dialog.v2" timestamp="1604475092988">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="2472" y="243" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604475092988" />
     <state x="2472" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604416289924" />
     <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1604431751182" />
+    <state x="2697" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604475230404">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2697" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604475230404" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

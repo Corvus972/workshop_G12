@@ -59,6 +59,11 @@ class Product
      */
     private $packs;
 
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $price;
+
     public function __construct()
     {
         $this->product_id = new ArrayCollection();
@@ -201,6 +206,18 @@ class Product
         if ($this->packs->removeElement($pack)) {
             $pack->removeProduct($this);
         }
+
+        return $this;
+    }
+
+    public function getPrice(): ?float
+    {
+        return $this->price;
+    }
+
+    public function setPrice(float $price): self
+    {
+        $this->price = $price;
 
         return $this;
     }
