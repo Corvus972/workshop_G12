@@ -99,6 +99,9 @@
     "fzaninotto/faker": {
         "version": "v1.9.1"
     },
+    "kylekatarnls/vicopo": {
+        "version": "1.2.1"
+    },
     "monolog/monolog": {
         "version": "1.25.5"
     },
