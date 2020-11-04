@@ -7,21 +7,15 @@
                 <hr />
             </div>
         </div>
-
         <div class="row justify-content-center mt-5">
             <div class="card text-white shadow-lg col-5">
                 <div class="card-body ">
                     <div class="card-content">
                         {{ form_start(form) }}
                         <h5 class="text-center">Informations personnelles</h5>
-                        {{form(form.firstName,{'attr':{'placeholder':""}})}}
-                        {{form_row(form.lastName,{'attr':{'placeholder':""}})}}
-                        {{form(form.address_line1,{'attr':{'placeholder':""}})}}
-                        {{form_row(form.address_line2,{'attr':{'placeholder':""}})}}
-                        {{form(form.zip_code,{'attr':{'placeholder':""}})}}
-                        {{form_row(form.region,{'attr':{'placeholder':""}})}}
-                        {{form(form.city,{'attr':{'placeholder':""}})}}
-                        {{form_row(form.email,{'attr':{'placeholder':""}})}}
+                        {% for item in form %}
+                            {{ form_row(item,{'attr':{'placeholder':""}} ) }}
+                        {% endfor %}
                         <div class="text-center pt-3">
                             <button type="submit" class="btn btn-outline-success">
                                 Modification
