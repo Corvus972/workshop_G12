@@ -1,99 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
+    <expand />
+    <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43130382-7c4a-4e6e-b942-6f2df4fc485c" name="Default Changelist" comment="done except for user fk in product">
-      <change afterPath="$PROJECT_DIR$/public/home/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/css/fontawesome-all.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/css/magnific-popup.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/css/swiper.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/about.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/background-image.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/details-1-background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/details-2-background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/down-arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/header-background.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/hexagon-green.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/hexagon-rs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/hexagon-rs.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/hexagon-white.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/hexagon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/hexagon.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/intro-office.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/logo2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/project-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/project-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/project-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/project-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/project-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/project-6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/project-7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/project-8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/services-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/services-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/services-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/team-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/team-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/team-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/team-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/testimonial-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/testimonial-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/testimonial-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/testimonial-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/testimonial-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/testimonial-6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/images/up-arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/js/isotope.pkgd.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/js/jquery.easing.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/js/jquery.magnific-popup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/js/morphext.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/js/popper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/js/scripts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/js/swiper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/js/validator.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-brands-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-brands-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-brands-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-brands-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-brands-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-regular-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-regular-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-regular-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-regular-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-regular-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-solid-900.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-solid-900.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-solid-900.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-solid-900.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-solid-900.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/registration/index.html.twig" afterDir="false" />
+    <list default="true" id="43130382-7c4a-4e6e-b942-6f2df4fc485c" name="Default Changelist" comment="remove dump">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
@@ -114,6 +36,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="producer_register" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
@@ -218,6 +145,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/dotenv" />
       <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/twbs/bootstrap" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jmRnvhdLhenc0aACpcJ0zRIMOC" />
@@ -228,6 +156,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -247,6 +176,8 @@
       <updated>1604407451568</updated>
       <workItem from="1604407453329" duration="641000" />
       <workItem from="1604408121686" duration="7998000" />
+      <workItem from="1604428446315" duration="14162000" />
+      <workItem from="1604472036298" duration="1032000" />
     </task>
     <task id="LOCAL-00001" summary="starting fixtures">
       <created>1604410489073</created>
@@ -276,7 +207,28 @@
       <option name="project" value="LOCAL" />
       <updated>1604415479250</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add role">
+      <created>1604432821011</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1604432821011</updated>
+    </task>
+    <task id="LOCAL-00006" summary="remove dump">
+      <created>1604432936379</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1604432936379</updated>
+    </task>
+    <task id="LOCAL-00007" summary="remove dump">
+      <created>1604442470940</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1604442470940</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,20 +239,37 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="starting fixtures" />
     <MESSAGE value="next" />
     <MESSAGE value="almost done" />
     <MESSAGE value="done except for user fk in product" />
-    <option name="LAST_COMMIT_MESSAGE" value="done except for user fk in product" />
+    <MESSAGE value="add role" />
+    <MESSAGE value="remove dump" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove dump" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="2612" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604440045084">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2612" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604440045084" />
+    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604472658384">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604472658384" />
     <state x="2104" y="87" key="MergeDialog" timestamp="1604416122861">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
@@ -317,9 +286,26 @@
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="2572" y="283" key="Vcs.Multiple.Commit.Info.Dialog.Key/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604416032686" />
-    <state x="2472" y="245" key="Vcs.Push.Dialog.v2" timestamp="1604415480347">
-      <screen x="1920" y="0" width="1920" height="1050" />
+    <state x="2472" y="243" key="Vcs.Push.Dialog.v2" timestamp="1604442475511">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="2472" y="243" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604442475511" />
     <state x="2472" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604415480347" />
+    <state x="2697" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604433035154">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2697" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604433035154" />
+    <state x="2587" y="253" width="586" height="534" key="find.popup" timestamp="1604438528107">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2587" y="253" width="586" height="534" key="find.popup/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604438528107" />
+    <state x="2536" y="240" key="run.anything.popup" timestamp="1604436793806">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2536" y="240" key="run.anything.popup/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604436793806" />
+    <state x="2543" y="225" key="search.everywhere.popup" timestamp="1604437348413">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2543" y="225" key="search.everywhere.popup/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1604437348413" />
   </component>
 </project>
