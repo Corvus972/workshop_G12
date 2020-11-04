@@ -45,12 +45,17 @@ class OrderItems
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $product_ref;
+    private $productref;
 
     /**
      * @ORM\ManyToOne(targetEntity=order::class, inversedBy="orderItems")
      */
     private $order_id;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $totalprice;
 
     public function getId(): ?int
     {
@@ -98,7 +103,7 @@ class OrderItems
         return $this->price;
     }
 
-    public function setPrice(string $price): self
+    public function setPrice(float $price): self
     {
         $this->price = $price;
 
@@ -119,12 +124,12 @@ class OrderItems
 
     public function getProductRef(): ?string
     {
-        return $this->product_ref;
+        return $this->productref;
     }
 
-    public function setProductRef(string $product_ref): self
+    public function setProductRef(string $productref): self
     {
-        $this->product_ref = $product_ref;
+        $this->productref = $productref;
 
         return $this;
     }
@@ -137,6 +142,18 @@ class OrderItems
     public function setOrderId(?order $order_id): self
     {
         $this->order_id = $order_id;
+
+        return $this;
+    }
+
+    public function getTotalPrice(): ?float
+    {
+        return $this->totalprice;
+    }
+
+    public function setTotalPrice(float $totalprice): self
+    {
+        $this->totalprice = $totalprice;
 
         return $this;
     }

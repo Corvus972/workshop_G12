@@ -94,7 +94,7 @@ class ProductController extends AbstractController
      * @param UserInterface $user
      * @return Response
      */
-    public function addToCart(Request $request, ProductRepository $repository, EntityManagerInterface $manager)
+    public function addToCart(Request $request, ProductRepository $repository, EntityManagerInterface $manager, OrderRepository $orderRepository, UserInterface $userProfile)
     {
         $user = $this->getUser();
         
@@ -102,29 +102,61 @@ class ProductController extends AbstractController
         $target = $repository->findById($id);
 
         $order_item = new OrderItems();
-        $order = new Order();
 
-        $quantity = $repository->findQuantity($id); 
+        $orders = $userProfile -> getOrders();
+        $orderNotPayed = null;
+        foreach ($orders as $key => $val){
+            if($orders[$key]->getStatus() ===  "Non payé"){
+                $orderNotPayed = $orders[$key];
+            }
+        }
+
+        $quantity = $repository->findQuantity($id);
         $unit = $repository->findUnit($id);
         $price = $repository->findPrice($id);
         $productRef = $repository->findProductRef($id);
+        $name = $repository->findName($id);
+        $img= $repository->findImg($id);
+
+        if($orderNotPayed){
+            $order = $orderNotPayed;
+            $old_total = $order -> getTotalPrice();
+            $order->setTotalprice($price * $quantity + $old_total)
+                ->setUser($user)
+                ->setDate(New \Datetime)
+                ->setPaymentMethod('Pas encore payé')
+                ->setShipped(false)
+                ->setStatus('Non payé');
+            $manager->persist($order);
+            $manager->flush();
+
+        } else{
+            $order = new Order();
+            $order->setTotalprice($price * $quantity)
+                ->setUser($user)
+                ->setDate(New \Datetime)
+                ->setPaymentMethod('Pas encore payé')
+                ->setShipped(false)
+                ->setStatus('Non payé');
+            $manager->persist($order);
+            $manager->flush();
+        }
+
+
 
         $order_item->setQuantity($quantity)
-                   ->setUnit($unit)
-                   ->setPrice($price)
-                   ->setProductRef($productRef);
-        
-        $order->setUser($user)
-              ->setDate(New \Datetime)
-              ->setPaymentMethod('Pas encore payé')
-              ->setShipped(false)
-              ->setStatus('Non payé');
-
+            ->setUnit($unit)
+            ->setPrice($price)
+            ->setTotalPrice($price * $quantity)
+            ->setOrderId($order)
+            ->setName($name)
+            ->setImage($img)
+            ->setProductRef($productRef);
         $manager->persist($order_item);
-        $manager->flush($order_item);
+        $manager->flush();
 
-        $manager->persist($order);
-        $manager->flush($order);
+
+
         
         return new JsonResponse(
             [

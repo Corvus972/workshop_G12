@@ -105,15 +105,14 @@
 
                             <!-- end of card -->
                         {% endfor %}
-                        {% else %}
-                            <h2 class="text-">Pas de panier pour l'instant ...</h2>
-                        {% endif %}
-
                             <div class="button-container">
                                 <button class="btn-solid-reg page-scroll"><i class="material-icons">add_shopping_cart</i></button>
                             </div> <!-- end of button-container -->
                         </div>
                         <!-- end of card -->
+                    {% else %}
+                        <h2 class="text-">Pas de panier pour l'instant ...</h2>
+                    {% endif %}
 
 
                     </div> <!-- end of col -->
@@ -168,6 +167,7 @@
                                 <button class="btn-solid-reg page-scroll add_to_cart" id ="{{ product.id }}"><i class="material-icons">add_shopping_cart</i></button>
                             </div> <!-- end of button-container -->
                                 <!-- end of card -->
+                                </div>
                             {% endfor %}
 
 
@@ -176,6 +176,8 @@
                 </div> <!-- end of row -->
             </div> <!-- end of container -->
         </div> <!-- end of cards-2 -->
+        </div>
+    </body>
 
 
         {% else %}
