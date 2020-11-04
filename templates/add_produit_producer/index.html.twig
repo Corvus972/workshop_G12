@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %} {% block body %}
+
+<div class="content ">
+  <div class="row justify-content-center mt-5">
+    <div>
+      <h3 class="text-center">Ajout d'un produit</h3>
+      <hr />
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="card text-white shadow-lg bg-success text-white col-5">
+      <div class="card-body ">
+        <div class="card-content">
+          {{ form_start(form) }}
+          <h5 class="text-center">Informations personnelles</h5>
+           {{ form_row(form.image,{'attr':{'placeholder':"Image"}})}}
+            {{form_row(form.name,{'attr':{'placeholder':"Nom du produit"}})}}
+            {{form_row(form.unit,{'attr':{'placeholder':"Unite"}})}}
+            {{form_row(form.quantity,{'attr':{'placeholder':"Quantité"}})}}
+            {{form_row(form.price,{'attr':{'placeholder':"Prix"}})}}
+            {{form_row(form.category,{'attr':{'placeholder':"Categorie"}})}}
+          <div class="text-center pt-3">
+            <button type="submit" class="btn bg-primary text-white mb-1">
+              Validé
+            </button>
+            {{ form_end(form) }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+

@@ -84,12 +84,49 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-            <div class="col">
-                <h3>Mes Produits
-                    <a class="btn" href="{{path('edit_profil')}}"><img src="https://img.icons8.com/officel/40/000000/edit.png"></a>
-                </h3>
+                <div class="col">
+                    <h3>Mes Produits
+                        <a class="btn bg-primary text-white " href="{{path('add_produit_producer')}}">Ajout</a>
+            
+                    </h3>
+                </div>
             </div>
+
+        <div class="row">
+
+            {% for products in product %}
+                <div class="col-3 ml-3 mt-5">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top"src="{{asset('uploads/pictureProduct' ~ user.id ~ '/' ~ products.image) }}" alt="Card image cap">
+                        <div class="card-body">
+                            <div class="col">
+                                    <h6> Nom  :
+                                        {{ products.name | lower }}</h6>
+                                    <h6> Unité :
+                                        {{ products.unit | lower }}</h6>
+                                </div>
+                                <div class="col">
+                                    <h6>Quantité :
+                                        {{ products.quantity | lower }}</h6>
+                                </div>
+                                <div class="col">
+                                    <h6>Prix :
+                                        {{ products.price }}</h6>
+                                </div>
+                          
+                            <div class="col pb-2 text-center mt-5">
+                                <a class="btn btn-danger" href="{{path('delete_produit',{'id' : products.id })}}">Supprimer</a>
+                                <a class="btn btn-primary text-white" href="{{path('edit_produit',{'id' : products.id })}}">Modifier</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            {% endfor %}
         </div>
+
     </div>
+
+</div>
 
 {% endblock %}
