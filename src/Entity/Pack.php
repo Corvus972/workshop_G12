@@ -39,6 +39,11 @@ class Pack
      */
     private $product;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $region;
+
     public function __construct()
     {
         $this->product = new ArrayCollection();
@@ -106,6 +111,18 @@ class Pack
     public function removeProduct(product $product): self
     {
         $this->product->removeElement($product);
+
+        return $this;
+    }
+
+    public function getRegion(): ?string
+    {
+        return $this->region;
+    }
+
+    public function setRegion(?string $region): self
+    {
+        $this->region = $region;
 
         return $this;
     }

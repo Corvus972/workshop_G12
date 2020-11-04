@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fda78bb611f4bc9483af6d2f3efd1ddb",
+    "content-hash": "36bc8b9a827169b2bf9720c94feceec4",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -1401,6 +1401,41 @@
                 "validator"
             ],
             "time": "2020-10-31T20:37:35+00:00"
+        },
+        {
+            "name": "kylekatarnls/vicopo",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kylekatarnls/vicopo.git",
+                "reference": "c0d851c716c9f67a948dd2ea338e881145be7daf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kylekatarnls/vicopo/zipball/c0d851c716c9f67a948dd2ea338e881145be7daf",
+                "reference": "c0d851c716c9f67a948dd2ea338e881145be7daf",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Vicopo\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "API HTTP et Script pour trouver les villes à partir d'un code postal et code postaux à partir d'une ville",
+            "homepage": "https://vicopo.selfbuild.fr",
+            "support": {
+                "issues": "https://github.com/kylekatarnls/vicopo/issues",
+                "source": "https://github.com/kylekatarnls/vicopo/tree/master"
+            },
+            "time": "2019-01-16T10:04:15+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -7522,5 +7557,5 @@
         "ext-iconv": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }
