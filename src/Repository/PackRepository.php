@@ -18,6 +18,37 @@ class PackRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Pack::class);
     }
+    public function findQuantity($id){
+        $qb = $this->createQueryBuilder('p')
+            ->select('p.quantity')
+            ->where('p.id = :id')
+            ->setParameter('id',$id)
+            ->getQuery()
+            ->getSingleScalarResult();
+
+        return $qb;
+    }
+
+    public function findDescription($id){
+        $qb = $this->createQueryBuilder('p')
+            ->select('p.description')
+            ->where('p.id = :id')
+            ->setParameter('id',$id)
+            ->getQuery()
+            ->getSingleScalarResult();
+
+        return $qb;
+    }
+    public function findName($id){
+        $qb = $this->createQueryBuilder('p')
+            ->select('p.name')
+            ->where('p.id = :id')
+            ->setParameter('id',$id)
+            ->getQuery()
+            ->getSingleScalarResult();
+
+        return $qb;
+    }
 
     // /**
     //  * @return Pack[] Returns an array of Pack objects

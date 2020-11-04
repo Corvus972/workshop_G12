@@ -60,6 +60,16 @@ class Product
      */
     private $packs;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $pack_ref;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=pack::class, inversedBy="products")
+     */
+    private $product_id;
+
     public function __construct()
     {
         $this->product_id = new ArrayCollection();
@@ -202,6 +212,25 @@ class Product
         if ($this->packs->removeElement($pack)) {
             $pack->removeProduct($this);
         }
+
+        return $this;
+    }
+
+    public function getPackRef(): ?string
+    {
+        return $this->pack_ref;
+    }
+
+    public function setPackRef(string $pack_ref): self
+    {
+        $this->pack_ref = $pack_ref;
+
+        return $this;
+    }
+
+    public function setProductId(?pack $product_id): self
+    {
+        $this->product_id = $product_id;
 
         return $this;
     }

@@ -2,6 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Pack;
+use App\Repository\PackRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,10 +18,31 @@ class CartProducerController extends AbstractController
      * @param Request $request
      * @param UserInterface $user
      */
-    public function cartProducer(Request $request, UserInterface $userProfile): Response
+    public function cartProducer(
+        Request $request,
+        UserInterface $userProfile,
+        PackRepository $packRepository,
+        EntityManagerInterface $manager
+        ): Response
     {
-        return $this->render('cart_producer/index.html.twig', [
-            'controller_name' => 'CartProducerController',
-        ]);
+        if($userProfile->getType() === 'producer') {
+            $id = $request->request->get('id', null);
+
+            /*$pack = new Pack;
+            $name = $packRepository->findName($id);
+            $description = $packRepository->findDescription($id);
+            $quantity = $packRepository->findQuantity($id);
+
+            $pack->setDescription($description)
+                        ->setName($name)
+                        ->setQuantity($quantity);
+
+            $manager->persist($pack);
+            $manager->flush();
+*/
+            return $this->render('cart_producer/index.html.twig', [
+                'user' => $userProfile
+            ]);
+        }
     }
 }

@@ -39,9 +39,15 @@ class Pack
      */
     private $product;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Product::class, mappedBy="product_id")
+     */
+    private $products;
+
     public function __construct()
     {
         $this->product = new ArrayCollection();
+        $this->products = new ArrayCollection();
     }
 
 
@@ -108,6 +114,14 @@ class Pack
         $this->product->removeElement($product);
 
         return $this;
+    }
+
+    /**
+     * @return Collection|Product[]
+     */
+    public function getProducts(): Collection
+    {
+        return $this->products;
     }
 
 }
