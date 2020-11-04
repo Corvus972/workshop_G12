@@ -30,7 +30,7 @@ class EditProfilController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($userProfile);
             $entityManager->flush();
-            return $this->redirectToRoute('edit_profil');
+            return $this->redirectToRoute('profil');
         }
         if($userProfile->getType() === 'consumer') {
             return $this->render('edit_profil/edit_profil_consumer.twig', [
