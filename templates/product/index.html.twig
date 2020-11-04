@@ -1,7 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProductController!{% endblock %}
-
 {% block body %}
 
     <head>
@@ -22,25 +20,13 @@
         <link rel="icon" href="images/favicon.png">
     </head>
     <body data-spy="scroll" data-target=".fixed-top">
-
-    <!-- Preloader -->
-    <div class="spinner-wrapper">
-        <div class="spinner">
-            <div class="bounce1"></div>
-            <div class="bounce2"></div>
-            <div class="bounce3"></div>
-        </div>
-    </div>
-    <!-- end of preloader -->
-
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
         <!-- Text Logo - Use this if you don't have a graphic logo -->
         <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Aria</a> -->
 
         <!-- Image Logo -->
-        <a class="navbar-brand logo-image" href="index.html"><img src="/produit/images/logo.png" alt="alternative"></a>
+        <a class="navbar-brand logo-image" href="index.html"><img src="/home/images/logo.png" alt="alternative"></a>
 
         <!-- Mobile Menu Toggle Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,54 +38,35 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#header">ACCUEIL </a>
+                    <a class="nav-link page-scroll" href="{{ path('home')}}">ACCUEIL</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#intro">PANIERS<span class="sr-only">(current)</span> </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#services">LES PRODUCTEURS</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#callMe">CONTACT</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#projects">DECONNEXION</a>
-                </li>
-
-                <!-- Dropdown Menu -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">A PROPOS</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">CONDITIONS GENERALES</span></a>
-                        <div class="dropdown-items-divide-hr"></div>
-                        <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">MENTIONS LÉGALES</span></a>
+                {% if app.user %}
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll"  href="{{ path('profil')}}">MON PANIER</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll"  href="{{ path('product_index')}}">LES PRODUITS</a>
+                    </li>
+                    <div class="mb-3">
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll"  href="{{ path('app_logout') }}">DECONNEXION</a>
+                        </li>
                     </div>
-                </li>
-                <!-- end of dropdown menu -->
-
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#contact">CONTACT</a>
-                </li>
+                {% endif %}
             </ul>
             <span class="nav-item social-icons">
                 <span class="fa-stack">
                     <a href="#your-link">
-
-
                     </a>
                 </span>
                 <span class="fa-stack">
                     <a href="#your-link">
-
                     </a>
                 </span>
             </span>
         </div>
     </nav> <!-- end of navbar -->
     <!-- end of navbar -->
-
-
     <!-- Header -->
     <header id="header" class="header">
         <div class="header-content">
@@ -108,7 +75,6 @@
                     <div class="col-lg-12">
                         <div class="text-container">
                             <h1>Découvrez nos paniers <span id="js-rotating">responsable, économiques, saisonnier</span></h1>
-
                             <a class="btn-solid-lg page-scroll" href="#paniers_1">J'achète local en cliquant ici</a>
                         </div>
                     </div> <!-- end of col -->
@@ -117,8 +83,6 @@
         </div> <!-- end of header-content -->
     </header> <!-- end of header -->
     <!-- end of header -->
-
-
     <!-- Paniers -->
     <div class="nav-side-menu">
         <div id="paniers_2" class="cards-2">
@@ -131,238 +95,286 @@
                 </div> <!-- end of row -->
                 <div class="row">
                     <div class="col-lg-12">
+                        {% if packs %}
+                        {% for pack in pack %}
+                            <!-- Card -->
+                            <div class="card">
+                                <div class="card-image">
+                                    <img class="img-fluid" src="/produit/images/services-1.jpg" alt="alternative">
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="card-title">Local'Eco</h3>
+                                    <p>Un mélange de produits du terroir à prix malin de chez Julien à Mauguio</p>
+                                    <ul class="list-unstyled li-space-lg">
+                                        <li class="media">
+                                            <i class="fas fa-square"></i>
+                                            <div class="media-body">2 Salade </div>
+                                        </li>
+                                        <li class="media">
+                                            <i class="fas fa-square"></i>
+                                            <div class="media-body">500gr Oignons </div>
+                                        </li>
+                                        <li class="media">
+                                            <i class="fas fa-square"></i>
+                                            <div class="media-body">300gr Pois chiches </div>
+                                        </li>
+                                        <li class="media">
+                                            <i class="fas fa-square"></i>
+                                            <div class="media-body">1/2 Courges </div>
+                                        </li>
 
+                                        <li class="media">
+                                            <i class="fas fa-square"></i>
+                                            <div class="media-body">2 Aubergines </div>
+                                        </li>
+                                    </ul>
+                                    <p class="price">à partir de <span>19€99</span></p>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="button-container">
+                                            <a class="btn-solid-reg page-scroll" href="#callMe"><i class="material-icons">add_shopping_cart</i></a>
+                                        </div> <!-- end of button-container -->
+                                    </div>
+                                    <div class="col">
+                                        <div class="button-container">
+                                            {#                                            <a class="btn-solid-reg page-scroll" href="{{ path('product_recipe',{'id' : user.dossierInscription.id })}}">#}
+                                            {#                                                <i class="material-icons">add_shopping_cart</i>#}
+                                            {#                                            </a>#}
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end of button-container -->
+                            </div>
+
+                            <!-- end of card -->
+                        {% endfor %}
+                        <div class="button-container">
+                            <button class="btn-solid-reg page-scroll"><i class="material-icons">add_shopping_cart</i></button>
+                        </div> <!-- end of button-container -->
+                    </div>
+                    <!-- end of card -->
+                    {% else %}
+                        <h2 class="text-">Pas de panier pour l'instant ...</h2>
+                    {% endif %}
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of cards-2 -->
+
+    <div id="paniers_1" class="cards-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <h2>Nos légumes régionaux</h2>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row justify-content-center mb-5 ">
+                <form action="" method="get">
+                    <div
+                            {#                        class="wrap"#}
+                    >
+                        <div class="search">
+                            <input type="text" class="searchTerm" name="q" placeholder="Rechercher..."/>
+                            <button type="submit" class="searchButton">
+                                <i class="material-icons">search</i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    {% if products %}
+                    {% for product in products %}
                         <!-- Card -->
                         <div class="card">
                             <div class="card-image">
-                                <img class="img-fluid" src="/produit/images/services-1.jpg" alt="alternative">
+                                <img class="img-fluid" src="{{ product.image }}" alt="alternative">
                             </div>
                             <div class="card-body">
                                 <h3 class="card-title">Local'Eco</h3>
-                                <p>Un mélange de produits du terroir à prix malin de chez Julien à Mauguio</p>
+                                <p>Un produit du terroir à prix malin de chez {{ product.user.firstname }}</p>
+                                {#                                        {{ product.user.firstname }}#}
                                 <ul class="list-unstyled li-space-lg">
                                     <li class="media">
                                         <i class="fas fa-square"></i>
-                                        <div class="media-body">2 Salade </div>
-                                    </li>
-                                    <li class="media">
-                                        <i class="fas fa-square"></i>
-                                        <div class="media-body">500gr Oignons </div>
-                                    </li>
-                                    <li class="media">
-                                        <i class="fas fa-square"></i>
-                                        <div class="media-body">300gr Pois chiches </div>
-                                    </li>
-                                    <li class="media">
-                                        <i class="fas fa-square"></i>
-                                        <div class="media-body">1/2 Courges </div>
-                                    </li>
-
-                                    <li class="media">
-                                        <i class="fas fa-square"></i>
-                                        <div class="media-body">2 Aubergines </div>
+                                        <div class="media-body">{{ product.name }} </div>
                                     </li>
                                 </ul>
-                                <p class="price">à partir de <span>19€99</span></p>
+                                <p class="price"><span>{{ product.price }}€</span></p>
                             </div>
                             <div class="button-container">
-                                <a class="btn-solid-reg page-scroll" href="#callMe"><i class="material-icons">add_shopping_cart</i></a>
+                                <button class="btn-solid-reg page-scroll add_to_cart" id ="{{ product.id }}"><i class="material-icons">add_shopping_cart</i></button>
                             </div> <!-- end of button-container -->
+                            <!-- end of card -->
                         </div>
-                        <!-- end of card -->
+                    {% endfor %}
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of cards-2 -->
 
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-            </div> <!-- end of container -->
-        </div> <!-- end of cards-2 -->
-
-        <div id="paniers_1" class="cards-2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-
-                        <h2>Nos légumes régionaux</h2>
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-                <div class="row">
-                    <form action="" method="get">
-                        <div class="wrap">
-                            <div class="search">
-                                <input type="text" class="searchTerm" placeholder="Rechercher..."/>
-                                <button type="submit" class="searchButton">
-                                    <i class="material-icons">search</i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        {% if products %}
-                            {% for product in products %}
-                                <!-- Card -->
-                                <div class="card">
-                                    <div class="card-image">
-                                        <img class="img-fluid" src="https://picsum.photos/400/600" alt="alternative">
-                                    </div>
-                                    <div class="card-body">
-                                        <h3 class="card-title">Local'Eco</h3>
-                                        <p>Un produit du terroir à prix malin de chez </p>
-{#                                        {{ product.user.firstname }}#}
-                                        <ul class="list-unstyled li-space-lg">
-                                            <li class="media">
-                                                <i class="fas fa-square"></i>
-                                                <div class="media-body">{{ product.name }} </div>
-                                            </li>
-                                        </ul>
-                                        <p class="price">à partir de <span>19€99</span></p>
-                                    </div>
-                                    <div class="button-container">
-                                        <a class="btn-solid-reg page-scroll" href="#callMe"><i class="material-icons">add_shopping_cart</i></a>
-                                    </div> <!-- end of button-container -->
-                                </div>
-                                <!-- end of card -->
-                            {% endfor %}
-                        {% else %}
-                            <h4>Pas de produits pour l'instant</h4>
-                        {% endif %}
-
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-            </div> <!-- end of container -->
-        </div> <!-- end of cards-2 -->
-
-
-        <!-- end of services -->
-
-        <!-- Footer -->
-        <div class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="text-container about">
-                            <h4>Few Words About Aria</h4>
-                            <p class="white">We're passionate about delivering the best business growth services for companies just starting out as startups or industry players that have established their market position a long tima ago.</p>
-                        </div> <!-- end of text-container -->
-                    </div> <!-- end of col -->
-                    <div class="col-md-2">
-                        <div class="text-container">
-                            <h4>Links</h4>
-                            <ul class="list-unstyled li-space-lg white">
-                                <li>
-                                    <a class="white" href="#your-link">startupguide.com</a>
-                                </li>
-                                <li>
-                                    <a class="white" href="terms-conditions.html">Terms & Conditions</a>
-                                </li>
-                                <li>
-                                    <a class="white" href="privacy-policy.html">Privacy Policy</a>
-                                </li>
-                            </ul>
-                        </div> <!-- end of text-container -->
-                    </div> <!-- end of col -->
-                    <div class="col-md-2">
-                        <div class="text-container">
-                            <h4>Tools</h4>
-                            <ul class="list-unstyled li-space-lg">
-                                <li>
-                                    <a class="white" href="#your-link">businessgrowth.com</a>
-                                </li>
-                                <li>
-                                    <a class="white" href="#your-link">influencers.com</a>
-                                </li>
-                                <li class="media">
-                                    <a class="white" href="#your-link">optimizer.net</a>
-                                </li>
-                            </ul>
-                        </div> <!-- end of text-container -->
-                    </div> <!-- end of col -->
-                    <div class="col-md-2">
-                        <div class="text-container">
-                            <h4>Partners</h4>
-                            <ul class="list-unstyled li-space-lg">
-                                <li>
-                                    <a class="white" href="#your-link">unicorns.com</a>
-                                </li>
-                                <li>
-                                    <a class="white" href="#your-link">staffmanager.com</a>
-                                </li>
-                                <li>
-                                    <a class="white" href="#your-link">association.gov</a>
-                                </li>
-                            </ul>
-                        </div> <!-- end of text-container -->
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-            </div> <!-- end of container -->
-        </div> <!-- end of footer -->
-        <!-- end of footer -->
+    {% else %}
+        <h2 class="text-center mt-5 mb-5">Pas de produits pour l'instant ...</h2>
+    {% endif %}
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="text-container about">
+                        <h4>Few Words About Aria</h4>
+                        <p class="white">We're passionate about delivering the best business growth services for companies just starting out as startups or industry players that have established their market position a long tima ago.</p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-md-2">
+                    <div class="text-container">
+                        <h4>Links</h4>
+                        <ul class="list-unstyled li-space-lg white">
+                            <li>
+                                <a class="white" href="#your-link">startupguide.com</a>
+                            </li>
+                            <li>
+                                <a class="white" href="terms-conditions.html">Terms & Conditions</a>
+                            </li>
+                            <li>
+                                <a class="white" href="privacy-policy.html">Privacy Policy</a>
+                            </li>
+                        </ul>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-md-2">
+                    <div class="text-container">
+                        <h4>Tools</h4>
+                        <ul class="list-unstyled li-space-lg">
+                            <li>
+                                <a class="white" href="#your-link">businessgrowth.com</a>
+                            </li>
+                            <li>
+                                <a class="white" href="#your-link">influencers.com</a>
+                            </li>
+                            <li class="media">
+                                <a class="white" href="#your-link">optimizer.net</a>
+                            </li>
+                        </ul>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-md-2">
+                    <div class="text-container">
+                        <h4>Partners</h4>
+                        <ul class="list-unstyled li-space-lg">
+                            <li>
+                                <a class="white" href="#your-link">unicorns.com</a>
+                            </li>
+                            <li>
+                                <a class="white" href="#your-link">staffmanager.com</a>
+                            </li>
+                            <li>
+                                <a class="white" href="#your-link">association.gov</a>
+                            </li>
+                        </ul>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->
+    <!-- end of footer -->
 
 
-        <!-- Copyright -->
-        <div class="copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p class="p-small">Copyright © 2020 <a href="https://inovatik.com">Template by Inovatik</a></p>
-                    </div> <!-- end of col -->
-                </div> <!-- enf of row -->
-            </div> <!-- end of container -->
-        </div> <!-- end of copyright -->
-        <!-- end of copyright -->
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small">Copyright © 2020 <a href="https://inovatik.com">Template by Inovatik</a></p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright -->
+    <!-- end of copyright -->
+    </body>
 
 
-        <!-- Scripts -->
-        <script src="/produit/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-        <script src="/produit/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
-        <script src="/produit/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-        <script src="/produit/js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-        <script src="/produit/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
-        <script src="/produit/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
-        <script src="/produit/js/morphext.min.js"></script> <!-- Morphtext rotating text in the header -->
-        <script src="/produit/js/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
-        <script src="/produit/js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
-        <script src="/produit/js/scripts.js"></script> <!-- Custom scripts -->
 
-        <style>
-            .search {
-                width: 100%;
-                position: relative;
-                display: flex;
-            }
+    <!-- Scripts -->
+    <script src="/produit/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="/produit/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="/produit/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="/produit/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="/produit/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="/produit/js/morphext.min.js"></script> <!-- Morphtext rotating text in the header -->
+    <script src="/produit/js/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
+    <script src="/produit/js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="/produit/js/scripts.js"></script> <!-- Custom scripts -->
 
-            .searchTerm {
-                width: 100%;
-                border: 3px solid #00B4CC;
-                border-right: none;
-                padding: 5px;
-                height: 20px;
-                border-radius: 5px 0 0 5px;
-                outline: none;
-                color: #9DBFAF;
-            }
+    <style>
+        .search {
+            width: 100%;
+            position: relative;
+            display: flex;
+        }
 
-            .searchTerm:focus{
-                color: #00B4CC;
-            }
+        .searchTerm {
+            width: 100%;
+            border: 3px solid black;
+            border-right: none;
+            padding: 5px;
+            height: 35px;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+            color: #9DBFAF;
+        }
 
-            .searchButton {
-                width: 40px;
-                height: 36px;
-                border: 1px solid #00B4CC;
-                background: orange;
-                text-align: center;
-                color: #fff;
-                border-radius: 0 5px 5px 0;
-                cursor: pointer;
-                font-size: 20px;
-            }
+        .searchTerm:focus{
+            color: black;
+        }
 
-            /*Resize the wrap to see the search bar change!*/
-            .wrap{
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-        </style>
+        .searchButton {
+            width: 40px;
+            height: 36px;
+            border: 1px solid black;
+            background: orange;
+            text-align: center;
+            color: #fff;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-size: 20px;
+        }
 
+        /*Resize the wrap to see the search bar change!*/
+        .wrap{
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+
+    <script>
+        $(document).on('click', '.add_to_cart', function(){
+
+            var id = $(this).attr('id');
+            $.ajax({
+
+                url: '{{ path('add_to_cart') }}',
+                type: 'POST',
+                data: {
+                    id: id
+                },
+                success: function (data) {
+                    if (data.success && data.success === true) {
+                        //toastr.success("Les batchs sélectionnés ont été supprimé");
+                    } else {
+                        //toastr.error(data.message);
+                    }
+                },
+                error: function (data) {
+                    console.error(data);
+                    //toastr.error("La suppression n'a pas aboutie");
+                    console.log('c\'est pas ok')
+                }
+            });
+        })
+
+    </script>
 {% endblock %}

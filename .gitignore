@@ -1,4 +1,4 @@
-
+snippet
 ###> symfony/framework-bundle ###
 .idea
 /.env.local
