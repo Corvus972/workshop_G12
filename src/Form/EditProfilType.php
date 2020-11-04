@@ -22,7 +22,6 @@ class EditProfilType extends AbstractType
             ->add('city')
         ;
     }
-
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([

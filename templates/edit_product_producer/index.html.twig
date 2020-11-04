@@ -1,0 +1,50 @@
+{% extends "base.html.twig" %} {% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Connexion</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="/profil/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/profil/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/profil/css/util.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/profil/css/main.css">
+</head>
+
+
+
+<div class="container-login100">
+    <div class="wrap-login100">
+      <div class="col-12">
+        <h3 class="text-center">Modifier un produit</h3>
+        <hr />
+      </div>
+      
+      <div class="col">
+      <div class="row justify-content-center">
+          {{ form_start(form) }}
+                
+                {{ form_row(form.image,{'attr':{'placeholder':"Image"}})}}
+                  {{form_row(form.name,{'attr':{'placeholder':"Nom du produit"}})}}
+                  {{form_row(form.unit,{'attr':{'placeholder':"Unite"}})}}
+                  {{form_row(form.quantity,{'attr':{'placeholder':"Quantité"}})}}
+                  {{form_row(form.price,{'attr':{'placeholder':"Prix"}})}}
+                  {{form_row(form.category,{'attr':{'placeholder':"Categorie"}})}}
+                <div class="text-center pt-3">
+                  <button type="submit" class="btn bg-primary text-white mb-1">
+                    Valider
+                  </button>
+            {{ form_end(form) }}
+         </div>
+      </div>
+            
+    </div>   
+  </div>
+</div>
+
+{% endblock %}

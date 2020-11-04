@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\EditProfilType;
+use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -30,7 +31,7 @@ class EditProfilController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($userProfile);
             $entityManager->flush();
-            return $this->redirectToRoute('edit_profil');
+            return $this->redirectToRoute('profil');
         }
         if($userProfile->getType() === 'consumer') {
             return $this->render('edit_profil/edit_profil_consumer.twig', [
@@ -49,17 +50,22 @@ class EditProfilController extends AbstractController
      * @param Request $request
      * @param UserInterface $user
      */
-    public function displayProfil(Request $request, UserInterface $userProfile, UserPasswordEncoderInterface $encoder): Response
+    public function displayProfil(Request $request, UserInterface $userProfile, UserPasswordEncoderInterface $encoder,ProductRepository $product): Response
     {
+        
+        $products = $product->findBy(array('user' => $userProfile));
+
         if($userProfile->getType() === 'consumer') {
             return $this->render('edit_profil/page_profil_consumer.twig', [
                 'user' => $userProfile
             ]);
         }else{
             return $this->render('edit_profil/page_profil_producer.twig', [
-                'user' => $userProfile
+                'user' => $userProfile,
+                'product'=> $products
             ]);
         }
     }
+
 
 }
