@@ -19,7 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43130382-7c4a-4e6e-b942-6f2df4fc485c" name="Default Changelist" comment="ok" />
+    <list default="true" id="43130382-7c4a-4e6e-b942-6f2df4fc485c" name="Default Changelist" comment="resolve conflicts">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -172,6 +175,8 @@
       <workItem from="1604408121686" duration="12757000" />
       <workItem from="1604426837864" duration="124000" />
       <workItem from="1604429905227" duration="1441000" />
+      <workItem from="1604431484499" duration="357000" />
+      <workItem from="1604433332036" duration="33000" />
     </task>
     <task id="LOCAL-00001" summary="starting fixtures">
       <created>1604410489073</created>
@@ -215,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604431297363</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="resolve conflicts">
+      <created>1604431748204</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1604431748204</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,17 +253,20 @@
     <MESSAGE value="conflicts resolved" />
     <MESSAGE value="products done" />
     <MESSAGE value="ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="ok" />
+    <MESSAGE value="resolve conflicts" />
+    <option name="LAST_COMMIT_MESSAGE" value="resolve conflicts" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2104" y="87" key="MergeDialog" timestamp="1604416211817">
-      <screen x="1920" y="0" width="1920" height="1050" />
+    <state x="184" y="87" key="MergeDialog" timestamp="1604431581725">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="2104" y="87" key="MergeDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604416211817" />
-    <state x="2518" y="286" key="MultipleFileMergeDialog" timestamp="1604416219468">
-      <screen x="1920" y="0" width="1920" height="1050" />
+    <state x="184" y="87" key="MergeDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1604431581725" />
+    <state x="598" y="286" key="MultipleFileMergeDialog" timestamp="1604431581749">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="2518" y="286" key="MultipleFileMergeDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604416219468" />
+    <state x="598" y="286" key="MultipleFileMergeDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1604431581749" />
     <state x="794" y="448" key="NewPhpFileDialog" timestamp="1604408718053">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -260,10 +275,21 @@
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="2572" y="283" key="Vcs.Multiple.Commit.Info.Dialog.Key/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604416032686" />
-    <state x="552" y="245" key="Vcs.Push.Dialog.v2" timestamp="1604431300052">
+    <state x="552" y="245" key="Vcs.Push.Dialog.v2" timestamp="1604431751182">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="2472" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604416289924" />
-    <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1604431300052" />
+    <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1604431751182" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/templates/product/index.html.twig</url>
+          <line>218</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
