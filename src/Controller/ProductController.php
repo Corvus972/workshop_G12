@@ -75,10 +75,6 @@ class ProductController extends AbstractController
         $req = $request->query->get('q');
         $recipes = $orderRepository -> findOneBy(['id' => $req]);
 
-        dump($recipes);
-        die;
-
-
         return $this->render('product/recipe.html.twig', [
             'recipes' => $recipes,
         ]);
