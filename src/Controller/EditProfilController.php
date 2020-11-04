@@ -66,9 +66,6 @@ class EditProfilController extends AbstractController
             ]);
         }
     }
-    
-    public function editProduit(){
 
-    }
 
 }

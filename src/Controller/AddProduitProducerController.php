@@ -77,7 +77,7 @@ class AddProduitProducerController extends AbstractController
      */
      public function deleteFolderRegistration($id, UserInterface $userProfile,Filesystem $fileSystem)
     {   
-         $fileName =  $this->getDoctrine()->getRepository(Product::class)->find($id);
+         $fileName = $this->getDoctrine()->getRepository(Product::class)->find($id);
          //Supprimer le fichier dans le dossier qui a l'id du user connecté
         $path = $this->getParameter('picture_directory');
         $fs = new Filesystem(); 
@@ -89,6 +89,50 @@ class AddProduitProducerController extends AbstractController
         $em->remove($productDataBase);
         $em->flush();
         return $this->redirectToRoute('profil'); 
+    }
+
+    
+     /**
+     * @Route("profil/edit/produit/{id}", name="edit_produit")
+     * @param $id
+     */
+    public function editProduit($id,UserInterface $userProfile,Request $request){
+
+        $editProduit = $this->getDoctrine()->getRepository(Product::class)->find($id);   
+        $form = $this->createForm(ProduitFormType::class, $editProduit);
+        $form->handleRequest($request);
+        
+        if ($form->isSubmitted() && $form->isValid()) {
+        
+            $picture = $form['image']->getData();
+            
+            $path = $this->getParameter('picture_directory');
+
+              
+                $fileName = $this->generateUniqueFileName().'.'.$picture->guessExtension();
+          
+                try {
+                        $picture->move($path.$userProfile->getId(), 
+                        $fileName
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+            
+                $entityManager = $this->getDoctrine()->getManager();
+                $editProduit->setUser($userProfile);
+                $editProduit->setImage($fileName);
+                $editProduit->setCategory($editProduit->getCategory());
+                $editProduit->setProductRef($this->generateUniqueFileName());
+
+                $entityManager->persist($editProduit);
+                $entityManager->flush();
+                return $this->redirectToRoute('profil'); 
+        }
+         return $this->render('edit_product_producer/index.html.twig', [
+            'form' => $form->createView()
+        ]);
+
     }
 
 }

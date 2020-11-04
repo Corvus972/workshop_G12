@@ -26,7 +26,7 @@ class ProduitFormType extends AbstractType
                               ],
                     ])
             ->add('quantity')
-            ->add('image',FileType::class)
+            ->add('image',FileType::class,array('data_class' => null))
             ->add('price')
             ->add('category',EntityType::class, [
                 'class' => Category::class,

@@ -83,19 +83,13 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col">
-                    <h3>Mes Produits
-                        <a class="btn bg-primary text-white " href="{{path('add_produit_producer')}}">Ajout</a>
-            
-                    </h3>
-                </div>
-            </div>
+          
+               CACA
+        
 
         <div class="row">
-
             {% for products in product %}
-                <div class="col-3 ml-3 mt-5">
+                <div class="col  mt-5 ">
                     <div class="card" style="width: 18rem;">
                         <img class="card-img-top"src="{{asset('uploads/pictureProduct' ~ user.id ~ '/' ~ products.image) }}" alt="Card image cap">
                         <div class="card-body">
@@ -121,9 +115,10 @@
                         </div>
                     </div>
                 </div>
-            
             {% endfor %}
-        </div>
+      
+
+        
 
     </div>
 
