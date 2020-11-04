@@ -4,7 +4,6 @@
 {% endblock %}
 
 {% block body %}
-
 	<!DOCTYPE html>
 	<html lang="en">
 		<head>
@@ -47,11 +46,17 @@
 
 								<a href="index.html"><img src="inscription/images/logo.png" alt="retour" width="50%"></a>
 							</span>
-                                   <div>
-
-							{{ form(form)}}
-
-							</div>
+                              <div>
+                                {% if form_errors(form)|length %}
+                                    <ul>
+                                        {% for error in form_errors(form) %}
+                                            <li>{{ error.message }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+{#                                {{ form_errors(form) }}#}
+                                {{ form(form)}}
+							  </div>
 						</div>
 					</div>
 

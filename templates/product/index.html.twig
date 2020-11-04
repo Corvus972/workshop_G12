@@ -1,7 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProductController!{% endblock %}
-
 {% block body %}
 
     <head>
@@ -131,45 +129,62 @@
                 </div> <!-- end of row -->
                 <div class="row">
                     <div class="col-lg-12">
+                        {% if packs %}
+                            {% for pack in pack %}
+                            <!-- Card -->
+                            <div class="card">
+                                <div class="card-image">
+                                    <img class="img-fluid" src="/produit/images/services-1.jpg" alt="alternative">
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="card-title">Local'Eco</h3>
+                                    <p>Un mélange de produits du terroir à prix malin de chez Julien à Mauguio</p>
+                                    <ul class="list-unstyled li-space-lg">
+                                        <li class="media">
+                                            <i class="fas fa-square"></i>
+                                            <div class="media-body">2 Salade </div>
+                                        </li>
+                                        <li class="media">
+                                            <i class="fas fa-square"></i>
+                                            <div class="media-body">500gr Oignons </div>
+                                        </li>
+                                        <li class="media">
+                                            <i class="fas fa-square"></i>
+                                            <div class="media-body">300gr Pois chiches </div>
+                                        </li>
+                                        <li class="media">
+                                            <i class="fas fa-square"></i>
+                                            <div class="media-body">1/2 Courges </div>
+                                        </li>
 
-                        <!-- Card -->
-                        <div class="card">
-                            <div class="card-image">
-                                <img class="img-fluid" src="/produit/images/services-1.jpg" alt="alternative">
+                                        <li class="media">
+                                            <i class="fas fa-square"></i>
+                                            <div class="media-body">2 Aubergines </div>
+                                        </li>
+                                    </ul>
+                                    <p class="price">à partir de <span>19€99</span></p>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="button-container">
+                                            <a class="btn-solid-reg page-scroll" href="#callMe"><i class="material-icons">add_shopping_cart</i></a>
+                                        </div> <!-- end of button-container -->
+                                    </div>
+                                    <div class="col">
+                                        <div class="button-container">
+{#                                            <a class="btn-solid-reg page-scroll" href="{{ path('product_recipe',{'id' : user.dossierInscription.id })}}">#}
+{#                                                <i class="material-icons">add_shopping_cart</i>#}
+{#                                            </a>#}
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end of button-container -->
                             </div>
-                            <div class="card-body">
-                                <h3 class="card-title">Local'Eco</h3>
-                                <p>Un mélange de produits du terroir à prix malin de chez Julien à Mauguio</p>
-                                <ul class="list-unstyled li-space-lg">
-                                    <li class="media">
-                                        <i class="fas fa-square"></i>
-                                        <div class="media-body">2 Salade </div>
-                                    </li>
-                                    <li class="media">
-                                        <i class="fas fa-square"></i>
-                                        <div class="media-body">500gr Oignons </div>
-                                    </li>
-                                    <li class="media">
-                                        <i class="fas fa-square"></i>
-                                        <div class="media-body">300gr Pois chiches </div>
-                                    </li>
-                                    <li class="media">
-                                        <i class="fas fa-square"></i>
-                                        <div class="media-body">1/2 Courges </div>
-                                    </li>
-
-                                    <li class="media">
-                                        <i class="fas fa-square"></i>
-                                        <div class="media-body">2 Aubergines </div>
-                                    </li>
-                                </ul>
-                                <p class="price">à partir de <span>19€99</span></p>
-                            </div>
-                            <div class="button-container">
-                                <a class="btn-solid-reg page-scroll" href="#callMe"><i class="material-icons">add_shopping_cart</i></a>
-                            </div> <!-- end of button-container -->
-                        </div>
-                        <!-- end of card -->
+                            <!-- end of card -->
+                        {% endfor %}
+                        {% else %}
+                            <h2 class="text-">Pas de panier pour l'instant ...</h2>
+                        {% endif %}
 
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
@@ -184,9 +199,11 @@
                         <h2>Nos légumes régionaux</h2>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
-                <div class="row justify-content-center">
+                <div class="row justify-content-center mb-5 ">
                     <form action="" method="get">
-                        <div class="wrap">
+                        <div
+{#                        class="wrap"#}
+                        >
                             <div class="search">
                                 <input type="text" class="searchTerm" name="q" placeholder="Rechercher..."/>
                                 <button type="submit" class="searchButton">
@@ -203,11 +220,11 @@
                                 <!-- Card -->
                                 <div class="card">
                                     <div class="card-image">
-                                        <img class="img-fluid" src="https://picsum.photos/400/600" alt="alternative">
+                                        <img class="img-fluid" src="{{ product.image }}" alt="alternative">
                                     </div>
                                     <div class="card-body">
                                         <h3 class="card-title">Local'Eco</h3>
-                                        <p>Un produit du terroir à prix malin de chez </p>
+                                        <p>Un produit du terroir à prix malin de chez {{ product.user.firstname }}</p>
 {#                                        {{ product.user.firstname }}#}
                                         <ul class="list-unstyled li-space-lg">
                                             <li class="media">
@@ -215,7 +232,7 @@
                                                 <div class="media-body">{{ product.name }} </div>
                                             </li>
                                         </ul>
-                                        <p class="price">à partir de <span>19€99</span></p>
+                                        <p class="price"><span>{{ product.price }}€</span></p>
                                     </div>
                                     <div class="button-container">
                                         <a class="btn-solid-reg page-scroll" href="#callMe"><i class="material-icons">add_shopping_cart</i></a>
