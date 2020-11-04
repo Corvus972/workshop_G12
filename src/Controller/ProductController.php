@@ -45,28 +45,25 @@ class ProductController extends AbstractController
     public function index(ProductRepository $productRepository, Request $request, UserInterface $userProfile, UserRepository $userRepository, PackRepository $packRepository): Response
     {
         $req = $request->query->get('q');
-        $userRegion = $userProfile -> getRegion();
-        $farmerInfo = $userRepository -> findBy(['region' => $userRegion]);
+        $userZipCode = $userProfile -> getRegion();
+        $getTwoNumberOfZip = substr($userZipCode, 0, 2);
+        $farmerInfo = $userRepository -> findBy(['region' => $userZipCode]);
+        $productsFilterByZipCode = $productRepository -> findBy((['user' => $farmerInfo]));
+        $packFilterByZipCode = $packRepository -> findBy((['id' => $farmerInfo]));
 
-        $packFilterByRegion = $packRepository -> findBy((['id' => $farmerInfo]));
-
-        $productsFilterByRegion = $productRepository -> findBy((['user' => $farmerInfo]));
-        $userRegion = Vicopo::https('34');
-//        dump($userRegion);
         if ($req){
-            $prods = new ArrayCollection($productsFilterByRegion);
+            $prods = new ArrayCollection($productsFilterByZipCode);
             $criteria = Criteria::create()->where(Criteria::expr()->contains('name', $req));
             $catalogue = $prods->matching($criteria);
         } else {
-            $catalogue = $productsFilterByRegion;
+            $catalogue = $productsFilterByZipCode;
         }
 
         return $this->render('product/index.html.twig', [
-            'packs' => $packFilterByRegion,
+            'packs' => $packFilterByZipCode,
             'products' => $catalogue,
         ]);
     }
-
 
     /**
      * @Route("/recipe", name="product_recipe")
@@ -88,7 +85,7 @@ class ProductController extends AbstractController
         ]);
     }
 
-     /**
+    /**
      * @Route("/add_to_cart", name="add_to_cart")
      * @param ProductRepository $productRepository
      * @param UserInterface $user
@@ -97,35 +94,36 @@ class ProductController extends AbstractController
     public function addToCart(Request $request, ProductRepository $repository, EntityManagerInterface $manager)
     {
         $user = $this->getUser();
-        
+
         $id = $request->request->get('id', null);
         $target = $repository->findById($id);
 
         $order_item = new OrderItems();
         $order = new Order();
 
-        $quantity = $repository->findQuantity($id); 
+        $quantity = $repository->findQuantity($id);
         $unit = $repository->findUnit($id);
         $price = $repository->findPrice($id);
         $productRef = $repository->findProductRef($id);
 
-        $order_item->setQuantity($quantity)
-                   ->setUnit($unit)
-                   ->setPrice($price)
-                   ->setProductRef($productRef);
-        
         $order->setUser($user)
-              ->setDate(New \Datetime)
-              ->setPaymentMethod('Pas encore payé')
-              ->setShipped(false)
-              ->setStatus('Non payé');
+            ->setDate(New \Datetime)
+            ->setPaymentMethod('Pas encore payé')
+            ->setShipped(false)
+            ->setStatus('Non payé');
+
+        $order_item->setQuantity($quantity)
+            ->setUnit($unit)
+            ->setPrice($price)
+            ->setOrderId($order)
+            ->setProductRef($productRef);
 
         $manager->persist($order_item);
         $manager->flush($order_item);
 
         $manager->persist($order);
         $manager->flush($order);
-        
+
         return new JsonResponse(
             [
                 'success' => true,
@@ -135,6 +133,6 @@ class ProductController extends AbstractController
 
         return $this->render('product/index.html.twig');
     }
-    
+
 
 }

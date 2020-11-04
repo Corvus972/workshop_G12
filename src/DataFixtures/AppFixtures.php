@@ -23,7 +23,7 @@ class AppFixtures extends Fixture
             ->setLastName("Houbre_")
             ->setEmail($faker->email)
             ->setFirstname('Zozo_')
-            ->setRoles(array('ROLE_ADMIN', 'ROLE_USER'))
+            ->setRoles(array('ROLE_PRODUCER'))
             ->setAddressLine1("line one of the address")
             ->setAddressLine2("line two of the address")
             ->setZipCode("34000")
