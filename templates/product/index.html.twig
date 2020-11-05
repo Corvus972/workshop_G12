@@ -3,7 +3,6 @@
 {% block body %}
 
     <head>
-
         <!-- Website Title -->
         <title>Nos paniers</title>
 
@@ -16,27 +15,93 @@
         <link href="/produit/css/magnific-popup.css" rel="stylesheet">
         <link href="/produit/css/styles.css" rel="stylesheet">
 
-        <!-- Favicon  -->
+            <!-- Favicon  -->
         <link rel="icon" href="images/favicon.png">
-    </head>
-    <body data-spy="scroll" data-target=".fixed-top">
+        </head>
+        <body data-spy="scroll" data-target=".fixed-top">
+        <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+        <!-- Text Logo - Use this if you don't have a graphic logo -->
+        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Aria</a> -->
 
-    <!-- Header -->
-    <header id="header" class="header">
-        <div class="header-content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="text-container">
-                            <h1>Découvrez nos paniers <span id="js-rotating">responsable, économiques, saisonnier</span></h1>
-                            <a class="btn-solid-lg page-scroll" href="#paniers_1">J'achète local en cliquant ici</a>
-                        </div>
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-            </div> <!-- end of container -->
-        </div> <!-- end of header-content -->
-    </header> <!-- end of header -->
-    <!-- end of header -->
+        <!-- Image Logo -->
+        <a class="navbar-brand logo-image" href="index.html"><img src="/home/images/logo.png" alt="alternative"></a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-awesome fas fa-bars"></span>
+            <span class="navbar-toggler-awesome fas fa-times"></span>
+        </button>
+        <!-- end of mobile menu toggle button -->
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="{{ path('home') }}#header">ACCUEIL <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="{{ path('home') }}#intro">LE CONCEPT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="{{ path('home') }}#services">LES PRODUCTEURS</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="{{ path('home') }}#contact">CONTACT</a>
+                </li>
+
+                {% if app.user %}
+                  <li class="nav-item">
+                    <a class="nav-link page-scroll"  href="{{ path('profil')}}">MON PANIER</a>
+                 </li>
+                   
+                 <li class="nav-item">
+                    <a class="nav-link page-scroll"  href="{{ path('product_index')}}">LES PRODUITS</a>
+                 </li>
+                   <li class="nav-item">
+                        <a class="nav-link page-scroll"  href="{{ path('profil')}}">MON PROFIL</a>
+                    </li>
+                 <div class="mb-3">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll"  href="{{ path('app_logout') }}">DECONNEXION</a>
+                    </li>
+                </div>
+                  {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll"  href="{{ path('app_login')}}">CONNEXION</a>
+                    </li>
+                {% endif %}
+            </ul>
+            <span class="nav-item social-icons">
+                <span class="fa-stack">
+                    <a href="#your-link">
+                    </a>
+                </span>
+                <span class="fa-stack">
+                    <a href="#your-link">
+                    </a>
+                </span>
+            </span>
+        </div>
+    </nav> <!-- end of navbar -->
+    <!-- end of navbar -->
+
+            <!-- Header -->
+            <header id="header" class="header">
+                <div class="header-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="text-container">
+                                    <h1>Découvrez nos paniers <span id="js-rotating">responsable, économiques, saisonnier</span></h1>
+                                    <a class="btn-solid-lg page-scroll" href="#paniers_1">J'achète local en cliquant ici</a>
+                                </div>
+                            </div> <!-- end of col -->
+                        </div> <!-- end of row -->
+                    </div> <!-- end of container -->
+                </div> <!-- end of header-content -->
+            </header> <!-- end of header -->
+            <!-- end of header -->
 
 
     <!-- Paniers -->
@@ -94,9 +159,6 @@
                                     </div>
                                     <div class="col">
                                         <div class="button-container">
-{#                                            <a class="btn-solid-reg page-scroll" href="{{ path('product_recipe',{'id' : user.dossierInscription.id })}}">#}
-{#                                                <i class="material-icons">add_shopping_cart</i>#}
-{#                                            </a>#}
                                         </div>
                                     </div>
                                 </div>
@@ -104,18 +166,15 @@
                             </div>
 
                             <!-- end of card -->
+                             <div class="button-container">
+                                <button class="btn-solid-reg page-scroll"><i class="material-icons">add_shopping_cart</i></button>
+                            </div> <!-- end of button-container -->
                         {% endfor %}
                         {% else %}
                             <h2 class="text-">Pas de panier pour l'instant ...</h2>
                         {% endif %}
-
-                            <div class="button-container">
-                                <button class="btn-solid-reg page-scroll"><i class="material-icons">add_shopping_cart</i></button>
-                            </div> <!-- end of button-container -->
                         </div>
                         <!-- end of card -->
-
-
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
             </div> <!-- end of container -->
@@ -131,9 +190,7 @@
                 </div> <!-- end of row -->
                 <div class="row justify-content-center mb-5 ">
                     <form action="" method="get">
-                        <div
-{#                        class="wrap"#}
-                        >
+                        <div>
                             <div class="search">
                                 <input type="text" class="searchTerm" name="q" placeholder="Rechercher..."/>
                                 <button type="submit" class="searchButton">
@@ -143,19 +200,18 @@
                         </div>
                     </form>
                 </div>
+            
                 <div class="row">
-                    <div class="col-lg-12">
-                        {% if products %}
-                            {% for product in products %}
-                                <!-- Card -->
+                {% if products %}
+                        {% for product in products %}
+                            <div class="col mt-5 ">
                                 <div class="card">
                                     <div class="card-image">
-                                        <img class="img-fluid" src="{{ product.image }}" alt="alternative">
+                                        <img class="img-fluid" src="{{asset('uploads/pictureProduct' ~ product.user.id ~ '/' ~ product.image) }}" alt="alternative">
                                     </div>
                                     <div class="card-body">
                                         <h3 class="card-title">Local'Eco</h3>
                                         <p>Un produit du terroir à prix malin de chez {{ product.user.firstname }}</p>
-{#                                        {{ product.user.firstname }}#}
                                         <ul class="list-unstyled li-space-lg">
                                             <li class="media">
                                                 <i class="fas fa-square"></i>
@@ -165,23 +221,17 @@
                                         <p class="price"><span>{{ product.price }}€</span></p>
                                     </div>
                                     <div class="button-container">
-                                <button class="btn-solid-reg page-scroll add_to_cart" id ="{{ product.id }}"><i class="material-icons">add_shopping_cart</i></button>
-                            </div> <!-- end of button-container -->
-                                <!-- end of card -->
-                            {% endfor %}
-
-
-
-                    </div> <!-- end of col -->
-                </div> <!-- end of row -->
-            </div> <!-- end of container -->
-        </div> <!-- end of cards-2 -->
-
-
-        {% else %}
-            <h2 class="text-center mt-5 mb-5">Pas de produits pour l'instant ...</h2>
-        {% endif %}
-
+                                        <button class="btn-solid-reg page-scroll add_to_cart" id ="{{ product.id }}"><i class="material-icons">add_shopping_cart</i></button>
+                                    </div> <!-- end of button-container -->
+                                    <!-- end of card -->
+                                </div> <!-- end of container -->
+                            </div>
+                        {% endfor %}
+                {% else %}
+                    <h2 class="text-center mt-5 mb-5">Pas de produits pour l'instant ...</h2>
+                {% endif %}
+                </div>
+             </div>
         <!-- end of services -->
 
         <!-- Footer -->
@@ -244,11 +294,7 @@
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
             </div> <!-- end of container -->
-        </div> <!-- end of footer -->
-        <!-- end of footer -->
-
-
-        <!-- Copyright -->
+             <!-- Copyright -->
         <div class="copyright">
             <div class="container">
                 <div class="row">
@@ -259,6 +305,11 @@
             </div> <!-- end of container -->
         </div> <!-- end of copyright -->
         <!-- end of copyright -->
+        </div> <!-- end of footer -->
+        <!-- end of footer -->
+
+
+       
 
 
         <!-- Scripts -->

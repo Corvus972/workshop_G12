@@ -52,17 +52,17 @@
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#header">ACCUEIL <span class="sr-only">(current)</span></a>
+                    <a class="nav-link page-scroll" href="{{ path('home') }}#header">ACCUEIL <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#intro">LE CONCEPT</a>
+                    <a class="nav-link page-scroll" href="{{ path('home') }}#intro">LE CONCEPT</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#services">LES PRODUCTEURS</a>
+                    <a class="nav-link page-scroll" href="{{ path('home') }}#services">LES PRODUCTEURS</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#contact">CONTACT</a>
+                    <a class="nav-link page-scroll" href="{{ path('home') }}#contact">CONTACT</a>
                 </li>
 
                 {% if app.user %}
@@ -201,8 +201,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-title">LES PANIERS</div>
+                    {# <div class="section-title">LES PANIERS </div> #}
                     <h2>Les paniers de la semaine</h2>
+                    <h2> Cette fonctionnalité est disponible dans 1 mois !</h2>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
             <div class="row">
@@ -214,7 +215,7 @@
                             <img class="img-fluid" src="/home/images/services-1.jpg" alt="alternative">
                         </div>
                         <div class="card-body">
-                            <h3 class="card-title">Panier 1</h3>
+                            <h3 class="card-title">Exemple 1</h3>
                             <p>Mélange parfait de légumes de saisons</p>
                             <ul class="list-unstyled li-space-lg">
                                 <li class="media">
@@ -240,7 +241,7 @@
                             <img class="img-fluid" src="/home/images/services-2.jpg" alt="alternative">
                         </div>
                         <div class="card-body">
-                            <h3 class="card-title">Panier 2</h3>
+                            <h3 class="card-title">exemple 2</h3>
                             <p>Mélange parfait de légumes de saisons</p>
                             <ul class="list-unstyled li-space-lg">
                                 <li class="media">
@@ -266,7 +267,7 @@
                             <img class="img-fluid" src="/home/images/services-3.jpg" alt="alternative">
                         </div>
                         <div class="card-body">
-                            <h3 class="card-title">Panier 3</h3>
+                            <h3 class="card-title">exemple 3</h3>
                             <p>Mélange parfait de légumes de saisons</p>
                             <ul class="list-unstyled li-space-lg">
                                 <li class="media">
@@ -404,29 +405,29 @@
 
                     <!-- Tab -->
                     <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
-                        <p><strong>Nous tenons très à coeur la satisfaction de nos clients.</strong> Un gagnant-<a class="green" href="#your-link">with huge potential</a></p>
-                        <p><strong>Our goal is to help</strong> your company achieve its full potential and establish long term stability for <a class="green" href="#your-link">the stakeholders</a></p>
+                        <p><strong>Nous tenons très à coeur la satisfaction de nos clients.</strong> {# Un gagnant-<a class="green" href="#your-link">with huge potential</a> #}</p>
+                       {#  <p><strong>Notre objectif est d'aider</strong> votre entreprise à atteindre son plein potentiel et à établir une stabilité à long terme pour les parties prenantes <a class="green" href="#your-link">the stakeholders</a></p> #}
                         <ul class="list-unstyled li-space-lg">
                             <li class="media">
                                 <i class="fas fa-square"></i>
-                                <div class="media-body">It's easy to get a quotation, just call our office anytime</div>
+                                <div class="media-body">Un service de livraison de qualité</div>
                             </li>
                             <li class="media">
                                 <i class="fas fa-square"></i>
-                                <div class="media-body">We'll get back to you with an initial estimate soon</div>
+                                <div class="media-body">Des produits 100% BIO</div>
                             </li>
                             <li class="media">
                                 <i class="fas fa-square"></i>
-                                <div class="media-body">Get ready to see results even after only 30 days</div>
+                                <div class="media-body">Des recettes bientôt disponible pour accompagner vos achats</div>
                             </li>
-                            <li class="media">
+                            {# <li class="media">
                                 <i class="fas fa-square"></i>
                                 <div class="media-body">Ask for a quote and start improving your business</div>
                             </li>
                             <li class="media">
                                 <i class="fas fa-square"></i>
                                 <div class="media-body">Just fill out the form and we'll call you right away</div>
-                            </li>
+                            </li> #}
                         </ul>
                     </div> <!-- end of tab-pane -->
                     <!-- end of tab -->

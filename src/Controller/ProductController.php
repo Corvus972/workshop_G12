@@ -16,7 +16,6 @@ use Doctrine\ORM\QueryBuilder;
 use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use Vicopo\Vicopo;
 use App\Entity\Order;
 use App\Entity\OrderItems;
 use Symfony\Component\HttpFoundation\Request;
@@ -24,6 +23,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\User;
+
 
 
 /**
@@ -51,7 +51,7 @@ class ProductController extends AbstractController
         $packFilterByRegion = $packRepository -> findBy((['id' => $farmerInfo]));
 
         $productsFilterByRegion = $productRepository -> findBy((['user' => $farmerInfo]));
-        $userRegion = Vicopo::https('34');
+      
 //        dump($userRegion);
         if ($req){
             $prods = new ArrayCollection($productsFilterByRegion);
