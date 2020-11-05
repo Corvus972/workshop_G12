@@ -69,11 +69,11 @@
                   <li class="nav-item">
                     <a class="nav-link page-scroll"  href="{{ path('profil')}}">MON PANIER</a>
                  </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll"  href="{{ path('profil')}}">MON PROFIL</a>
-                    </li>
                  <li class="nav-item">
-                    <a class="nav-link page-scroll"  href="{{ path('product_index')}}">LES PRODUITS</a>
+                    <a class="nav-link page-scroll"  href="{{ path('product')}}">LES PRODUITS</a>
+                 </li>
+                  <li class="nav-item">
+                    <a class="nav-link page-scroll"  href="{{ path('profil')}}">MON PANIER</a>
                  </li>
                  <div class="mb-3">
                     <li class="nav-item">
@@ -82,8 +82,11 @@
                 </div>
                   {% else %}
                     <li class="nav-item">
-                        <a class="nav-link page-scroll"  href="{{ path('app_login')}}">CONNEXION</a>
-                    </li>
+                    <a class="nav-link page-scroll"  href="{{ path('app_login')}}">CONNEXION</a>
+                </li>
+                    <li class="nav-item">
+                    <a class="nav-link page-scroll"  href="{{ path('registration')}}">INSCRIPTION</a>
+                </li>
                 {% endif %}
             </ul>
             <span class="nav-item social-icons">
@@ -109,7 +112,7 @@
                         <div class="text-container">
                             <h1>Consommez <span id="js-rotating">local, responsable, saisonnier</span></h1>
                             <p class="p-heading p-large">Le Panier Local vous propose chaque semaine des paniers de produits de saisons de producteurs de la région. Luttons ensemble contre le gaspillage alimentaire !</p>
-                            <a class="btn-solid-lg page-scroll" href="{{ path('registration')}}">COMMENCEZ</a>
+                            <a class="btn-solid-lg page-scroll" href="#intro">COMMENCEZ</a>
                         </div>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->

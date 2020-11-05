@@ -67,6 +67,31 @@ class ProductRepository extends ServiceEntityRepository
     return $qb;
     }
 
+    public function findName($id) {
+        $qb = $this->createQueryBuilder('p')
+            ->select('p.name')
+            ->where('p.id = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getSingleScalarResult()
+        ;
+
+        return $qb;
+
+    }
+    public function findImg($id) {
+        $qb = $this->createQueryBuilder('p')
+            ->select('p.image')
+            ->where('p.id = :id')
+            ->setParameter('id', $id)
+            ->getQuery()
+            ->getSingleScalarResult()
+        ;
+
+        return $qb;
+
+    }
+
     // /**
     //  * @return Product[] Returns an array of Product objects
     //  */
