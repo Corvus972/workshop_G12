@@ -78,7 +78,7 @@
                   {% set counter = counter + 1 %}
                   Lot n° {{ counter }}:<br>
                   {% for product in lot %}
-                  {{ product.name }}
+                  {{ product.name }} : {{ product.quantity }} {{ product.unit }}
                   <br>
                   {% endfor %}
                   {% endfor %}

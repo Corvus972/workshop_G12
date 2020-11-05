@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\EditProfilType;
+use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,7 +16,9 @@ class EditProfilController extends AbstractController
     /**
      * @Route("edit/profil", name="edit_profil")
      * @param Request $request
-     * @param UserInterface $user
+     * @param UserInterface $userProfile
+     * @param UserPasswordEncoderInterface $encoder
+     * @return Response
      */
     public function editProfil(Request $request, UserInterface $userProfile, UserPasswordEncoderInterface $encoder): Response
     {
@@ -30,7 +33,7 @@ class EditProfilController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($userProfile);
             $entityManager->flush();
-            return $this->redirectToRoute('edit_profil');
+            return $this->redirectToRoute('profil');
         }
         if($userProfile->getType() === 'consumer') {
             return $this->render('edit_profil/edit_profil_consumer.twig', [
@@ -44,22 +47,67 @@ class EditProfilController extends AbstractController
             ]);
         }
     }
+    public function getOrders($userProfile) {
+        $orders = $userProfile -> getOrders();
+        $ordersPayed = [];
+        foreach ($orders as $key => $val){
+            if($orders[$key]->getStatus() ===  "Commandé"){
+                array_push($ordersPayed, $orders[$key]);
+//                array_push($ordersPayed, (object)[
+//                    $orders[$key]
+//                ]);
+            }
+        }
+        return $ordersPayed;
+    }
+//    /**
+//     * @Route("order/profil", name="order_profile")
+//     * @param Request $request
+//     * @param UserInterface $userProfile
+//     * @return Response
+//     */
+//    public function orderProfile(Request $request, UserInterface $userProfile): Response
+//    {
+//        $orderPayed = $this-> getOrders($userProfile);
+////        $prods = null;
+////        if($orderPayed) {
+////            foreach ($orderPayed as $k => $val){
+////                $prods = $orderPayed[$k] -> getOrderItems();
+////            }
+////        }
+//        return $this->render('orders/orders_customer.html.twig', [
+////            'cart_products' => $prods,
+//            'orders' => $orderPayed
+//        ]);
+//
+//    }
+
     /**
      * @Route("profil", name="profil")
      * @param Request $request
-     * @param UserInterface $user
+     * @param UserInterface $userProfile
+     * @param UserPasswordEncoderInterface $encoder
+     * @param ProductRepository $product
+     * @return Response
      */
-    public function displayProfil(Request $request, UserInterface $userProfile, UserPasswordEncoderInterface $encoder): Response
+    public function displayProfil(Request $request, UserInterface $userProfile, UserPasswordEncoderInterface $encoder,ProductRepository $product): Response
     {
+        
+        $products = $product->findBy(array('user' => $userProfile));
+        $orderPayed = $this-> getOrders($userProfile);
+
         if($userProfile->getType() === 'consumer') {
             return $this->render('edit_profil/page_profil_consumer.twig', [
-                'user' => $userProfile
+                'user' => $userProfile,
+                'orders' => $orderPayed
             ]);
         }else{
             return $this->render('edit_profil/page_profil_producer.twig', [
-                'user' => $userProfile
+                'user' => $userProfile,
+                'product'=> $products
             ]);
         }
     }
+
 
 }

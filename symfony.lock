@@ -99,6 +99,9 @@
     "fzaninotto/faker": {
         "version": "v1.9.1"
     },
+    "kylekatarnls/vicopo": {
+        "version": "1.2.1"
+    },
     "monolog/monolog": {
         "version": "1.25.5"
     },
@@ -109,7 +112,11 @@
         "version": "2.2.3"
     },
     "php": {
+<<<<<<< HEAD
         "version": "7.3"
+=======
+        "version": "7.4"
+>>>>>>> 5364ac81b77bafdd585220ca00dfb8a69321a622
     },
     "phpdocumentor/reflection-common": {
         "version": "2.2.0"
@@ -505,6 +512,9 @@
         "version": "v4.5.3"
     },
     "twig/extra-bundle": {
+        "version": "v3.1.1"
+    },
+    "twig/intl-extra": {
         "version": "v3.1.1"
     },
     "twig/twig": {

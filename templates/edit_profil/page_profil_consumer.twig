@@ -2,83 +2,202 @@
 
 
 {% block body %}
-<div class="row justify-content-center">
-    <div class=" mt-1 p-3 mb-3 bg-white rounded p-center">
-        <div class="col">
-            <h3>INFORMATION PERSONELLE
-                <a class="btn" href="{{path('edit_profil')}}"><img src="https://img.icons8.com/officel/40/000000/edit.png"></a>
-            </h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Connexion</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="/profil/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/profil/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/profil/css/util.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/profil/css/main.css">
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="/produit/css/bootstrap.css" rel="stylesheet">
+    <link href="/produit/css/fontawesome-all.css" rel="stylesheet">
+    <link href="/produit/css/swiper.css" rel="stylesheet">
+    <link href="/produit/css/magnific-popup.css" rel="stylesheet">
+    <link href="/produit/css/styles.css" rel="stylesheet">
+</head>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+        <!-- Text Logo - Use this if you don't have a graphic logo -->
+        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Aria</a> -->
+
+        <!-- Image Logo -->
+        <a class="navbar-brand logo-image" href="{{path('home')}}"><img src="/home/images/logo.png" alt="alternative"></a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-awesome fas fa-bars"></span>
+            <span class="navbar-toggler-awesome fas fa-times"></span>
+        </button>
+        <!-- end of mobile menu toggle button -->
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="{{ path('home')}}">ACCUEIL</a>
+                </li>
+                {% if app.user %}
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll"  href="{{ path('profil')}}">MON PROFIL</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll"  href="{{ path('profil')}}">MON PANIER</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll"  href="{{ path('product_index')}}">LES PRODUITS</a>
+                    </li>
+                    <div class="mb-3">
+                        <li class="nav-item">
+                            <a class="nav-link page-scroll"  href="{{ path('app_logout') }}">DECONNEXION</a>
+                        </li>
+                    </div>
+                {% endif %}
+            </ul>
+            <span class="nav-item social-icons">
+                <span class="fa-stack">
+                    <a href="#your-link">
+                    </a>
+                </span>
+                <span class="fa-stack">
+                    <a href="#your-link">
+                    </a>
+                </span>
+            </span>
         </div>
-        <hr>
-    </div>
-</div>
+    </nav> <!-- end of navbar -->
+</head>
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
 {# Information personnelle #}
-<div class="container">
-    <div class="row offset-2 ">
-        <div class="col">
-            <div class="row ">
-                <div class="col mb-1">
-                    <h5>
-                        <strong>Nom :</strong>
-                    </h5>
-                    {{user.lastname}}
-                </div>
-                <div class="col mb-1">
-                    <h5>
-                        <strong>Prénom :</strong>
-                    </h5>
-                    {{user.firstname}}
-                </div>
-            </div>
-            <div class="row ">
-                <div class="col mb-1">
-                    <h5>
-                        <strong>E-mail :</strong>
-                    </h5>
-                    {{user.email}}
-                </div>
-
-                <div class="col mb-1 ">
-                    <h5>
-                        <strong>Adresse 1 :</strong>
-                    </h5>
-                    {{ user.addressline1 }}
-                </div>
-            </div>
-            <div class="row">
-
-                <div class="col mb-3 ">
-                    <h5>
-                        <strong>Code postal :</strong>
-                    </h5>
-                    {{ user.zipcode }}
-                </div>
-                <div class="col mb-3 ">
-                    <h5>
-                        <strong>Adresse 2 :</strong>
-                    </h5>
-                    {{ user.addressline2 }}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col mb-3 ">
-                    <h5>
-                        <strong>Ville :</strong>
-                    </h5>
-                    {{user.city}}
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row justify-content-center">
-        <div class=" mt-1 p-3 mb-3 bg-white rounded p-center">
+<div class="container-login100">
+    <div class="wrap-login100">
+        <div class="row justify-content-center">
             <div class="col">
-                <h3>MES COMMANDES
+                <h3>INFORMATION PERSONELLE
                     <a class="btn" href="{{path('edit_profil')}}"><img src="https://img.icons8.com/officel/40/000000/edit.png"></a>
                 </h3>
             </div>
-            <hr>
+        </div>
+            <div class="col-12">
+                <div class="row">
+                    <div class="col mb-1">
+                        <h5>
+                            <strong>Nom :</strong>
+                        </h5>
+                        {{user.lastname}}
+                    </div>
+                    <div class="col mb-1">
+                        <h5>
+                            <strong>Prénom :</strong>
+                        </h5>
+                        {{user.firstname}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col mb-1">
+                        <h5>
+                            <strong>E-mail :</strong>
+                        </h5>
+                        {{user.email}}
+                    </div>
+
+                    <div class="col mb-1 ">
+                        <h5>
+                            <strong>Adresse 1 :</strong>
+                        </h5>
+                        {{ user.addressline1 }}
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col mb-3 ">
+                        <h5>
+                            <strong>Département :</strong>
+                        </h5>
+                        {{ user.region }}
+                    </div>
+                    <div class="col mb-3 ">
+                        <h5>
+                            <strong>Adresse 2 :</strong>
+                        </h5>
+                        {{ user.addressline2 }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col mb-3 ">
+                        <h5>
+                            <strong>Ville :</strong>
+                        </h5>
+                        {{user.city}}
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+            <div class="col">
+
+                <h3 class="mb-5">Commandes passées</h3>
+
+                    <!-- Content -->
+                    <div class="container mt-5">
+                        <div class="">
+                            <div class="row justify-content-center">
+
+                                {% if orders %}
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Commande</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Total</th>
+                                            <th scope="col">Produits</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for order in orders %}
+                                            <tr>
+                                                <th scope="row">#</th>
+                                                <td>Commande du {{ order.date|date("m/d/Y", "Europe/Paris") }}</td>
+                                                <td>{{ order.status }}</td>
+                                                <td>{{ order.totalprice }}€</td>
+                                                <td class="row">
+                                                    {% for prod in order.orderItems %}
+                                                        <div class="col">{{ prod.name }}</div>
+                                                    {% endfor %}
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                {% else %}
+                                    <h3>Pas de commandes pour l'instant ...</h3>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Content -->
+
+
+                <h3>Produit commandé
+
+                </h3>
+            </div>
         </div>
     </div>
-</div>
+
 {% endblock %}

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Mon Panier Local - Panier</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="/cart/css/core-style.css">
+    <link rel="stylesheet" href="/cart/style.css">
+
+    <!-- Responsive CSS -->
+    <link href="/cart/css/responsive.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="catagories-side-menu">
+    <!-- Close Icon -->
+    <div id="sideMenuClose">
+        <i class="ti-close"></i>
+    </div>
+    <!--  Side Nav  -->
+    <div class="nav-side-menu">
+        <div class="menu-list">
+            <h6>Categories</h6>
+            <ul id="menu-content" class="menu-content collapse out">
+                <!-- Single Item -->
+                <li data-toggle="collapse" data-target="#vegetable" class="collapsed active">
+                    <a href="#">Fruits et légumes <span class="arrow"></span></a>
+                    <ul class="sub-menu collapse" id="vegetable">
+                        <li><a href="#">Légumes</a></li>
+                        <li><a href="#">Fruits</a></li>
+                        <li><a href="#">Nos paniers</a></li>
+                    </ul>
+                </li>
+                <!-- Single Item -->
+                <li data-toggle="collapse" data-target="#grocery_fresh" class="collapsed">
+                    <a href="#">Epicerie <span class="arrow"></span></a>
+                    <ul class="sub-menu collapse" id="grocery">
+                        <li><a href="#">Fromagerie</a></li>
+                        <li><a href="#">Boucherie</a></li>
+                        <li><a href="#">Charcuterie</a></li>
+                    </ul>
+                </li>
+                <!-- Single Item -->
+                <li data-toggle="collapse" data-target="#grocery_dry" class="collapsed">
+                    <a href="#">Epicerie sec <span class="arrow"></span></a>
+                    <ul class="sub-menu collapse" id="grocery_dry">
+                        <li><a href="#">Epicerie salé</a></li>
+                        <li><a href="#">Epicerie sucrée</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="wrapper">
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <!-- ****** Cart Area Start ****** -->
+    <div class="cart_area section_padding_100 clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                {% if cart_products|length > 0 %}
+                    <div class="cart-table clearfix">
+                        <table class="table table-responsive">
+                            <thead>
+                            <tr>
+                                <th>Vos produits</th>
+                                <th>Prix</th>
+                                <th>Unité</th>
+                                <th>Quantité</th>
+                                <th>Total</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for product in cart_products %}
+                            <tr>
+                                <td class="cart_product_img d-flex align-items-center">
+                                    <a href="#"><img class="img-thumbnail img-fluid w-75" src="{{ product.image }}" alt="Product"></a>
+                                    <h6>{{ product.name }}</h6>
+                                </td>
+                                <td class="price"><span>{{ product.price }}€</span></td>
+                                <td class="price"><span>{{ product.unit }}</span></td>
+                                <td class="qty">
+                                    <div class="quantity">
+{#                                        <span class="qty-minus"#}
+{#                                              onclick="updateQuantity('less')">#}
+{#                                            <i class="fa fa-minus" aria-hidden="true"></i>#}
+{#                                        </span>#}
+{#                                        <input onchange="" type="number"#}
+{#                                               class="qty-text" class="qty" step="1" min="1" max="99"#}
+{#                                               name="quantity" value="{{ product.quantity }}"/>#}
+{#                                        <span class="qty-plus"#}
+{#                                              onclick="updateQuantity('add')">#}
+{#                                            <i class="fa fa-plus" aria-hidden="true"></i>#}
+{#                                        </span>#}
+                                        <a href="{{ path('cart_less', {'id': product.id} ) }}"
+                                           class="qty-minus">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </a>
+
+                                        <input type="number" class="qty-text" id="qty" step="1" min="1" max="99" name="quantity" value="{{ product.quantity }}">
+                                        <a href="{{ path('cart_add', {'id': product.id} ) }}"
+                                           class="qty-plus">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </a>
+
+                                    </div>
+                                </td>
+                                <td class="total_price"><span>{{ product.totalprice }}€</span></td>
+                                <td><a class="text-danger" href="{{ path('cart_delete', {'id': product.id} ) }}">X</a></td>
+                            </tr>
+                            {% endfor %}
+
+                            </tbody>
+                        </table>
+                    </div>
+                    {% else %}
+                    <h1 class="mt-5 mb-5">Votre panier est vide ...</h1>
+                    {% endif %}
+                    <div class="cart-footer d-flex mt-30">
+                        <div class="back-to-shop w-50">
+                            <a href="{{ path('product_index')}}">Continuer mes achats</a>
+                        </div>
+                        {% if cart_products|length > 0 %}
+                        <div class="update-checkout w-50 text-right">
+                            <a href="{{ path('cart_clear' )}}">Supprimer mon panier</a>
+{#                            <a href="#">Mettre à jour mon panier</a>#}
+                        </div>
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>
+            {% if cart_products|length > 0 %}
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="coupon-code-area mt-70">
+                        <div class="cart-page-heading">
+                            <h5>Psst.. Un code promo ?</h5>
+                            <p>Entre votre code promo</p>
+                        </div>
+                        <form action="#">
+                            <input type="search" name="search" placeholder="#SUPERPRODUCTEUR">
+                            <button class="btn karl-checkout-btn_2" type="submit">Appliquer</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="shipping-method-area mt-70">
+                        <div class="cart-page-heading">
+                            <h5>On vous livre comment ?</h5>
+                            <p>Sélectionner un mode de livraison</p>
+                        </div>
+
+                        <div class="custom-control custom-radio mb-30">
+                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label d-flex align-items-center justify-content-between" for="customRadio1"><span>Livré sous 48H</span><span>5€</span></label>
+                        </div>
+
+                        <div class="custom-control custom-radio mb-30">
+                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label d-flex align-items-center justify-content-between" for="customRadio2"><span>Livré sous 72H</span><span>2€</span></label>
+                        </div>
+
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label d-flex align-items-center justify-content-between" for="customRadio3"><span>Economisez avec une livraisons sous 4 jours ouvrés</span><span>Gratuit</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="cart-total-area mt-70">
+                        <div class="cart-page-heading">
+                            <h5>Panier complet</h5>
+                            <p>Informations</p>
+                        </div>
+
+                        <ul class="cart-total-chart">
+                            <li><span>Sous-total</span> <span>{% if order %}{{ order.totalprice }}€{% endif %}</span></li>
+                            <li><span>Frais d'expédition</span> <span>Gratuit</span></li>
+                            <li><span><strong>Total</strong></span>
+                                <span>
+                                    <strong>
+                                        {% if order %}
+                                            {{ order.totalprice }}€
+                                        {% endif %}
+                                    </strong>
+                                </span>
+                            </li>
+                        </ul>
+                        <a href="{{ path('cart_done')}}" class="btn karl-checkout-btn">Procéder au paiement</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <!-- ****** Cart Area End ****** -->
+</div>
+
+</body>
+
+</html>
+
+<script>
+    const updateQuantity = (method) => {
+        let effect = document.getElementById('qty'),
+            qty = effect.value;
+        if (method === "add") {
+            if( !isNaN( qty )) effect.value++;return false;
+        } else {
+            if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;
+        }
+
+    }
+</script>

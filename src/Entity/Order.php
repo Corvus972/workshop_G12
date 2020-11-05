@@ -2,10 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\OrderRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Entity\Product;
+use App\Entity\OrderItems;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\OrderRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity(repositoryClass=OrderRepository::class)
@@ -49,6 +51,13 @@ class Order
      * @ORM\OneToMany(targetEntity=OrderItems::class, mappedBy="order_id")
      */
     private $orderItems;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $totalprice;
+
+
 
     public function __construct()
     {
@@ -177,5 +186,18 @@ class Order
 
         return $this;
     }
+
+    public function getTotalprice(): ?float
+    {
+        return $this->totalprice;
+    }
+
+    public function setTotalprice(?float $totalprice): self
+    {
+        $this->totalprice = $totalprice;
+
+        return $this;
+    }
+
 
 }

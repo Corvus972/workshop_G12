@@ -1,0 +1,229 @@
+<!-- Title  -->
+<title>Mon Panier Local - Paiement</title>
+
+<!-- Favicon  -->
+<link rel="icon" href="img/core-img/favicon.ico">
+
+<!-- Core Style CSS -->
+<link rel="stylesheet" href="css/core-style.css">
+<link rel="stylesheet" href="style.css">
+
+<!-- Responsive CSS -->
+<link href="css/responsive.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="catagories-side-menu">
+    <!-- Close Icon -->
+    <div id="sideMenuClose">
+        <i class="ti-close"></i>
+    </div>
+    <!--  Side Nav  -->
+    <div class="nav-side-menu">
+        <div class="menu-list">
+            <h6>Categories</h6>
+            <ul id="menu-content" class="menu-content collapse out">
+                <!-- Single Item -->
+                <li data-toggle="collapse" data-target="#vegetable" class="collapsed active">
+                    <a href="#">Fruits et légumes <span class="arrow"></span></a>
+                    <ul class="sub-menu collapse" id="vegetable">
+                        <li><a href="#">Légumes</a></li>
+                        <li><a href="#">Fruits</a></li>
+                        <li><a href="#">Nos paniers</a></li>
+                    </ul>
+                </li>
+                <!-- Single Item -->
+                <li data-toggle="collapse" data-target="#grocery_fresh" class="collapsed"> 
+                    <a href="#">Epicerie <span class="arrow"></span></a>
+                    <ul class="sub-menu collapse" id="grocery">
+                        <li><a href="#">Fromagerie</a></li>
+                        <li><a href="#">Boucherie</a></li>
+                        <li><a href="#">Charcuterie</a></li>
+                    </ul>
+                </li>
+                <!-- Single Item -->
+                <li data-toggle="collapse" data-target="#grocery_dry" class="collapsed">
+                    <a href="#">Epicerie sec <span class="arrow"></span></a>
+                    <ul class="sub-menu collapse" id="grocery_dry">
+                        <li><a href="#">Epicerie salé</a></li>
+                        <li><a href="#">Epicerie sucrée</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div id="wrapper">
+
+        <!-- ****** Header Area Start ****** -->
+
+
+        <!-- ****** Checkout Area Start ****** -->
+        <div class="checkout_area section_padding_100">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12 col-md-6">
+                        <div class="checkout_details_area mt-50 clearfix">
+
+                            <div class="cart-page-heading">
+                                <h5>Adresse de facturation</h5>
+                                
+                            </div>
+
+                            <form action="#" method="post">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="first_name">PRENOM <span>*</span></label>
+                                        <input type="text" class="form-control" id="first_name" value="" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="last_name">Nom <span>*</span></label>
+                                        <input type="text" class="form-control" id="last_name" value="" required>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label for="company">Nom de l'entreprise</label>
+                                        <input type="text" class="form-control" id="company" value="">
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label for="country">Pays <span>*</span></label>
+                                        <select class="custom-select d-block w-100" id="country">
+                                        <option value="fr">France</option>
+                                    
+                                    </select>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label for="street_address">Adresse <span>*</span></label>
+                                        <input type="text" class="form-control mb-3" id="street_address" value="">
+                                        <input type="text" class="form-control" id="street_address2" value="">
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label for="postcode">Code postal <span>*</span></label>
+                                        <input type="text" class="form-control" id="postcode" value="">
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label for="city">Ville <span>*</span></label>
+                                        <input type="text" class="form-control" id="city" value="">
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label for="state">REGION <span>*</span></label>
+                                        <input type="text" class="form-control" id="state" value="">
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label for="phone_number">NUMERO DE TELEPHONE <span>*</span></label>
+                                        <input type="number" class="form-control" id="phone_number" min="0" value="">
+                                    </div>
+                                    <div class="col-12 mb-4">
+                                        <label for="email_address">Adresse email <span>*</span></label>
+                                        <input type="email" class="form-control" id="email_address" value="">
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="custom-control custom-checkbox d-block mb-2">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                            <label class="custom-control-label" for="customCheck1">Conditions GENERALES</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox d-block mb-2">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                            <label class="custom-control-label" for="customCheck2">CREER mon compte</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox d-block">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                            <label class="custom-control-label" for="customCheck3">S'inscrire A la newsletter</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-5 ml-lg-auto">
+                        <div class="order-details-confirmation">
+
+                            <div class="cart-page-heading">
+                                <h5>Ma commande</h5>
+                                <p>Informations</p>
+                            </div>
+
+                            <ul class="order-details-form mb-4">
+                                <li><span>Produits</span> <span>Total</span></li>
+                                <li><span>Panais</span> <span>15 Euros</span></li>
+                                <li><span>Sous-total</span> <span>15 Euros</span></li>
+                                <li><span>Frais expedition</span> <span>Gratuit</span></li>
+                                <li><span>Total</span> <span>15 Euros</span></li>
+                            </ul>
+
+
+                            <div id="accordion" role="tablist" class="mb-4">
+                                <div class="card">
+                                    <div class="card-header" role="tab" id="headingOne">
+                                        <h6 class="mb-0">
+                                            <a data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne"><i class="fa fa-circle-o mr-3"></i>Paypal</a>
+                                        </h6>
+                                    </div>
+
+                                    <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>Redirection vers PAYPAL.COM</p>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                                <div class="card">
+                                    <div class="card-header" role="tab" id="headingThree">
+                                        <h6 class="mb-0">
+                                            <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"><i class="fa fa-circle-o mr-3"></i>Carte bancaire</a>
+                                        </h6>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>Redirection vers la plateforme bancaire partenaire</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" role="tab" id="headingFour">
+                                        <h6 class="mb-0">
+                                            <a class="collapsed" data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour"><i class="fa fa-circle-o mr-3"></i>Transfert bancaire</a>
+                                        </h6>
+                                    </div>
+                                    <div id="collapseFour" class="collapse show" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>Attention, ce mode paiement est plus long de 2 jours ouvrable.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href="#" class="btn karl-checkout-btn">PROCEDER AU PAIEMENT</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- ****** Checkout Area End ****** -->
+
+
+        <!-- ****** Footer Area End ****** -->
+    </div>
+    <!-- /.wrapper end -->
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="js/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+
+</body>
+
+</html>

@@ -44,6 +44,11 @@ class Pack
      */
     private $products;
 
+    /** 
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $region;
+
     public function __construct()
     {
         $this->product = new ArrayCollection();
@@ -122,6 +127,18 @@ class Pack
     public function getProducts(): Collection
     {
         return $this->products;
+    }
+    
+    public function getRegion(): ?string
+    {
+        return $this->region;
+    }
+
+    public function setRegion(?string $region): self
+    {
+        $this->region = $region;
+
+        return $this;
     }
 
 }

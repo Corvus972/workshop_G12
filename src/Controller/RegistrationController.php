@@ -4,8 +4,11 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\RegistrationType;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ObjectManager;
+use Symfony\Component\Form\FormError;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,16 +19,22 @@ class RegistrationController extends AbstractController
 {
     /**
      * @Route("/registration", name="registration")
+     * @param Request $request
+     * @param UserPasswordEncoderInterface $encoder
+     * @param EntityManagerInterface $manager
+     * @param UserRepository $userRepo
+     * @return RedirectResponse|Response
      */
-    public function registration(Request $request, UserPasswordEncoderInterface $encoder, EntityManagerInterface $manager)
+    public function registration(Request $request, UserPasswordEncoderInterface $encoder, EntityManagerInterface $manager, UserRepository $userRepo)
     {
         
         $user = new User();
         $form = $this->createForm(RegistrationType::class, $user);
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()){ 
-            $hash = $encoder->encodePassword($user, $user->getPassword()); 
+        if($form->isSubmitted() && $form->isValid()){
+
+            $hash = $encoder->encodePassword($user, $user->getPassword());
             $user->setPassword($hash);
             if($user->getType() === 'consumer'){
                 $user->setRoles(["ROLE_USER"]);
@@ -33,10 +42,10 @@ class RegistrationController extends AbstractController
                 $user->setRoles(["ROLE_PRODUCER"]);
             }
             $manager->persist($user);
-            
+
             $manager->flush();
 
-            $this->addFlash('success', 'Votre compte à bien été enregistré.');
+            $this->addFlash('success', 'Votre compte à bien été créé.');
             return $this->redirectToRoute('app_login');
         }
         

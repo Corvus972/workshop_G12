@@ -1,15 +1,13 @@
 {% extends 'base.html.twig' %}
-
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
-<!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Connexion</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
+<!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="/login/images/icons/favicon.png"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="/login/vendor/bootstrap/css/bootstrap.min.css">
@@ -17,7 +15,7 @@
 	<link rel="stylesheet" type="text/css" href="/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="/login/vendor/animate/animate.css">
-<!--===============================================================================================-->	
+<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="/login/vendor/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="/login/vendor/select2/select2.min.css">
@@ -27,23 +25,17 @@
 <!--===============================================================================================-->
 </head>
 <body>
-	
-	<div class="limiter">
-     {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
 
-   {#  {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %} #}
+	<div class="limiter">
+   
+
 		<div class="container-login100">
+	 
 			<div class="wrap-login100">
+		
 				<div class="login100-pic js-tilt" data-tilt>
 					<img src="/login/images/img-01.png" alt="IMG">
 				</div>
-
 				<form class="login100-form validate-form" method="post">
 					<span class="login100-form-title">
 						Connexion
@@ -65,7 +57,6 @@
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
-          
 					</div>
 					
 					<div class="container-login100-form-btn">
@@ -89,6 +80,20 @@
 						</a>
 					</div>
 				</form>
+				 {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+				{% for message in app.flashes('success') %}
+					<div class="alert alert-success">
+						{{ message }}
+					</div>
+				{% endfor %}
 			</div>
 		</div>
 	</div>
@@ -144,5 +149,4 @@
         Sign in
     </button>
 </form> #}
-
 {% endblock %}
