@@ -51,8 +51,7 @@ class ProductController extends AbstractController
         $packFilterByRegion = $packRepository -> findBy((['id' => $farmerInfo]));
 
         $productsFilterByRegion = $productRepository -> findBy((['user' => $farmerInfo]));
-        $userRegion = Vicopo::https('34');
-//        dump($userRegion);
+        $productsFilterByRegion = $productRepository -> findBy((['user' => $farmerInfo]));
         if ($req){
             $prods = new ArrayCollection($productsFilterByRegion);
             $criteria = Criteria::create()->where(Criteria::expr()->contains('name', $req));
