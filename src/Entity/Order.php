@@ -52,6 +52,13 @@ class Order
      */
     private $orderItems;
 
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $totalprice;
+
+
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
@@ -179,5 +186,18 @@ class Order
 
         return $this;
     }
+
+    public function getTotalprice(): ?float
+    {
+        return $this->totalprice;
+    }
+
+    public function setTotalprice(?float $totalprice): self
+    {
+        $this->totalprice = $totalprice;
+
+        return $this;
+    }
+
 
 }

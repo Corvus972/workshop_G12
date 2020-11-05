@@ -51,7 +51,8 @@ class ProductController extends AbstractController
         $packFilterByRegion = $packRepository -> findBy((['id' => $farmerInfo]));
 
         $productsFilterByRegion = $productRepository -> findBy((['user' => $farmerInfo]));
-        $productsFilterByRegion = $productRepository -> findBy((['user' => $farmerInfo]));
+        $userRegion = Vicopo::https('34');
+//        dump($userRegion);
         if ($req){
             $prods = new ArrayCollection($productsFilterByRegion);
             $criteria = Criteria::create()->where(Criteria::expr()->contains('name', $req));
@@ -87,44 +88,101 @@ class ProductController extends AbstractController
         ]);
     }
 
-     /**
+    /**
      * @Route("/add_to_cart", name="add_to_cart")
-     * @param ProductRepository $productRepository
-     * @param UserInterface $user
+     * @param Request $request
+     * @param ProductRepository $repository
+     * @param EntityManagerInterface $manager
+     * @param OrderRepository $orderRepository
+     * @param UserInterface $userProfile
      * @return Response
      */
-    public function addToCart(Request $request, ProductRepository $repository, EntityManagerInterface $manager)
+    public function addToCart(Request $request, ProductRepository $repository, EntityManagerInterface $manager, OrderRepository $orderRepository, UserInterface $userProfile)
     {
         $user = $this->getUser();
-        
+
         $id = $request->request->get('id', null);
         $target = $repository->findById($id);
 
-        $order_item = new OrderItems();
-        $order = new Order();
 
-        $quantity = $repository->findQuantity($id); 
+
+        $orders = $userProfile -> getOrders();
+        $orderNotPayed = null;
+        foreach ($orders as $key => $val){
+            if($orders[$key]->getStatus() ===  "Non payé"){
+                $orderNotPayed = $orders[$key];
+            }
+        }
+
+//        $quantity = $repository->findQuantity($id);
         $unit = $repository->findUnit($id);
         $price = $repository->findPrice($id);
         $productRef = $repository->findProductRef($id);
+        $name = $repository->findName($id);
+        $img= $repository->findImg($id);
 
-        $order_item->setQuantity($quantity)
-                   ->setUnit($unit)
-                   ->setPrice($price)
-                   ->setProductRef($productRef);
-        
-        $order->setUser($user)
-              ->setDate(New \Datetime)
-              ->setPaymentMethod('Pas encore payé')
-              ->setShipped(false)
-              ->setStatus('Non payé');
+        if($orderNotPayed){ //ORDER NOT PAYED
+            $order = $orderNotPayed;
+            $old_total = $order -> getTotalPrice();
+            $order->setTotalprice($price  + $old_total)
+                ->setUser($user)
+                ->setDate(New \Datetime)
+                ->setPaymentMethod('Pas encore payé')
+                ->setShipped(false)
+                ->setStatus('Non payé');
+            $manager->persist($order);
+            $manager->flush();
+
+        } else{
+            $order = new Order(); //ORDER NOT PAYED
+            $order->setTotalprice($price)
+                ->setUser($user)
+                ->setDate(New \Datetime)
+                ->setPaymentMethod('Pas encore payé')
+                ->setShipped(false)
+                ->setStatus('Non payé');
+            $manager->persist($order);
+            $manager->flush();
+        }
+
+        $items = $orderNotPayed -> getOrderItems();
+//        $order_item = null;
+//        if($items) {
+//            foreach($items as $key => $val){
+//                if($items[$key]-> getProductRef() === $productRef ) {
+//                    $order_item = $items[$key];
+//                    $old_qty = $order_item-> getQuantity();
+//                    $old_tot_price = $order_item-> getTotalPrice();
+//                    $order_item->setQuantity($old_qty + 1)
+//                        ->setUnit($unit)
+//                        ->setPrice($price)
+//                        ->setTotalPrice($old_tot_price + $price)
+//                        ->setOrderId($order)
+//                        ->setName($name)
+//                        ->setImage($img)
+//                        ->setProductRef($productRef);
+//                }
+//            }
+
+//        }else{
+        $order_item = new OrderItems();
+        $order_item->setQuantity(1)
+            ->setUnit($unit)
+            ->setPrice($price)
+            ->setTotalPrice($price)
+            ->setOrderId($order)
+            ->setName($name)
+            ->setImage($img)
+            ->setProductRef($productRef);
+//        }
+
 
         $manager->persist($order_item);
-        $manager->flush($order_item);
+        $manager->flush();
 
-        $manager->persist($order);
-        $manager->flush($order);
-        
+
+
+
         return new JsonResponse(
             [
                 'success' => true,
@@ -134,6 +192,6 @@ class ProductController extends AbstractController
 
         return $this->render('product/index.html.twig');
     }
-    
+
 
 }

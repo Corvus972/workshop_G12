@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Mon Panier Local - Panier</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="css/core-style.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Responsive CSS -->
+    <link href="css/responsive.css" rel="stylesheet">
+
+</head>
+
+<body>
+    
+    <div class="catagories-side-menu">
+        <!-- Close Icon -->
+        <div id="sideMenuClose">
+            <i class="ti-close"></i>
+        </div>
+        <!--  Side Nav  -->
+        <div class="nav-side-menu">
+            <div class="menu-list">
+                <h6>Categories</h6>
+                <ul id="menu-content" class="menu-content collapse out">
+                    <!-- Single Item -->
+                    <li data-toggle="collapse" data-target="#vegetable" class="collapsed active">
+                        <a href="#">Fruits et légumes <span class="arrow"></span></a>
+                        <ul class="sub-menu collapse" id="vegetable">
+                            <li><a href="#">Légumes</a></li>
+                            <li><a href="#">Fruits</a></li>
+                            <li><a href="#">Nos paniers</a></li>
+                        </ul>
+                    </li>
+                    <!-- Single Item -->
+                    <li data-toggle="collapse" data-target="#grocery_fresh" class="collapsed"> 
+                        <a href="#">Epicerie <span class="arrow"></span></a>
+                        <ul class="sub-menu collapse" id="grocery">
+                            <li><a href="#">Fromagerie</a></li>
+                            <li><a href="#">Boucherie</a></li>
+                            <li><a href="#">Charcuterie</a></li>
+                        </ul>
+                    </li>
+                    <!-- Single Item -->
+                    <li data-toggle="collapse" data-target="#grocery_dry" class="collapsed">
+                        <a href="#">Epicerie sec <span class="arrow"></span></a>
+                        <ul class="sub-menu collapse" id="grocery_dry">
+                            <li><a href="#">Epicerie salé</a></li>
+                            <li><a href="#">Epicerie sucrée</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="wrapper">
+
+
+
+        <!-- ****** Cart Area Start ****** -->
+        <div class="cart_area section_padding_100 clearfix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="cart-table clearfix">
+                            <table class="table table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th>Vos paniers</th>
+                                        <th>Prix</th>
+                                        <th>Quantité</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="cart_product_img d-flex align-items-center">
+                                            <a href="#"><img src="img/product-img/panais.jpg" alt="Product"></a>
+                                            <h6>Panier "Le Panais de José"</h6>
+                                        </td>
+                                        <td class="price"><span>15€</span></td>
+                                        <td class="qty">
+                                            <div class="quantity">
+                                                <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                                <input type="number" class="qty-text" id="qty" step="1" min="1" max="99" name="quantity" value="1">
+                                                <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                            </div>
+                                        </td>
+                                        <td class="total_price"><span>15€</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="cart-footer d-flex mt-30">
+                            <div class="back-to-shop w-50">
+                                <a href="shop-grid-left-sidebar.html">Continuer mes achats</a>
+                            </div>
+                            <div class="update-checkout w-50 text-right">
+                                <a href="#">Supprimer mon panier</a>
+                                <a href="#">Mettre à jour mon panier</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="coupon-code-area mt-70">
+                            <div class="cart-page-heading">
+                                <h5>Psst.. Un code promo ?</h5>
+                                <p>Entre votre code promo</p>
+                            </div>
+                            <form action="#">
+                                <input type="search" name="search" placeholder="#SUPERPRODUCTEUR">
+                                <button class="btn karl-checkout-btn_2" type="submit">Appliquer</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="shipping-method-area mt-70">
+                            <div class="cart-page-heading">
+                                <h5>On vous livre comment ?</h5>
+                                <p>Sélectionner un mode de livraison</p>
+                            </div>
+
+                            <div class="custom-control custom-radio mb-30">
+                                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label d-flex align-items-center justify-content-between" for="customRadio1"><span>Livré sous 48H</span><span>5€</span></label>
+                            </div>
+
+                            <div class="custom-control custom-radio mb-30">
+                                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label d-flex align-items-center justify-content-between" for="customRadio2"><span>Livré sous 72H</span><span>2€</span></label>
+                            </div>
+
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label d-flex align-items-center justify-content-between" for="customRadio3"><span>Economisez avec une livraisons sous 4 jours ouvrés</span><span>Gratuit</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="cart-total-area mt-70">
+                            <div class="cart-page-heading">
+                                <h5>Panier complet</h5>
+                                <p>Informations</p>
+                            </div>
+
+                            <ul class="cart-total-chart">
+                                <li><span>Sous-total</span> <span>15€</span></li>
+                                <li><span>Frais d'expédition</span> <span>Gratuit</span></li>
+                                <li><span><strong>Total</strong></span> <span><strong>15€</strong></span></li>
+                            </ul>
+                            <a href="checkout.html" class="btn karl-checkout-btn">Procéder au paiement</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ****** Cart Area End ****** -->
+
+       
+    </div>
+    <!-- /.wrapper end -->
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="js/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+
+</body>
+
+</html>
