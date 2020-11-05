@@ -73,18 +73,16 @@
 <!-- end of navbar -->
 <div class="container-login100">
     <div class="wrap-login100">
-        <div class="row justify-content-center">
-            <div class="col">
-                <h3 class="text-center">MODIFIER VOS INFORMATIONS PERSONNELLES</h3>
-                <hr />
-            </div>
-        </div>
+        <div class="col-12">
+        <h3 class="text-center">Modifier vos information personnelles</h3>
+        <hr />
+      </div>
         <div class="col-12">
             <div class="row">
                 <div class="col mb-1">
                     <div class="card-content">
                         {{ form_start(form) }}
-                        <h5 class="text-center">Informations personnelles</h5>
+                     
                         {% for item in form %}
                             {{ form_row(item,{'attr':{'placeholder':""}} ) }}
                         {% endfor %}
@@ -100,4 +98,6 @@
         </div>
     </div>
 </div>
+
+
 {% endblock %}
