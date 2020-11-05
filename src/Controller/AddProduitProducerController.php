@@ -25,7 +25,7 @@ class AddProduitProducerController extends AbstractController
         return md5(uniqid());
     }
     /**
-     * @Route("/add/produit/producer", name="add_produit_producer")
+     * @Route("/producer/add/produit/producer", name="add_produit_producer")
      */
     public function index(UserInterface $userProfile,Filesystem $filesystem,Request $request): Response
     {
@@ -72,7 +72,7 @@ class AddProduitProducerController extends AbstractController
     
      /**
      * Supprimer produit
-     * @Route("profil/delete/produit/{id}", name="delete_produit")
+     * @Route("/producer/profil/delete/produit/{id}", name="delete_produit")
      * @param $id
      */
      public function deleteFolderRegistration($id, UserInterface $userProfile,Filesystem $fileSystem)
@@ -93,7 +93,7 @@ class AddProduitProducerController extends AbstractController
 
     
      /**
-     * @Route("profil/edit/produit/{id}", name="edit_produit")
+     * @Route("/producer/profil/edit/produit/{id}", name="edit_produit")
      * @param $id
      */
     public function editProduit($id,UserInterface $userProfile,Request $request){

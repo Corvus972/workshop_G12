@@ -16,6 +16,7 @@ use Doctrine\ORM\QueryBuilder;
 use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+
 use App\Entity\Order;
 use App\Entity\OrderItems;
 use Symfony\Component\HttpFoundation\Request;
@@ -27,7 +28,7 @@ use Symfony\Component\Security\Core\User\User;
 
 
 /**
- * @Route("/product")
+ * @Route("/user/product")
  */
 class ProductController extends AbstractController
 {
