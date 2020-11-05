@@ -7,9 +7,12 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
+ * @UniqueEntity("email")
  */
 class User implements UserInterface
 {
@@ -59,16 +62,6 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $zip_code;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $region;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
     private $city;
 
     /**
@@ -85,6 +78,17 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=255)
      */
     private $type;
+
+    /**
+     * @ORM\Column(type="integer")
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 2,
+     *      minMessage = "Vous n'avez pas indiqué {{ limit }} chiffres",
+     *      maxMessage = "Vous avez renseigné plus de {{ limit }} chiffres",
+     * )
+     */
+    private $region;
 
     public function __construct()
     {
@@ -218,30 +222,6 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getZipCode(): ?string
-    {
-        return $this->zip_code;
-    }
-
-    public function setZipCode(string $zip_code): self
-    {
-        $this->zip_code = $zip_code;
-
-        return $this;
-    }
-
-    public function getRegion(): ?string
-    {
-        return $this->region;
-    }
-
-    public function setRegion(string $region): self
-    {
-        $this->region = $region;
-
-        return $this;
-    }
-
     public function getCity(): ?string
     {
         return $this->city;
@@ -322,6 +302,18 @@ class User implements UserInterface
     public function setType(string $type): self
     {
         $this->type = $type;
+
+        return $this;
+    }
+
+    public function getRegion(): ?int
+    {
+        return $this->region;
+    }
+
+    public function setRegion(int $region): self
+    {
+        $this->region = $region;
 
         return $this;
     }

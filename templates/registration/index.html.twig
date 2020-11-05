@@ -1,8 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello RegistrationController!
-{% endblock %}
-
 {% block body %}
 	<html lang="en">
 		<head>
@@ -42,18 +39,9 @@
 						<div class="login100-form">
 							<span class="login100-form-title">
 								Inscription<br/><br/>
-
 								<a href="index.html"><img src="inscription/images/logo.png" alt="retour" width="50%"></a>
 							</span>
                               <div>
-                                {% if form_errors(form)|length %}
-                                    <ul>
-                                        {% for error in form_errors(form) %}
-                                            <li>{{ error.message }}</li>
-                                        {% endfor %}
-                                    </ul>
-                                {% endif %}
-{#                                {{ form_errors(form) }}#}
                                 {{ form(form)}}
 							  </div>
 						</div>
@@ -64,6 +52,7 @@
 				<script>
 					$('.js-tilt').tilt({scale: 1.1})
 				</script>
-			</body>
+			</div>
+		</body>
 	</html>
 {% endblock %}
