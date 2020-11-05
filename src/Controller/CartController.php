@@ -84,10 +84,6 @@ class CartController extends AbstractController
         $prods = $orderNotPayed -> getOrderItems();
 
         return $this->redirectToRoute('cart_index');
-        return $this->render('cart/index.html.twig', [
-            'cart_products' => $prods,
-            'order' => $orderNotPayed
-        ]);
     }
 
     /**
@@ -110,12 +106,7 @@ class CartController extends AbstractController
         $orderNotPayed = $this-> getOrder($userProfile);
         $prods = $orderNotPayed -> getOrderItems();
 
-//        $this->addFlash('success', 'Produit supprimé');
         return $this->redirectToRoute('cart_index');
-        return $this->render('cart/index.html.twig', [
-            'cart_products' => $prods,
-            'order' => $orderNotPayed
-        ]);
     }
 
     /**
@@ -193,8 +184,8 @@ class CartController extends AbstractController
 
         }
 
-        $this->addFlash('success', 'Votre compte à bien été passée');
-        return $this->redirectToRoute('edit_profil');
+        $this->addFlash('success', 'Votre compte a bien été passée');
+        return $this->redirectToRoute('profil');
     }
 
 }

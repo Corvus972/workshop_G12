@@ -76,6 +76,12 @@
     </nav> <!-- end of navbar -->
 </head>
 
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
 {# Information personnelle #}
 <div class="container-login100">
     <div class="wrap-login100">
@@ -143,8 +149,49 @@
             </div>
             <div class="row justify-content-center">
             <div class="col">
-                <h3>Produit acheté 
-                    <a class="btn" href="{{path('add_produit_producer')}}"><img src="https://img.icons8.com/officel/40/000000/edit.png"></a>
+                <h3 class="mb-5">Commandes passées</h3>
+
+                    <!-- Content -->
+                    <div class="container mt-5">
+                        <div class="">
+                            <div class="row justify-content-center">
+
+                                {% if orders %}
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Commande</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Total</th>
+                                            <th scope="col">Produits</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for order in orders %}
+                                            <tr>
+                                                <th scope="row">#</th>
+                                                <td>Commande du {{ order.date|date("m/d/Y", "Europe/Paris") }}</td>
+                                                <td>{{ order.status }}</td>
+                                                <td>{{ order.totalprice }}€</td>
+                                                <td class="row">
+                                                    {% for prod in order.orderItems %}
+                                                        <div class="col">{{ prod.name }}</div>
+                                                    {% endfor %}
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                {% else %}
+                                    <h3>Pas de commandes pour l'instant ...</h3>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Content -->
+
                 </h3>
             </div>
         </div>

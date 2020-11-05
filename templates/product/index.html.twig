@@ -56,11 +56,11 @@
                             <!-- Card -->
                             <div class="card">
                                 <div class="card-image">
-                                    <img class="img-fluid" src="/produit/images/services-1.jpg" alt="alternative">
+                                    <img class="img-fluid" src="{{ pack.image }}" alt="alternative">
                                 </div>
                                 <div class="card-body">
                                     <h3 class="card-title">Local'Eco</h3>
-                                    <p>Un mélange de produits du terroir à prix malin de chez Julien à Mauguio</p>
+                                    <p>Un mélange de produits du terroir à prix malin de chez {{ pack.user.firstname }}</p>
                                     <ul class="list-unstyled li-space-lg">
                                         <li class="media">
                                             <i class="fas fa-square"></i>
@@ -102,6 +102,10 @@
                                 </div>
                                 <!-- end of button-container -->
                             </div>
+                            <div class="button-container">
+                                <button class="btn-solid-reg page-scroll"><i class="material-icons">add_shopping_cart</i></button>
+                            </div> <!-- end of button-container -->
+                        </div>
 
                             <!-- end of card -->
                         {% endfor %}
@@ -109,10 +113,6 @@
                             <h2 class="text-">Pas de panier pour l'instant ...</h2>
                         {% endif %}
 
-                            <div class="button-container">
-                                <button class="btn-solid-reg page-scroll"><i class="material-icons">add_shopping_cart</i></button>
-                            </div> <!-- end of button-container -->
-                        </div>
                         <!-- end of card -->
 
 
@@ -167,6 +167,7 @@
                                     <div class="button-container">
                                 <button class="btn-solid-reg page-scroll add_to_cart" id ="{{ product.id }}"><i class="material-icons">add_shopping_cart</i></button>
                             </div> <!-- end of button-container -->
+                                </div>
                                 <!-- end of card -->
                             {% endfor %}
 
