@@ -34,13 +34,6 @@ class RegistrationController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()){
 
-//            if ($userRepo->findOneBy(['email' => $form->get('email')])) {
-//                $form->addError(new FormError('User already exists'));
-//                return $this->render('registration/index.html.twig', [
-//                    'form' => $form->createView(),
-//                ]);
-//            }
-
             $hash = $encoder->encodePassword($user, $user->getPassword());
             $user->setPassword($hash);
             if($user->getType() === 'consumer'){
@@ -52,7 +45,7 @@ class RegistrationController extends AbstractController
 
             $manager->flush();
 
-            $this->addFlash('success', 'Votre compte à bien été enregistré.');
+            $this->addFlash('success', 'Votre compte à bien été créé.');
             return $this->redirectToRoute('app_login');
         }
         

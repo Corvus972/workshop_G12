@@ -36,11 +36,13 @@ class CartController extends AbstractController
             $em -> flush();
         } else {
             $old_qty = $item -> getQuantity();
-            $pr = $item -> getPrice();
-            $oldTotal = $item -> getTotalPrice();
-            $item -> setQuantity($old_qty - 1);
-            $item -> setTotalPrice($oldTotal - $pr);
-            $em -> flush();
+            if($old_qty > 1) {
+                $pr = $item -> getPrice();
+                $oldTotal = $item -> getTotalPrice();
+                $item -> setQuantity($old_qty - 1);
+                $item -> setTotalPrice($oldTotal - $pr);
+                $em -> flush();
+            }
         }
 
     }

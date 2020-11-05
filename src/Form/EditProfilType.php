@@ -17,12 +17,10 @@ class EditProfilType extends AbstractType
             ->add('lastName')
             ->add('address_line1')
             ->add('address_line2')
-            ->add('zip_code')
             ->add('region')
             ->add('city')
         ;
     }
-
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([

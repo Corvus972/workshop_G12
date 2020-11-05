@@ -100,7 +100,7 @@ class ProductController extends AbstractController
     public function addToCart(Request $request, ProductRepository $repository, EntityManagerInterface $manager, OrderRepository $orderRepository, UserInterface $userProfile)
     {
         $user = $this->getUser();
-        
+
         $id = $request->request->get('id', null);
         $target = $repository->findById($id);
 
@@ -165,15 +165,15 @@ class ProductController extends AbstractController
 //            }
 
 //        }else{
-            $order_item = new OrderItems();
-            $order_item->setQuantity(1)
-                ->setUnit($unit)
-                ->setPrice($price)
-                ->setTotalPrice($price)
-                ->setOrderId($order)
-                ->setName($name)
-                ->setImage($img)
-                ->setProductRef($productRef);
+        $order_item = new OrderItems();
+        $order_item->setQuantity(1)
+            ->setUnit($unit)
+            ->setPrice($price)
+            ->setTotalPrice($price)
+            ->setOrderId($order)
+            ->setName($name)
+            ->setImage($img)
+            ->setProductRef($productRef);
 //        }
 
 
@@ -182,7 +182,7 @@ class ProductController extends AbstractController
 
 
 
-        
+
         return new JsonResponse(
             [
                 'success' => true,
@@ -192,6 +192,6 @@ class ProductController extends AbstractController
 
         return $this->render('product/index.html.twig');
     }
-    
+
 
 }

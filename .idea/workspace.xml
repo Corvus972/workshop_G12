@@ -19,12 +19,71 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43130382-7c4a-4e6e-b942-6f2df4fc485c" name="Default Changelist" comment="close to finish cart">
+    <list default="true" id="43130382-7c4a-4e6e-b942-6f2df4fc485c" name="Default Changelist" comment="doneeee">
+      <change afterPath="$PROJECT_DIR$/public/profil/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/css/vendor/animate/animate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/css/vendor/bootstrap/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/css/vendor/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/css/vendor/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/css/vendor/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/css/vendor/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/css/vendor/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/css/vendor/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/css/vendor/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/css/vendor/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/css/vendor/bootstrap/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/css/vendor/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/css/vendor/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/css/vendor/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/css/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/css/vendor/bootstrap/js/popper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/css/vendor/bootstrap/js/popper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/css/vendor/bootstrap/js/tooltip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/css/vendor/css-hamburgers/hamburgers.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/css/vendor/css-hamburgers/hamburgers.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/css/vendor/jquery/jquery-3.2.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/css/vendor/select2/select2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/css/vendor/select2/select2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/css/vendor/select2/select2.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/css/vendor/select2/select2.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/css/vendor/tilt/tilt.jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/images/header-background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/images/icons/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/images/icons/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/images/img-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/profil/images/img-02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/pictureProduct1/1b6ceabc612e60be24cc930c0843803c.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/pictureProduct1/4c69f52fa5e71926f8c91800c5ca9f22.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/pictureProduct1/63808daeb8dbf030361806404b77e196.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/pictureProduct1/8e94e00802b6e8adaa55b6894b4377cf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/pictureProduct1/ac124597799ee54a16bf3d4cc68379f2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/pictureProduct1/cf2233f5beec57d9bda610923c8b6301.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/pictureProduct1/f20d363e0033e1a4dd60966b9aee3672.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/AddProduitProducerController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/ProduitFormType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/add_produit_producer/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/edit_product_producer/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/translation.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/translation.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EditProfilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EditProfilController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cart/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cart/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/EditProfilType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/EditProfilType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RegistrationType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RegistrationType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/edit_profil/edit_profil_consumer.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/edit_profil/edit_profil_consumer.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/edit_profil/edit_profil_producer.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/edit_profil/edit_profil_producer.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/edit_profil/page_profil_consumer.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/edit_profil/page_profil_consumer.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/edit_profil/page_profil_producer.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/edit_profil/page_profil_producer.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/product/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/registration/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +240,7 @@
       <workItem from="1604429905227" duration="1441000" />
       <workItem from="1604431484499" duration="357000" />
       <workItem from="1604433332036" duration="33000" />
-      <workItem from="1604559764714" duration="11316000" />
+      <workItem from="1604559764714" duration="12971000" />
     </task>
     <task id="LOCAL-00001" summary="starting fixtures">
       <created>1604410489073</created>
@@ -239,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604532084963</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="cart almost done">
+      <created>1604572163405</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1604572163405</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,18 +333,20 @@
     <MESSAGE value="ok" />
     <MESSAGE value="resolve conflicts" />
     <MESSAGE value="close to finish cart" />
-    <option name="LAST_COMMIT_MESSAGE" value="close to finish cart" />
+    <MESSAGE value="cart almost done" />
+    <MESSAGE value="doneeee" />
+    <option name="LAST_COMMIT_MESSAGE" value="doneeee" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="87" key="MergeDialog" timestamp="1604431581725">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="2104" y="87" key="MergeDialog" timestamp="1604573586293">
+      <screen x="1920" y="0" width="1920" height="1050" />
     </state>
-    <state x="2104" y="87" key="MergeDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604416211817" />
+    <state x="2104" y="87" key="MergeDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604573586293" />
     <state x="184" y="87" key="MergeDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1604431581725" />
-    <state x="598" y="286" key="MultipleFileMergeDialog" timestamp="1604431581749">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="2518" y="286" key="MultipleFileMergeDialog" timestamp="1604573630391">
+      <screen x="1920" y="0" width="1920" height="1050" />
     </state>
-    <state x="2518" y="286" key="MultipleFileMergeDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604416219468" />
+    <state x="2518" y="286" key="MultipleFileMergeDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604573630391" />
     <state x="598" y="286" key="MultipleFileMergeDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1604431581749" />
     <state x="794" y="448" key="NewPhpFileDialog" timestamp="1604408718053">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -288,10 +356,10 @@
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="2572" y="283" key="Vcs.Multiple.Commit.Info.Dialog.Key/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604416032686" />
-    <state x="2472" y="245" key="Vcs.Push.Dialog.v2" timestamp="1604532086419">
+    <state x="2472" y="245" key="Vcs.Push.Dialog.v2" timestamp="1604572164780">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
-    <state x="2472" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604532086419" />
+    <state x="2472" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604572164780" />
     <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1604431751182" />
     <state x="2697" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604476525239">
       <screen x="1920" y="0" width="1920" height="1050" />
@@ -303,7 +371,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/templates/product/index.html.twig</url>
-          <line>247</line>
+          <line>250</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
