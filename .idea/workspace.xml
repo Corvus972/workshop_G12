@@ -19,15 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43130382-7c4a-4e6e-b942-6f2df4fc485c" name="Default Changelist" comment="resolve conflicts">
+    <list default="true" id="43130382-7c4a-4e6e-b942-6f2df4fc485c" name="Default Changelist" comment="close to finish cart">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CartController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Order.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/OrderItems.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/OrderItems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ProductRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ProductRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/cart/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cart/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/product/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -185,6 +181,7 @@
       <workItem from="1604429905227" duration="1441000" />
       <workItem from="1604431484499" duration="357000" />
       <workItem from="1604433332036" duration="33000" />
+      <workItem from="1604559764714" duration="11316000" />
     </task>
     <task id="LOCAL-00001" summary="starting fixtures">
       <created>1604410489073</created>
@@ -235,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604431748204</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="close to finish cart">
+      <created>1604532084963</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1604532084963</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,7 +266,8 @@
     <MESSAGE value="products done" />
     <MESSAGE value="ok" />
     <MESSAGE value="resolve conflicts" />
-    <option name="LAST_COMMIT_MESSAGE" value="resolve conflicts" />
+    <MESSAGE value="close to finish cart" />
+    <option name="LAST_COMMIT_MESSAGE" value="close to finish cart" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="87" key="MergeDialog" timestamp="1604431581725">
@@ -283,10 +288,10 @@
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>
     <state x="2572" y="283" key="Vcs.Multiple.Commit.Info.Dialog.Key/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604416032686" />
-    <state x="552" y="245" key="Vcs.Push.Dialog.v2" timestamp="1604431751182">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="2472" y="245" key="Vcs.Push.Dialog.v2" timestamp="1604532086419">
+      <screen x="1920" y="0" width="1920" height="1050" />
     </state>
-    <state x="2472" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604416289924" />
+    <state x="2472" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1604532086419" />
     <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1604431751182" />
     <state x="2697" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604476525239">
       <screen x="1920" y="0" width="1920" height="1050" />
@@ -298,7 +303,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/templates/product/index.html.twig</url>
-          <line>250</line>
+          <line>247</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

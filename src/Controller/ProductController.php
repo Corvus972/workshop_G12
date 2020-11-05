@@ -88,10 +88,13 @@ class ProductController extends AbstractController
         ]);
     }
 
-     /**
+    /**
      * @Route("/add_to_cart", name="add_to_cart")
-     * @param ProductRepository $productRepository
-     * @param UserInterface $user
+     * @param Request $request
+     * @param ProductRepository $repository
+     * @param EntityManagerInterface $manager
+     * @param OrderRepository $orderRepository
+     * @param UserInterface $userProfile
      * @return Response
      */
     public function addToCart(Request $request, ProductRepository $repository, EntityManagerInterface $manager, OrderRepository $orderRepository, UserInterface $userProfile)
@@ -101,7 +104,7 @@ class ProductController extends AbstractController
         $id = $request->request->get('id', null);
         $target = $repository->findById($id);
 
-        $order_item = new OrderItems();
+
 
         $orders = $userProfile -> getOrders();
         $orderNotPayed = null;
@@ -111,17 +114,17 @@ class ProductController extends AbstractController
             }
         }
 
-        $quantity = $repository->findQuantity($id);
+//        $quantity = $repository->findQuantity($id);
         $unit = $repository->findUnit($id);
         $price = $repository->findPrice($id);
         $productRef = $repository->findProductRef($id);
         $name = $repository->findName($id);
         $img= $repository->findImg($id);
 
-        if($orderNotPayed){
+        if($orderNotPayed){ //ORDER NOT PAYED
             $order = $orderNotPayed;
             $old_total = $order -> getTotalPrice();
-            $order->setTotalprice($price * $quantity + $old_total)
+            $order->setTotalprice($price  + $old_total)
                 ->setUser($user)
                 ->setDate(New \Datetime)
                 ->setPaymentMethod('Pas encore payé')
@@ -131,8 +134,8 @@ class ProductController extends AbstractController
             $manager->flush();
 
         } else{
-            $order = new Order();
-            $order->setTotalprice($price * $quantity)
+            $order = new Order(); //ORDER NOT PAYED
+            $order->setTotalprice($price)
                 ->setUser($user)
                 ->setDate(New \Datetime)
                 ->setPaymentMethod('Pas encore payé')
@@ -142,16 +145,38 @@ class ProductController extends AbstractController
             $manager->flush();
         }
 
+        $items = $orderNotPayed -> getOrderItems();
+//        $order_item = null;
+//        if($items) {
+//            foreach($items as $key => $val){
+//                if($items[$key]-> getProductRef() === $productRef ) {
+//                    $order_item = $items[$key];
+//                    $old_qty = $order_item-> getQuantity();
+//                    $old_tot_price = $order_item-> getTotalPrice();
+//                    $order_item->setQuantity($old_qty + 1)
+//                        ->setUnit($unit)
+//                        ->setPrice($price)
+//                        ->setTotalPrice($old_tot_price + $price)
+//                        ->setOrderId($order)
+//                        ->setName($name)
+//                        ->setImage($img)
+//                        ->setProductRef($productRef);
+//                }
+//            }
+
+//        }else{
+            $order_item = new OrderItems();
+            $order_item->setQuantity(1)
+                ->setUnit($unit)
+                ->setPrice($price)
+                ->setTotalPrice($price)
+                ->setOrderId($order)
+                ->setName($name)
+                ->setImage($img)
+                ->setProductRef($productRef);
+//        }
 
 
-        $order_item->setQuantity($quantity)
-            ->setUnit($unit)
-            ->setPrice($price)
-            ->setTotalPrice($price * $quantity)
-            ->setOrderId($order)
-            ->setName($name)
-            ->setImage($img)
-            ->setProductRef($productRef);
         $manager->persist($order_item);
         $manager->flush();
 

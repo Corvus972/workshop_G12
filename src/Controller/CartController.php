@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\OrderItems;
 use App\Repository\OrderItemsRepository;
+use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -20,24 +21,26 @@ class CartController extends AbstractController
         $orderNotPayed = null;
         foreach ($orders as $key => $val){
             if($orders[$key]->getStatus() ===  "Non payé"){
-                $orderNotPayed = $orders[$key]; //TODO verify only one order
+                $orderNotPayed = $orders[$key];
             }
         }
         return $orderNotPayed;
     }
-    public function setItem($item, $type) {
+    public function setItem($item, $type, $em) {
         if ($type === "add") {
             $old_qty = $item -> getQuantity();
             $pr = $item -> getPrice();
             $oldTotal = $item -> getTotalPrice();
             $item -> setQuantity($old_qty + 1);
             $item -> setTotalPrice($oldTotal + $pr);
+            $em -> flush();
         } else {
             $old_qty = $item -> getQuantity();
             $pr = $item -> getPrice();
             $oldTotal = $item -> getTotalPrice();
             $item -> setQuantity($old_qty - 1);
             $item -> setTotalPrice($oldTotal - $pr);
+            $em -> flush();
         }
 
     }
@@ -49,7 +52,8 @@ class CartController extends AbstractController
     public function index(UserInterface $userProfile): Response
     {
         $orderNotPayed = $this-> getOrder($userProfile);
-        $prods = $orderNotPayed -> getOrderItems();
+        $prods = null;
+        if($orderNotPayed) $prods = $orderNotPayed -> getOrderItems();
 
         return $this->render('cart/index.html.twig', [
             'cart_products' => $prods,
@@ -62,20 +66,22 @@ class CartController extends AbstractController
      * @param $id
      * @param UserInterface $userProfile
      * @param OrderItemsRepository $orderItems
+     * @param EntityManagerInterface $em
      * @return Response
      */
-    public function add($id, UserInterface $userProfile, OrderItemsRepository $orderItems): Response
+    public function add($id, UserInterface $userProfile, OrderItemsRepository $orderItems, EntityManagerInterface $em): Response
     {
         $item = $orderItems -> findOneBy(['id' => $id]);
-        $this -> setItem($item, "add");
+        $this -> setItem($item, "add", $em);
         $orderNotPayed = $this-> getOrder($userProfile);
         $old_price = $orderNotPayed -> getTotalprice();
         $orderNotPayed -> setTotalprice($old_price + $item ->getPrice());
+        $em -> flush();
 
         $orderNotPayed = $this-> getOrder($userProfile);
         $prods = $orderNotPayed -> getOrderItems();
 
-
+        return $this->redirectToRoute('cart_index');
         return $this->render('cart/index.html.twig', [
             'cart_products' => $prods,
             'order' => $orderNotPayed
@@ -87,19 +93,23 @@ class CartController extends AbstractController
      * @param $id
      * @param UserInterface $userProfile
      * @param OrderItemsRepository $orderItems
+     * @param EntityManagerInterface $em
      * @return Response
      */
-    public function less($id, UserInterface $userProfile, OrderItemsRepository $orderItems): Response
+    public function less($id, UserInterface $userProfile, OrderItemsRepository $orderItems, EntityManagerInterface $em): Response
     {
         $item = $orderItems -> findOneBy(['id' => $id]);
-        $this ->  setItem($item, "less");
+        $this ->  setItem($item, "less", $em);
         $orderNotPayed = $this-> getOrder($userProfile);
         $old_price = $orderNotPayed -> getTotalprice();
-        $orderNotPayed -> setTotalprice($old_price + $item ->getPrice());
+        $orderNotPayed -> setTotalprice($old_price - $item ->getPrice());
+        $em -> flush();
 
         $orderNotPayed = $this-> getOrder($userProfile);
         $prods = $orderNotPayed -> getOrderItems();
 
+//        $this->addFlash('success', 'Produit supprimé');
+        return $this->redirectToRoute('cart_index');
         return $this->render('cart/index.html.twig', [
             'cart_products' => $prods,
             'order' => $orderNotPayed
@@ -121,17 +131,16 @@ class CartController extends AbstractController
         $orderNotPayed = $this-> getOrder($userProfile);
         $old_price = $orderNotPayed -> getTotalprice();
         $orderNotPayed -> setTotalprice($old_price - $item ->getTotalPrice());
-
+        $em -> flush();
         $em -> remove($item);
         $em -> flush();
 
         $orderNotPayed = $this-> getOrder($userProfile);
 
         $prods = $orderNotPayed -> getOrderItems();
-        return $this->render('cart/index.html.twig', [
-            'cart_products' => $prods,
-            'order' => $orderNotPayed
-        ]);
+
+        $this->addFlash('success', 'Produit supprimé');
+        return $this->redirectToRoute('cart_index');
     }
 
     /**
@@ -150,8 +159,40 @@ class CartController extends AbstractController
             $em -> remove($prods[$key]);
             $em -> flush();
         }
-        return $this->render('cart/index.html.twig', [
-            'cart_products' => $prods,
-        ]);
+        $this->addFlash('success', 'Panier Supprimé');
+        return $this->redirectToRoute('cart_index');
     }
+
+    /**
+     * @Route("/done", name="cart_done")
+     * @param UserInterface $userProfile
+     * @param OrderItemsRepository $orderItems
+     * @param EntityManagerInterface $em
+     * @param ProductRepository $productRepository
+     * @return Response
+     */
+    public function done(UserInterface $userProfile, OrderItemsRepository $orderItems, EntityManagerInterface $em, ProductRepository $productRepository): Response
+    {
+        $orderNotPayed = $this-> getOrder($userProfile);
+        $orderNotPayed -> setStatus("Commandé");
+        $em -> flush();
+        $prods = $orderNotPayed -> getOrderItems();
+
+        $prodRepo = $productRepository;
+        foreach ($prods as $key => $val){
+            foreach ($prodRepo as $k => $v){
+                if($prodRepo[$k] -> getProductRef() === $prods[$key]) {
+                    $old_qty = $prodRepo[$k] -> getQuantity();
+                    $prodRepo[$k] -> setQuantity($old_qty - $prods[$key] -> getQuantity());
+                    $em -> persist($prodRepo[$k]);
+                    $em ->flush();
+                }
+            }
+
+        }
+
+        $this->addFlash('success', 'Votre compte à bien été passée');
+        return $this->redirectToRoute('edit_profil');
+    }
+
 }

@@ -25,6 +25,27 @@
 
 <body>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="catagories-side-menu">
     <!-- Close Icon -->
     <div id="sideMenuClose">
@@ -69,7 +90,11 @@
 
 <div id="wrapper">
 
-
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
 
     <!-- ****** Cart Area Start ****** -->
     <div class="cart_area section_padding_100 clearfix">
@@ -99,6 +124,17 @@
                                 <td class="price"><span>{{ product.unit }}</span></td>
                                 <td class="qty">
                                     <div class="quantity">
+{#                                        <span class="qty-minus"#}
+{#                                              onclick="updateQuantity('less')">#}
+{#                                            <i class="fa fa-minus" aria-hidden="true"></i>#}
+{#                                        </span>#}
+{#                                        <input onchange="" type="number"#}
+{#                                               class="qty-text" class="qty" step="1" min="1" max="99"#}
+{#                                               name="quantity" value="{{ product.quantity }}"/>#}
+{#                                        <span class="qty-plus"#}
+{#                                              onclick="updateQuantity('add')">#}
+{#                                            <i class="fa fa-plus" aria-hidden="true"></i>#}
+{#                                        </span>#}
                                         <a href="{{ path('cart_less', {'id': product.id} ) }}"
                                            class="qty-minus">
                                             <i class="fa fa-minus" aria-hidden="true"></i>
@@ -125,7 +161,7 @@
                     {% endif %}
                     <div class="cart-footer d-flex mt-30">
                         <div class="back-to-shop w-50">
-                            <a href="{{ path('home')}}">Continuer mes achats</a>
+                            <a href="{{ path('product_index')}}">Continuer mes achats</a>
                         </div>
                         {% if cart_products|length > 0 %}
                         <div class="update-checkout w-50 text-right">
@@ -194,7 +230,7 @@
                                 </span>
                             </li>
                         </ul>
-                        <a href="checkout.html" class="btn karl-checkout-btn">Procéder au paiement</a>
+                        <a href="{{ path('cart_done')}}" class="btn karl-checkout-btn">Procéder au paiement</a>
                     </div>
                 </div>
             </div>
@@ -207,3 +243,16 @@
 </body>
 
 </html>
+
+<script>
+    const updateQuantity = (method) => {
+        let effect = document.getElementById('qty'),
+            qty = effect.value;
+        if (method === "add") {
+            if( !isNaN( qty )) effect.value++;return false;
+        } else {
+            if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;
+        }
+
+    }
+</script>
