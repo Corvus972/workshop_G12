@@ -27,19 +27,12 @@
 <body>
 
 	<div class="limiter">
-     {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
-
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
-        </div>
-    {% endif %}
+   
 
 		<div class="container-login100">
-
+	 
 			<div class="wrap-login100">
+		
 				<div class="login100-pic js-tilt" data-tilt>
 					<img src="/login/images/img-01.png" alt="IMG">
 				</div>
@@ -87,6 +80,15 @@
 						</a>
 					</div>
 				</form>
+				 {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
 				{% for message in app.flashes('success') %}
 					<div class="alert alert-success">
 						{{ message }}
