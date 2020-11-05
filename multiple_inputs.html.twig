@@ -1,95 +1,89 @@
 {% block body %}
-   <!-- Styles -->
-<link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext" rel="stylesheet">
-<div id="wrapper">
-   <!-- ****** Cart Area Start ****** -->
-   <div class="cart_area section_padding_100 clearfix">
-      <div class="container">
-         <div class="row">
-            <div class="col-12">
-               <div class="cart-table clearfix">
-                  <table class="table table-responsive">
-                     <thead>
-                        <img src="/cart_producer/images/logo.png" alt="logo" width="20%" style="padding-bottom: 20px;">
-                        <h1>Ajouter un panier</h1>
-                        <tr>
-                           <th>Produit</th>
-                           <th>Quantité</th>
-                           <th>Unité</th>
-                           <th></th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr>
-                           <td class="cart_product_img d-flex align-items-center">
-                              <input type="text" placeholder="Aubergine, panais..." id="name" name="produit"/>
-                           </td>
-                           </td>
-                           <td>
-                              <input type="number" class="qty-text" id="quantity" step="1" min="1" max="99" name="quantity" >
-                           </td>
-                           <td>
-                              <select name="unite" id="unit">
-                              <option value="u">unité</option>
-                              <option value="kg">kg</option>
-                           </td>
-                           <td>
-                              <button class="newElem"
-                                 style="background-color:#51a651;
-                                 color:white;
-                                 border-radius: 10%;
-                                 box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),inset -2px -2px 3px rgba(0, 0, 0, .6);
-                                 text-align: center;
-                                 border: 0;
-                                 padding: 0 6px;
-                                 font-
-                                 "
-                                 >
-                              <i class="material-icons"> Ajouter </i>
-                              </button>
-                           </td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </div>
-               <div>
-                  Créer un lot avec ces produits :<br>
-                  {% for product in products %}
-                  <input class="check" type="checkbox" id="{{ product.id }}" value="{{ product.name }}">{{ product.name }}<br>
-                  {% endfor %}
-                  <button type="submit" class="createLot">Créer ce lot</button>
-               </div>
-               <div class="inputscontainer"></div>
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext" rel="stylesheet">
+
+    <div id="wrapper">
+        <!-- ****** Cart Area Start ****** -->
+        <div class="cart_area section_padding_100 clearfix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="cart-table clearfix">
+                            <table class="table table-responsive">
+                                <thead>
+                                <img src="/cart_producer/images/logo.png" alt="logo" width="20%" style="padding-bottom: 20px;">
+                                <h1>Ajouter un panier</h1> <button class="createLot">Créer un lot</button>
+                                <tr>
+                                    <th>Produit</th>
+                                    <th>Quantité</th>
+                                    <th>Unité</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="cart_product_img d-flex align-items-center">
+                                            <input type="text" placeholder="Aubergine, panais..." id="name" name="produit"/>
+                                    </td>
+                                    </td>
+                                    <td>
+                                        <input type="number" class="qty-text" id="quantity" step="1" min="1" max="99" name="quantity" >
+                                    </td>
+                                    <td>
+                                        <select name="unite" id="unit">
+
+                                            <option value="u">unité</option>
+
+                                            <option value="kg">kg</option>
+                                    </td>
+                                    <td>
+                                        <button class="newElem"
+                                                style="background-color:#51a651;
+                                                    color:white;
+                                                    border-radius: 10%;
+                                                    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),inset -2px -2px 3px rgba(0, 0, 0, .6);
+                                                    text-align: center;
+                                                    border: 0;
+                                                    padding: 0 6px;
+                                                    font-
+                                                    "
+                                                    >
+                                            <i class="material-icons"> Ajouter </i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div>
+                            <div id="error" style="color: red;text-align: center"></div>
+                            <ul id="myUL">
+                                <li id="info" style="color:red;text-align: center;">Veuillez ajouter des produits</li>
+                            </ul>
+                        </div>
+                        <div class="inputscontainer"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-lg-4">
+                        <div class="cart-total-area mt-70">
+                            <div class="cart-page-heading">
+                            </div>
+                            <h5><label for="avatar">Ajouter une photo à votre annonce?</label><br/></h5>
+                            <input type="file"id="panier" name="avatar" accept="image/png, image/jpeg"><br/>
+
+                            <button type="button" class="btn karl-checkout-btn submit_cart_producer">mettre en ligne</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
-         <div class="row">
-            <div class="col-12 col-lg-4">
-               <div class="cart-total-area mt-70">
-                  <div class="cart-page-heading">
-                  </div>
-                  <h5><label for="avatar">Ajouter une photo à votre annonce?</label><br/></h5>
-                  <input type="file"id="panier" name="avatar" accept="image/png, image/jpeg"><br/>
-               </div>
-               <div>
-                  <h4>Vos lots actuellement enregistrés</h4>
-                  {% set counter = 0 %}
-                  {% for lot in lots %}
-                  {% set counter = counter + 1 %}
-                  Lot n° {{ counter }}:<br>
-                  {% for product in lot %}
-                  {{ product.name }}
-                  <br>
-                  {% endfor %}
-                  {% endfor %}
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   <!-- ****** Cart Area End ****** -->
-</div>
-<!-- /.wrapper end -->
+        </div>
+        <!-- ****** Cart Area End ****** -->
+    </div>
+    <!-- /.wrapper end -->
+
     <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 
     <style>
@@ -2281,7 +2275,7 @@
 
 <script>
 
-function generateRef() {
+$(document).on('click', '.createLot', function() {
 
    var result           = '';
    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -2290,61 +2284,60 @@ function generateRef() {
       result += characters.charAt(Math.floor(Math.random() * charactersLength));
    }
 
+   console.log(result);
    return result;
 
-}
-
-$(document).on('click', '.createLot', function() {
-
-var IDs=[];
-var ref = generateRef();
-
-$("input:checkbox").each(function(){
-    var $this = $(this);
-    if($this.is(":checked")){
-        IDs.push($this.attr("id"));
-    }
-
-    $.ajax({
-                url: '{{ path('add_lots_producer') }}',
-                type: 'POST',
-                data: {
-                    ids: IDs,
-                    ref: ref
-                },
-                success: function (data) {
-                    if (data.success && data.success === true) {
-                        //toastr.success("ok");
-                    } else {
-                        //toastr.error(data.message);
-                    }
-                },
-                error: function (data) {
-                    console.error(data);
-                    //toastr.error("Pas ok");
-                    console.log('pas ok')
-                }
-
-        });
-    })
 })
 
-     $(document).on('click', '.newElem', function(){
+    var id = 0;
 
-            var name = $('#name').val();
-            var quantity = $('#quantity').val();
-            var unit = $('#unit').val();
-            var productref = 'test'
-        
+$(document).on('click', '.newElem', function(){
+
+           var nameInput = document.createElement('input')
+               nameInput.setAttribute('type', 'text')
+               nameInput.setAttribute('name', 'name')
+               nameInput.setAttribute('placeholder', 'Nom du produit')
+               nameInput.setAttribute('class', 'name')
+
+            var qtyInput = document.createElement('input')
+               qtyInput.setAttribute('type', 'text')
+               qtyInput.setAttribute('name', 'qty')
+               qtyInput.setAttribute('placeholder', 'Quantité')
+               qtyInput.setAttribute('class', 'quantity')
+
+            var unitInput = document.createElement('input')
+               unitInput.setAttribute('type', 'text')
+               unitInput.setAttribute('name', 'unit')
+               unitInput.setAttribute('placeholder', 'Unité')
+               unitInput.setAttribute('class', 'unit')
+
+           $('.inputscontainer').append(nameInput)
+           $('.inputscontainer').append(qtyInput)
+           $('.inputscontainer').append(unitInput)
+           $('.inputscontainer').append('<br>')
+
+           id++;
+
+     })
+
+     $(document).on('click', '.submit_cart_producer', function(){
+
+            var name = $('.name').val();
+            var quantity = $('.quantity').val();
+            var unit = $('.unit').val();
+            var id = $(this).attr('id');
+            var ref = 'test'; 
+            
+            var data = [];
+            var obj = {'name':name,'quantity':quantity,'unit': unit, 'ref':ref}
+
+            data.push(obj)
+            console.log(data)
+
              $.ajax({
                 url: '{{ path('add_cart_producer') }}',
                 type: 'POST',
-                data: {
-                    name: name,
-                    quantity: quantity,
-                    unit: unit,
-                    productref: productref
-                },
+                data: data,
                 success: function (data) {
                     if (data.success && data.success === true) {
                         //toastr.success("ok");

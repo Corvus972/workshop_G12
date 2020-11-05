@@ -35,16 +35,45 @@ class ProductRepository extends ServiceEntityRepository
         ;
     }
     */
-
-    /*
-    public function findOneBySomeField($value): ?Product
+    public function findLotsRefs()
     {
         return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
+            ->select('p.pack_ref')
+            ->where('p.pack_ref is NOT NULL')
+            ->distinct()
+            ->getQuery()
+            ->getScalarResult()
+        ;
+    }
+    
+    public function findUserAvailableProducts($userId)
+    {
+        return $this->createQueryBuilder('p')
+            ->where('p.user = :id')
+            ->andWhere('p.pack_ref is NULL')
+            ->setParameter('id', $userId)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    public function findProduct($id)
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.id = :id')
+            ->setParameter('id', $id)
             ->getQuery()
             ->getOneOrNullResult()
         ;
     }
-    */
+
+    public function findProductsByLotRef($lotref)
+    {
+        return $this->createQueryBuilder('p')
+        ->where('p.pack_ref = :lotref')
+        ->setParameter('lotref', $lotref)
+        ->getQuery()
+        ->getResult()
+    ;
+    }
 }

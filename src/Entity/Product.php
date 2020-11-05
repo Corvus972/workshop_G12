@@ -61,14 +61,9 @@ class Product
     private $packs;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $pack_ref;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=pack::class, inversedBy="products")
-     */
-    private $product_id;
 
     public function __construct()
     {
@@ -149,30 +144,6 @@ class Product
     public function setUser(?User $user): self
     {
         $this->user = $user;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|order[]
-     */
-    public function getProductId(): Collection
-    {
-        return $this->product_id;
-    }
-
-    public function addProductId(order $productId): self
-    {
-        if (!$this->product_id->contains($productId)) {
-            $this->product_id[] = $productId;
-        }
-
-        return $this;
-    }
-
-    public function removeProductId(order $productId): self
-    {
-        $this->product_id->removeElement($productId);
 
         return $this;
     }
