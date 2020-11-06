@@ -26,24 +26,24 @@ class CartProducerController extends AbstractController
 
         $lotsRefs = $repo->findLotsRefs();
         $lots = [];
+        $products = $repo->findUserAvailableproducts($user->getId());
+
+        $prices = [];
+        $quantities = [];
 
         // Reconstitue lots with products pack ref
         foreach($lotsRefs as $key => $value) {
-
             foreach($value as $tab) { 
-
-            $refs = $repo->findProductsByLotRef($tab);
-            $lots[] = $refs;
-
+                $refs = $repo->findProductsByLotRef($tab);
+                $lots[] = $refs;
+                $prices[] = $repo->findPricesByLotRef($tab);
+                $quantities[] = $repo->findQuantitiesByLotRef($tab);
             }
-
         }
-            
-        $products = $repo->findUserAvailableproducts(2);
 
             return $this->render('cart_producer/index.html.twig', [
-                'products' => $products,
-                'lots'     => $lots
+                'products'   => $products,
+                'lots'       => $lots
             ]);
 
     }
@@ -59,11 +59,14 @@ class CartProducerController extends AbstractController
             $quantity = $request->request->get('quantity');
             $unit = $request->request->get('unit');
             $productRef = $request->request->get('productref');
+            $price = $request->request->get('price');
+
 
             $product = new Product;
             $product->setName($name)
                     ->setQuantity($quantity)
                     ->setUnit($unit)
+                    ->setPrice($price)
                     ->setProductRef($productRef)
                     ->setUser($user);
         

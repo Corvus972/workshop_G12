@@ -38,7 +38,28 @@ class ProductRepository extends ServiceEntityRepository
         ->getQuery()
         ->getSingleScalarResult()
     ;
+    return $qb;
+    }
 
+    public function findPricesByLotRef($ref){
+        $qb = $this->createQueryBuilder('p')
+        ->select('p.price')
+        ->where('p.pack_ref = :ref')
+        ->setParameter('ref', $ref)
+        ->getQuery()
+        ->getResult()
+    ;
+    return $qb;
+    }
+
+    public function findQuantitiesByLotRef($ref){
+        $qb = $this->createQueryBuilder('p')
+        ->select('p.quantity')
+        ->where('p.pack_ref = :ref')
+        ->setParameter('ref', $ref)
+        ->getQuery()
+        ->getResult()
+    ;
     return $qb;
     }
     
@@ -50,9 +71,7 @@ class ProductRepository extends ServiceEntityRepository
         ->getQuery()
         ->getSingleScalarResult()
     ;
-
     return $qb;
-
     }
 
     public function findProductRef($id) {
