@@ -83,7 +83,7 @@ class EditProfilController extends AbstractController
 //    }
 
     /**
-     * @Route("profil", name="profil")
+     * @Route("/profil/index", name="profil")
      * @param Request $request
      * @param UserInterface $userProfile
      * @param UserPasswordEncoderInterface $encoder

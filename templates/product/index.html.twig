@@ -43,7 +43,7 @@
                     <a class="nav-link page-scroll" href="{{ path('home') }}#intro">LE CONCEPT</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="{{ path('home') }}#services">LES PRODUCTEURS</a>
+                    <a class="nav-link page-scroll" href="{{ path('home') }}#services">LES PANIERS</a>
                 </li>
 
                 <li class="nav-item">
@@ -52,7 +52,7 @@
 
                 {% if app.user %}
                   <li class="nav-item">
-                    <a class="nav-link page-scroll"  href="{{ path('profil')}}">MON PANIER</a>
+                    <a class="nav-link page-scroll"  href="{{ path('cart_index')}}">MON PANIER</a>
                  </li>
                    
                  <li class="nav-item">
@@ -185,7 +185,7 @@
                 <div class="row">
                     <div class="col-lg-12">
 
-                        <h2>Nos légumes régionaux</h2>
+                        <h2>Nos produits régionaux</h2>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
                 <div class="row justify-content-center mb-5 ">
@@ -207,7 +207,8 @@
                             <div class="col mt-5 ">
                                 <div class="card">
                                     <div class="card-image">
-                                        <img class="img-fluid" src="{{asset('uploads/pictureProduct' ~ product.user.id ~ '/' ~ product.image) }}" alt="alternative">
+                                        <img class="img-fluid"
+					 src="{{asset('uploads/pictureProduct' ~ '/' ~ product.image) }}" alt="alternative">
                                     </div>
                                     <div class="card-body">
                                         <h3 class="card-title">Local'Eco</h3>

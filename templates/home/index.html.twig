@@ -40,7 +40,7 @@
         <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Aria</a> -->
 
         <!-- Image Logo -->
-        <a class="navbar-brand logo-image" href="{{ path('home') }}"><img src="/home/images/logo.png" alt="alternative"></a>
+        <a class="navbar-brand logo-image" href="{{ path('home') }}"><img src="home/images/logo.png" alt="alternative"></a>
 
         <!-- Mobile Menu Toggle Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,7 +58,7 @@
                     <a class="nav-link page-scroll" href="{{ path('home') }}#intro">LE CONCEPT</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="{{ path('home') }}#services">LES PRODUCTEURS</a>
+                    <a class="nav-link page-scroll" href="{{ path('home') }}#services">LES PANIERS</a>
                 </li>
 
                 <li class="nav-item">
@@ -102,8 +102,43 @@
         </div>
     </nav> <!-- end of navbar -->
     <!-- end of navbar -->
-
-    <!-- Header -->
+	{% if app.user %}
+		{% if app.user.type != "producer" %}
+ 	<!-- Header -->
+            <header id="header" class="header">
+                <div class="header-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="text-container">
+                                    <h1>Découvrez nos paniers <span id="js-rotating">responsable, économiques, saisonnier</span></h1>
+                                    <a class="btn-solid-lg page-scroll" href="{{ path('product_index') }}">J'achète local en cliquant ici</a>
+                                </div>
+                            </div> <!-- end of col -->
+                        </div> <!-- end of row -->
+                    </div> <!-- end of container -->
+                </div> <!-- end of header-content -->
+            </header> <!-- end of header -->
+            <!-- end of header -->
+		{% else %}
+		<!-- Header -->
+    <header id="header" class="header">
+        <div class="header-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-container">
+                            <h1>Consommez <span id="js-rotating">local, responsable, saisonnier</span></h1>
+                        </div>
+                    </div> <!-- end of col -->
+                </div> <!-- end of row -->
+            </div> <!-- end of container -->
+        </div> <!-- end of header-content -->
+    </header> <!-- end of header -->
+    <!-- end of header -->
+		{% endif %}
+	{% else %}
+    	<!-- Header -->
     <header id="header" class="header">
         <div class="header-content">
             <div class="container">
@@ -121,7 +156,7 @@
     </header> <!-- end of header -->
     <!-- end of header -->
 
-
+    {% endif %}
     <!-- Intro -->
     <div id="intro" class="basic-1">
         <div class="container">
@@ -240,7 +275,7 @@
                     <!-- Card -->
                     <div class="card">
                         <div class="card-image">
-                            <img class="img-fluid" src="/home/images/services-2.jpg" alt="alternative">
+                            <img class="img-fluid" src="home/images/services-2.jpg" alt="alternative">
                         </div>
                         <div class="card-body">
                             <h3 class="card-title">exemple 2</h3>
@@ -266,7 +301,7 @@
                     <!-- Card -->
                     <div class="card">
                         <div class="card-image">
-                            <img class="img-fluid" src="/home/images/services-3.jpg" alt="alternative">
+                            <img class="img-fluid" src="home/images/services-3.jpg" alt="alternative">
                         </div>
                         <div class="card-body">
                             <h3 class="card-title">exemple 3</h3>
@@ -463,7 +498,7 @@
                                 <!-- Slide -->
                                 <div class="swiper-slide">
                                     <div class="card">
-                                        <img class="card-image" src="/home/images/testimonial-1.jpg" alt="alternative">
+                                        <img class="card-image" src="home/images/testimonial-1.jpg" alt="alternative">
                                         <div class="card-body">
                                             <div class="testimonial-text">90% de toute les tomates comestibles ont été jetées en Australie à cause de leur apparence.</div>
                                             <div class="testimonial-author">The Guardian, 2017</div>
@@ -475,7 +510,7 @@
                                 <!-- Slide -->
                                 <div class="swiper-slide">
                                     <div class="card">
-                                        <img class="card-image" src="/home/images/testimonial-2.jpg" alt="alternative">
+                                        <img class="card-image" src="home/images/testimonial-2.jpg" alt="alternative">
                                         <div class="card-body">
                                             <div class="testimonial-text">Les bananes sont le fruit le plus gaspillé en magasin en raison de marques brunes mineures.</div>
                                             <div class="testimonial-author">The Guardian, 2017</div>
@@ -487,7 +522,7 @@
                                 <!-- Slide -->
                                 <div class="swiper-slide">
                                     <div class="card">
-                                        <img class="card-image" src="/home/images/testimonial-3.jpg" alt="alternative">
+                                        <img class="card-image" src="home/images/testimonial-3.jpg" alt="alternative">
                                         <div class="card-body">
                                             <div class="testimonial-text">3 700 milliards de pommes sont gaspillées dans le monde chaque année.</div>
                                             <div class="testimonial-author">FAO, 2012</div>
@@ -499,7 +534,7 @@
                                 <!-- Slide -->
                                 <div class="swiper-slide">
                                     <div class="card">
-                                        <img class="card-image" src="/home/images/testimonial-4.jpg" alt="alternative">
+                                        <img class="card-image" src="home/images/testimonial-4.jpg" alt="alternative">
                                         <div class="card-body">
                                             <div class="testimonial-text">50% des pommes de terres achetées chaque jour par les foyers britanniques sont jetées, pour un coût annuel de 256 millions d'euros.</div>
                                             <div class="testimonial-author">The Guardian, 2017</div>
@@ -511,7 +546,7 @@
                                 <!-- Slide -->
                                 <div class="swiper-slide">
                                     <div class="card">
-                                        <img class="card-image" src="/home/images/testimonial-5.jpg" alt="alternative">
+                                        <img class="card-image" src="home/images/testimonial-5.jpg" alt="alternative">
                                         <div class="card-body">
                                             <div class="testimonial-text">30% des carottes n'arrivent jamais en rayon en Suisse à cause de défauts esthétiques.</div>
                                             <div class="testimonial-author">FAO, 2017</div>
@@ -523,7 +558,7 @@
                                 <!-- Slide -->
                                 <div class="swiper-slide">
                                     <div class="card">
-                                        <img class="card-image" src="/home/images/testimonial-6.jpg" alt="alternative">
+                                        <img class="card-image" src="home/images/testimonial-6.jpg" alt="alternative">
                                         <div class="card-body">
                                             <div class="testimonial-text"> Depuis la production jusqu’au traitement des déchets, le cycle de vie de la nourriture d’un Français moyen représente environ 20% du total de ses émissions quotidiennes.</div>
                                             <div class="testimonial-author">FAO, 2019</div>
@@ -557,7 +592,7 @@
             <div class="row">
                 <div class="col-lg-5 col-xl-6">
                     <div class="image-container">
-                        <img class="img-fluid" src="/home/images/about.jpg" alt="alternative">
+                        <img class="img-fluid" src="home/images/about.jpg" alt="alternative">
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-7 col-xl-6">
@@ -736,16 +771,16 @@
     </div> <!-- end of footer -->
     <!-- end of footer -->
     <!-- Scripts -->
-    <script src="/home/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-    <script src="/home/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
-    <script src="/home/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-    <script src="/home/js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="/home/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
-    <script src="/home/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
-    <script src="/home/js/morphext.min.js"></script> <!-- Morphtext rotating text in the header -->
-    <script src="/home/js/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
-    <script src="/home/js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
-    <script src="/home/js/scripts.js"></script> <!-- Custom scripts -->
+    <script src="home/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="home/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="home/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="home/js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="home/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="home/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="home/js/morphext.min.js"></script> <!-- Morphtext rotating text in the header -->
+    <script src="home/js/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
+    <script src="home/js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="home/js/scripts.js"></script> <!-- Custom scripts -->
 </body>
 </html>
 

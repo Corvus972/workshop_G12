@@ -117,7 +117,8 @@
                             {% for product in cart_products %}
                             <tr>
                                 <td class="cart_product_img d-flex align-items-center">
-                                    <a href="#"><img class="img-thumbnail img-fluid w-75" src="{{ product.image }}" alt="Product"></a>
+                                    <a href="#"><img class="img-thumbnail img-fluid w-75" src="{{asset('uploads/pictureProduct' ~ '/' ~ product.image) }}" 
+					alt="Product"></a>
                                     <h6>{{ product.name }}</h6>
                                 </td>
                                 <td class="price"><span>{{ product.price }}€</span></td>

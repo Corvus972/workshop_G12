@@ -39,14 +39,12 @@ class AddProduitProducerController extends AbstractController
             
             $path = $this->getParameter('picture_directory');
 
-              if (!$path.$userProfile->getId()) {
-                $filesystem->mkdir($path.$userProfile->getId(),0700);
-            }
+        
              $fileName = $this->generateUniqueFileName().'.'.$picture->guessExtension();
           
              
                 try {
-                      $picture->move($path.$userProfile->getId(), 
+                      $picture->move($path, 
                     $fileName
                     );
                 } catch (FileException $e) {
@@ -81,7 +79,7 @@ class AddProduitProducerController extends AbstractController
          //Supprimer le fichier dans le dossier qui a l'id du user connecté
         $path = $this->getParameter('picture_directory');
         $fs = new Filesystem(); 
-        $fs->remove($path.$userProfile->getId().'/'.$fileName->getImage()); 
+        $fs->remove($path.'/'.$fileName->getImage()); 
         
         //Supprimer les nom des fichiés dans la BDD
         $productDataBase = $this->getDoctrine()->getRepository(Product::class)->find($id);
