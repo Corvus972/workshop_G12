@@ -2,6 +2,10 @@
    <!-- Styles -->
 <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext" rel="stylesheet">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
 <div id="wrapper">
    <!-- ****** Cart Area Start ****** -->
    <div class="cart_area section_padding_100 clearfix">
@@ -62,7 +66,7 @@
                   {% for product in products %}
                   <input class="check" type="checkbox" id="{{ product.id }}" value="{{ product.name }}">{{ product.name }}<br>
                   {% endfor %}
-                  <button type="submit" class="createLot">Créer ce lot</button>
+                  <button type="submit" class="btn btn-primary createLot">Créer ce lot</button>
                </div>
                <div class="inputscontainer"></div>
             </div>
@@ -75,24 +79,43 @@
                   <h5><label for="avatar">Ajouter une photo à votre annonce?</label><br/></h5>
                   <input type="file"id="panier" name="avatar" accept="image/png, image/jpeg"><br/>
                </div>
-               <div>
+
+
+            <div class="row">
+
                {% set lotPrice = 0 %}
+
                   <h4>Vos lots actuellement enregistrés</h4>
+
                   {% set counter = 0 %}
+
                   {% for lot in lots %}
+
+                   <div class="card" style="width: 18rem;">
+
                   {% set counter = counter + 1 %}
+
+                  <div class="card-body">
+                    <div class="col">
                   <b>Lot n° {{ counter }} </b>:<br>
+
                   {% for product in lot %}
-                  
-                   {{ product.name }} : {{ product.quantity }} {{ product.unit }} {% set lotPrice = product.id * product.quantity %} </li>
-                  
+
+                   {{ product.name }} : {{ product.quantity }} {{ product.unit }} {% set lotPrice = product.price * product.quantity %} </li>
                   <br>
+
                   {% endfor %} 
+                  
                   <b>Prix du lot</b> : {{ lotPrice - 10/100 }} &euro;
+                    </div>
+                  </div>
                   <br>
                   <br>
+                  </div>
                   {% endfor %}
-               </div>
+                
+            </div>
+
             </div>
          </div>
       </div>
@@ -100,6 +123,7 @@
    <!-- ****** Cart Area End ****** -->
 </div>
 <!-- /.wrapper end -->
+<!-- début scripts -->
     <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 
     <style>
