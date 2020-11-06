@@ -1,0 +1,202 @@
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\n###> symfony/framework-bundle ###\r\n/.env.local\r\n/.env.local.php\r\n/.env.*.local\r\n/config/secrets/prod/prod.decrypt.private.php\r\n/public/bundles/\r\n/var/\r\n/vendor/\r\n###< symfony/framework-bundle ###\r\n\r\n###> symfony/phpunit-bridge ###\r\n.phpunit\r\n.phpunit.result.cache\r\n/phpunit.xml\r\n###< symfony/phpunit-bridge ###\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .gitignore	(revision d0e4395b2508059d7a4ab319c6c3a7bbe99b23c1)
++++ .gitignore	(date 1604432627782)
+@@ -13,4 +13,4 @@
+ .phpunit
+ .phpunit.result.cache
+ /phpunit.xml
+-###< symfony/phpunit-bridge ###
++###< symfony/phpunit-bridge ###
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"BranchesTreeState\">\r\n    <expand>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n    </expand>\r\n    <select />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"43130382-7c4a-4e6e-b942-6f2df4fc485c\" name=\"Default Changelist\" comment=\"done except for user fk in product\">\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/css/bootstrap.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/css/fontawesome-all.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/css/magnific-popup.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/css/styles.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/css/swiper.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/about.jpg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/background-image.jpg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/details-1-background.jpg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/details-2-background.jpg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/down-arrow.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/favicon.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/header-background.jpg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/hexagon-green.svg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/hexagon-rs.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/hexagon-rs.psd\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/hexagon-white.svg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/hexagon.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/hexagon.psd\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/intro-office.jpg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/logo.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/logo.svg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/logo2.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/project-1.jpg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/project-2.jpg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/project-3.jpg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/project-4.jpg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/project-5.jpg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/project-6.jpg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/project-7.jpg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/project-8.jpg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/services-1.jpg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/services-2.jpg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/services-3.jpg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/team-1.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/team-2.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/team-3.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/team-4.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/testimonial-1.jpg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/testimonial-2.jpg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/testimonial-3.jpg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/testimonial-4.jpg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/testimonial-5.jpg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/testimonial-6.jpg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/images/up-arrow.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/js/bootstrap.min.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/js/isotope.pkgd.min.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/js/jquery.easing.min.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/js/jquery.magnific-popup.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/js/jquery.min.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/js/morphext.min.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/js/popper.min.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/js/scripts.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/js/swiper.min.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/js/validator.min.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/webfonts/fa-brands-400.eot\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/webfonts/fa-brands-400.svg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/webfonts/fa-brands-400.ttf\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/webfonts/fa-brands-400.woff\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/webfonts/fa-brands-400.woff2\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/webfonts/fa-regular-400.eot\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/webfonts/fa-regular-400.svg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/webfonts/fa-regular-400.ttf\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/webfonts/fa-regular-400.woff\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/webfonts/fa-regular-400.woff2\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/webfonts/fa-solid-900.eot\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/webfonts/fa-solid-900.svg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/webfonts/fa-solid-900.ttf\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/webfonts/fa-solid-900.woff\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/public/home/webfonts/fa-solid-900.woff2\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/Controller/HomeController.php\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/Controller/RegistrationController.php\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/templates/home/index.html.twig\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/templates/registration/index.html.twig\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/composer.lock\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/composer.lock\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/symfony.lock\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/symfony.lock\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\" doNotAsk=\"true\" synchronizationState=\"SYNCHRONIZE\">\r\n    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>\r\n    <execution />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"composer.json\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"PhpWorkspaceProjectConfiguration\">\r\n    <include_path>\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/error-handler\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/event-dispatcher\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/expression-language\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/filesystem\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/finder\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/flex\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/form\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/framework-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-client\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-client-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-foundation\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-kernel\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/inflector\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/intl\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/mailer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/maker-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/mime\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/monolog-bridge\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/monolog-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/options-resolver\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/phpunit-bridge\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-icu\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-mbstring\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-php72\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-php73\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-php80\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/process\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/property-access\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/property-info\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/routing\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-core\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-csrf\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-guard\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-http\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/serializer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/service-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/stopwatch\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/translation\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/twig-bridge\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/twig-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/validator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/var-dumper\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/var-exporter\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/web-link\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/web-profiler-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/yaml\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/annotations\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/cache\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/collections\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/common\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/dbal\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/doctrine-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/doctrine-migrations-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/event-manager\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/inflector\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/instantiator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/lexer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/migrations\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/orm\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/persistence\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/sql-formatter\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/ocramius/proxy-manager\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/webmozart/assert\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/fzaninotto/faker\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpdocumentor/reflection-common\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/composer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpdocumentor/type-resolver\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/zendframework/zend-code\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/zendframework/zend-eventmanager\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/cache\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/container\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/link\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/log\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/twig/extra-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/twig/twig\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/nikic/php-parser\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sensio/framework-extra-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/egulias/email-validator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/monolog/monolog\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/asset\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/browser-kit\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/cache\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/cache-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/config\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/console\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/css-selector\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/debug\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/debug-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/dependency-injection\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/doctrine-bridge\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/dom-crawler\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/translation-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/dotenv\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/data-fixtures\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle\" />\r\n    </include_path>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1jmRnvhdLhenc0aACpcJ0zRIMOC\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\r\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\r\n    <property name=\"node.js.path.for.package.tslint\" value=\"project\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"43130382-7c4a-4e6e-b942-6f2df4fc485c\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1604407451568</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1604407451568</updated>\r\n      <workItem from=\"1604407453329\" duration=\"641000\" />\r\n      <workItem from=\"1604408121686\" duration=\"7998000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"starting fixtures\">\r\n      <created>1604410489073</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604410489073</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"next\">\r\n      <created>1604410752981</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604410752981</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"almost done\">\r\n      <created>1604415055582</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604415055582</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"done except for user fk in product\">\r\n      <created>1604415479250</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1604415479250</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"5\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"starting fixtures\" />\r\n    <MESSAGE value=\"next\" />\r\n    <MESSAGE value=\"almost done\" />\r\n    <MESSAGE value=\"done except for user fk in product\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"done except for user fk in product\" />\r\n  </component>\r\n  <component name=\"WindowStateProjectService\">\r\n    <state x=\"2104\" y=\"87\" key=\"MergeDialog\" timestamp=\"1604416122861\">\r\n      <screen x=\"1920\" y=\"0\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"2104\" y=\"87\" key=\"MergeDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050\" timestamp=\"1604416122861\" />\r\n    <state x=\"2518\" y=\"286\" key=\"MultipleFileMergeDialog\" timestamp=\"1604416124249\">\r\n      <screen x=\"1920\" y=\"0\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"2518\" y=\"286\" key=\"MultipleFileMergeDialog/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050\" timestamp=\"1604416124249\" />\r\n    <state x=\"794\" y=\"448\" key=\"NewPhpFileDialog\" timestamp=\"1604408718053\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"794\" y=\"448\" key=\"NewPhpFileDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050\" timestamp=\"1604408718053\" />\r\n    <state x=\"2572\" y=\"283\" key=\"Vcs.Multiple.Commit.Info.Dialog.Key\" timestamp=\"1604416032686\">\r\n      <screen x=\"1920\" y=\"0\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"2572\" y=\"283\" key=\"Vcs.Multiple.Commit.Info.Dialog.Key/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050\" timestamp=\"1604416032686\" />\r\n    <state x=\"2472\" y=\"245\" key=\"Vcs.Push.Dialog.v2\" timestamp=\"1604415480347\">\r\n      <screen x=\"1920\" y=\"0\" width=\"1920\" height=\"1050\" />\r\n    </state>\r\n    <state x=\"2472\" y=\"245\" key=\"Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050\" timestamp=\"1604415480347\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision d0e4395b2508059d7a4ab319c6c3a7bbe99b23c1)
++++ .idea/workspace.xml	(date 1604432940729)
+@@ -1,101 +1,19 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="BranchesTreeState">
+-    <expand>
+-      <path>
+-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-      </path>
+-      <path>
+-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-      </path>
++    <expand />
++    <select>
+       <path>
+         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+       </path>
+-    </expand>
+-    <select />
++    </select>
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="43130382-7c4a-4e6e-b942-6f2df4fc485c" name="Default Changelist" comment="done except for user fk in product">
+-      <change afterPath="$PROJECT_DIR$/public/home/css/bootstrap.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/css/fontawesome-all.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/css/magnific-popup.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/css/styles.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/css/swiper.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/about.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/background-image.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/details-1-background.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/details-2-background.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/down-arrow.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/favicon.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/header-background.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/hexagon-green.svg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/hexagon-rs.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/hexagon-rs.psd" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/hexagon-white.svg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/hexagon.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/hexagon.psd" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/intro-office.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/logo.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/logo.svg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/logo2.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/project-1.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/project-2.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/project-3.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/project-4.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/project-5.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/project-6.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/project-7.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/project-8.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/services-1.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/services-2.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/services-3.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/team-1.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/team-2.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/team-3.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/team-4.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/testimonial-1.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/testimonial-2.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/testimonial-3.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/testimonial-4.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/testimonial-5.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/testimonial-6.jpg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/images/up-arrow.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/js/bootstrap.min.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/js/isotope.pkgd.min.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/js/jquery.easing.min.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/js/jquery.magnific-popup.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/js/jquery.min.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/js/morphext.min.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/js/popper.min.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/js/scripts.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/js/swiper.min.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/js/validator.min.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-brands-400.eot" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-brands-400.svg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-brands-400.ttf" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-brands-400.woff" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-brands-400.woff2" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-regular-400.eot" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-regular-400.svg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-regular-400.ttf" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-regular-400.woff" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-regular-400.woff2" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-solid-900.eot" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-solid-900.svg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-solid-900.ttf" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-solid-900.woff" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/public/home/webfonts/fa-solid-900.woff2" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/templates/registration/index.html.twig" afterDir="false" />
++    <list default="true" id="43130382-7c4a-4e6e-b942-6f2df4fc485c" name="Default Changelist" comment="remove dump">
++      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -228,6 +146,7 @@
+   <component name="PropertiesComponent">
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="WebServerToolWindowFactoryState" value="false" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+     <property name="node.js.detected.package.eslint" value="true" />
+     <property name="node.js.detected.package.tslint" value="true" />
+     <property name="node.js.path.for.package.eslint" value="project" />
+@@ -247,6 +166,7 @@
+       <updated>1604407451568</updated>
+       <workItem from="1604407453329" duration="641000" />
+       <workItem from="1604408121686" duration="7998000" />
++      <workItem from="1604428446315" duration="3730000" />
+     </task>
+     <task id="LOCAL-00001" summary="starting fixtures">
+       <created>1604410489073</created>
+@@ -276,7 +196,21 @@
+       <option name="project" value="LOCAL" />
+       <updated>1604415479250</updated>
+     </task>
+-    <option name="localTasksCounter" value="5" />
++    <task id="LOCAL-00005" summary="add role">
++      <created>1604432821011</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1604432821011</updated>
++    </task>
++    <task id="LOCAL-00006" summary="remove dump">
++      <created>1604432936379</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1604432936379</updated>
++    </task>
++    <option name="localTasksCounter" value="7" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -287,18 +221,27 @@
+       <map>
+         <entry key="MAIN">
+           <value>
+-            <State />
++            <State>
++              <option name="CUSTOM_BOOLEAN_PROPERTIES">
++                <map>
++                  <entry key="Show.Git.Branches" value="true" />
++                </map>
++              </option>
++            </State>
+           </value>
+         </entry>
+       </map>
+     </option>
++    <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="starting fixtures" />
+     <MESSAGE value="next" />
+     <MESSAGE value="almost done" />
+     <MESSAGE value="done except for user fk in product" />
+-    <option name="LAST_COMMIT_MESSAGE" value="done except for user fk in product" />
++    <MESSAGE value="add role" />
++    <MESSAGE value="remove dump" />
++    <option name="LAST_COMMIT_MESSAGE" value="remove dump" />
+   </component>
+   <component name="WindowStateProjectService">
+     <state x="2104" y="87" key="MergeDialog" timestamp="1604416122861">

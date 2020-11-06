@@ -60,8 +60,13 @@ class Product
     private $packs;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
+    private $pack_ref;
+     
+    /** 
+    * @ORM\Column(type="float")
+    */
     private $price;
 
     public function __construct()
@@ -147,30 +152,6 @@ class Product
         return $this;
     }
 
-    /**
-     * @return Collection|order[]
-     */
-    public function getProductId(): Collection
-    {
-        return $this->product_id;
-    }
-
-    public function addProductId(order $productId): self
-    {
-        if (!$this->product_id->contains($productId)) {
-            $this->product_id[] = $productId;
-        }
-
-        return $this;
-    }
-
-    public function removeProductId(order $productId): self
-    {
-        $this->product_id->removeElement($productId);
-
-        return $this;
-    }
-
     public function getProductRef(): ?string
     {
         return $this->product_ref;
@@ -210,6 +191,24 @@ class Product
         return $this;
     }
 
+    public function getPackRef(): ?string
+    {
+        return $this->pack_ref;
+    }
+
+    public function setPackRef(string $pack_ref): self
+    {
+        $this->pack_ref = $pack_ref;
+
+        return $this;
+    }
+
+    public function setProductId(?pack $product_id): self
+    {
+        $this->product_id = $product_id;
+
+    }
+    
     public function getPrice(): ?float
     {
         return $this->price;

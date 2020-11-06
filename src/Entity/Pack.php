@@ -40,6 +40,11 @@ class Pack
     private $product;
 
     /**
+     * @ORM\OneToMany(targetEntity=Product::class, mappedBy="product_id")
+     */
+    private $products;
+
+    /** 
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $region;
@@ -47,6 +52,7 @@ class Pack
     public function __construct()
     {
         $this->product = new ArrayCollection();
+        $this->products = new ArrayCollection();
     }
 
 
@@ -115,6 +121,14 @@ class Pack
         return $this;
     }
 
+    /**
+     * @return Collection|Product[]
+     */
+    public function getProducts(): Collection
+    {
+        return $this->products;
+    }
+    
     public function getRegion(): ?string
     {
         return $this->region;
