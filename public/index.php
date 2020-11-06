@@ -27,13 +27,18 @@ $kernel = new Kernel($_SERVER['APP_ENV'], (bool) $_SERVER['APP_DEBUG']);
 // ...
 $request = Request::createFromGlobals();
 
+// tell Symfony about your reverse proxy
 Request::setTrustedProxies(
-    // trust *all* requests (the 'REMOTE_ADDR' string is replaced at
-    // run time by $_SERVER['REMOTE_ADDR'])
-    ['127.0.0.1', 'REMOTE_ADDR'],
+    // the IP address (or range) of your proxy
+    ['192.0.0.1', '10.0.0.0/8'],
+    // trust *all* "X-Forwarded-*" headers
+    Request::HEADER_X_FORWARDED_ALL
 
-    // if you're using ELB, otherwise use a constant from above
-    Request::HEADER_X_FORWARDED_AWS_ELB
+    // or, if your proxy instead uses the "Forwarded" header
+    // Request::HEADER_FORWARDED
+
+    // or, if you're using AWS ELB
+    // Request::HEADER_X_FORWARDED_AWS_ELB
 );
 $response = $kernel->handle($request);
 $response->send();
