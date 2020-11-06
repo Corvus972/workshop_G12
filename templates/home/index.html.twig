@@ -1,3 +1,708 @@
-<li class="nav-item">
-                        <a class="nav-link page-scroll"  href="{{ path('app_login')}}">CONNEXION</a>
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon panier local{% endblock %}
+
+{% block body %}
+    <html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+    <meta property="og:site_name" content="" /> <!-- website name -->
+    <meta property="og:site" content="" /> <!-- website link -->
+    <meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+    <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+    <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+    <meta property="og:type" content="article" />
+    <!-- Website Title -->
+    <title>Le Panier Local</title>
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="/home/css/bootstrap.css" rel="stylesheet">
+    <link href="/home/css/fontawesome-all.css" rel="stylesheet">
+    <link href="/home/css/swiper.css" rel="stylesheet">
+    <link href="/home/css/magnific-popup.css" rel="stylesheet">
+    <link href="/home/css/styles.css" rel="stylesheet">
+
+    <!-- Favicon  -->
+    <link rel="icon" href="home/images/favicon.png">
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+    <!-- Text Logo - Use this if you don't have a graphic logo -->
+    <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Aria</a> -->
+
+    <!-- Image Logo -->
+    <a class="navbar-brand logo-image" href="{{ path('home') }}"><img src="/home/images/logo.png" alt="alternative"></a>
+
+
+    <!-- end of mobile menu toggle button -->
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link page-scroll" href="{{ path('home')}}">ACCUEIL <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link page-scroll" href="{{ path('home') }}#intro">LE CONCEPT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link page-scroll" href="{{ path('home') }}#services">LES PRODUCTEURS</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link page-scroll" href="{{ path('home') }}#contact">CONTACT</a>
+            </li>
+
+            {% if app.user %}
+                {% if app.user.type != "producer" %}
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll"  href="{{ path('product_index')}}">LES PRODUITS</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll"  href="{{ path('cart_index')}}">MON PANIER</a>
+                    </li>
+                {% endif %}
+
+                <li class="nav-item">
+                    <a class="nav-link page-scroll"  href="{{ path('profil')}}">MON PROFIL</a>
+                </li>
+                <div class="mb-3">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll"  href="{{ path('app_logout') }}">DECONNEXION</a>
+                    </li>
+                </div>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link page-scroll"  href="{{ path('app_login')}}">CONNEXION</a>
+                </li>
+            {% endif %}
+        </ul>
+        <span class="nav-item social-icons">
+                <span class="fa-stack">
+                    <a href="#your-link">
+                    </a>
+                </span>
+                <span class="fa-stack">
+                    <a href="#your-link">
+                    </a>
+                </span>
+            </span>
+    </div>
+</nav>
+<!-- Header -->
+<header id="header" class="header">
+    <div class="header-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-container">
+                        <h1>Consommez <span id="js-rotating">local, responsable, saisonnier</span></h1>
+                        <p class="p-heading p-large">Le Panier Local vous propose chaque semaine des paniers de produits de saisons de producteurs de la région. Luttons ensemble contre le gaspillage alimentaire !</p>
+                        <a class="btn-solid-lg page-scroll" href="{{ path('registration')}}">COMMENCEZ</a>
+                    </div>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of header-content -->
+</header> <!-- end of header -->
+<!-- end of header -->
+<!-- Intro -->
+<div id="intro" class="basic-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="text-container">
+                    <div class="section-title">LE CONCEPT</div>
+                    <h2>Le Panier Local vous propose chaque semaine des produits de saisons de producteurs locaux</h2>
+                    <p>Pour se détacher du schéma de grande distribution et limiter le gaspillage, chaque semaine nous vous proposons un arrivage de légumes et autres produits locaux en provenances d'exploitations de votre région</p>
+                    <p class="testimonial-text">"Luttons contre le gaspillage, aidons nos agriculteurs, devenons locavore ! "</p>
+                    <div class="testimonial-author">Francky - Producteur</div>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-7">
+                <div class="image-container">
+                    <img class="img-fluid" src="/home/images/intro-office.jpg" alt="alternative">
+                </div> <!-- end of image-container -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of basic-1 -->
+<!-- end of intro -->
+
+<!-- Description -->
+<div class="cards-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <!-- Card -->
+                <div class="card">
+                        <span class="fa-stack">
+                            <span class="hexagon"></span>
+
+                        </span>
+                    <div class="card-body">
+                        <h4 class="card-title">Anti-gaspillage</h4>
+                        <p>Les produits de la semaine proposés dans Panier Local sont un équilibre de produits de saisons, mis en avant afin d'éviter qu'ils ne soient tous simplement gaspillés.</p>
+                    </div>
+                </div>
+                <!-- end of card -->
+
+                <!-- Card -->
+                <div class="card">
+                        <span class="fa-stack">
+                            <span class="hexagon"></span>
+
+                        </span>
+                    <div class="card-body">
+                        <h4 class="card-title">Local</h4>
+                        <p>Manger local, c'est bien manger, mais c'est aussi soutenir les femmes et les hommes qui produisent notre nourriture, soutenir leurs exploitations et limiter les importations de produits.</p>
+                    </div>
+                </div>
+                <!-- end of card -->
+                <!-- Card -->
+                <div class="card">
+                        <span class="fa-stack">
+                            <span class="hexagon"></span>
+
+                        </span>
+                    <div class="card-body">
+                        <h4 class="card-title">Economique</h4>
+                        <p>Profitez de la possibilité de vous grouper pour acheter chez les producteurs à des prix de gros, plus avantageux.</p>
+                    </div>
+                </div>
+                <!-- end of card -->
+
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of cards-1 -->
+<!-- end of description -->
+<!-- Services -->
+<div id="services" class="cards-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                {# <div class="section-title">LES PANIERS </div> #}
+                <h2>Les paniers de la semaine</h2>
+                <h2> Cette fonctionnalité est disponible dans 1 mois !</h2>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+        <div class="row">
+            <div class="col-lg-12">
+
+                <!-- Card -->
+                <div class="card">
+                    <div class="card-image">
+                        <img class="img-fluid" src="/home/images/services-1.jpg" alt="alternative">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Exemple 1</h3>
+                        <p>Mélange parfait de légumes de saisons</p>
+                        <ul class="list-unstyled li-space-lg">
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Légume 1 </div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Légume 2 </div>
+                            </li>
+                        </ul>
+                        <p class="price">à partir de <span>19€99</span></p>
+                    </div>
+                    <div class="button-container">
+                        <a class="btn-solid-reg page-scroll" href="#callMe">DETAILS</a>
+                    </div> <!-- end of button-container -->
+                </div>
+                <!-- end of card -->
+                <!-- Card -->
+                <div class="card">
+                    <div class="card-image">
+                        <img class="img-fluid" src="/home/images/services-2.jpg" alt="alternative">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">exemple 2</h3>
+                        <p>Mélange parfait de légumes de saisons</p>
+                        <ul class="list-unstyled li-space-lg">
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Legume 1 </div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Légume 2 </div>
+                            </li>
+                        </ul>
+                        <p class="price">à partir de <span>29€99</span></p>
+                    </div>
+                    <div class="button-container">
+                        <a class="btn-solid-reg page-scroll" href="#callMe">DETAILS</a>
+                    </div> <!-- end of button-container -->
+                </div>
+                <!-- end of card -->
+                <!-- Card -->
+                <div class="card">
+                    <div class="card-image">
+                        <img class="img-fluid" src="/home/images/services-3.jpg" alt="alternative">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">exemple 3</h3>
+                        <p>Mélange parfait de légumes de saisons</p>
+                        <ul class="list-unstyled li-space-lg">
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Légume 1</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Légume 2</div>
+                            </li>
+                        </ul>
+                        <p class="price">à partir de <span>24€99</span></p>
+                    </div>
+                    <div class="button-container">
+                        <a class="btn-solid-reg page-scroll" href="#callMe">DETAILS</a>
+                    </div> <!-- end of button-container -->
+                </div>
+                <!-- end of card -->
+
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of cards-2 -->
+<!-- end of services -->
+<!-- Details 1 -->
+<div id="details" class="accordion">
+    <div class="area-1">
+    </div><!-- end of area-1 on same line and no space between comments to eliminate margin white space --><div class="area-2">
+
+        <!-- Accordion -->
+        <div class="accordion-container" id="accordionOne">
+            <h2>Participez activement à la lutte anti-gaspillage en sortant du schéma "Grande surface"</h2>
+            <div class="item">
+                <div id="headingOne">
+                        <span data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" role="button">
+                            <span class="circle-numbering">1</span><span class="accordion-title">Le soutien des producteurs</span>
+                        </span>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionOne">
+                    <div class="accordion-body">
+                        En donnant la priorité aux circuits courts et aux producteurs locaux, nous participons au maintien d'une agriculture responsable en France.
+                    </div>
+                </div>
+            </div> <!-- end of item -->
+
+            <div class="item">
+                <div id="headingTwo">
+                        <span class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" role="button">
+                            <span class="circle-numbering">2</span><span class="accordion-title">La préservation de l'environnement</span>
+                        </span>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionOne">
+                    <div class="accordion-body">
+                        Choisir un Panier Local, c'est éviter que des produits frais et locaux soient gaspillés car non calibrés pour les grandes surfaces.
+                    </div>
+                </div>
+            </div> <!-- end of item -->
+
+            <div class="item">
+                <div id="headingThree">
+                        <span class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" role="button">
+                            <span class="circle-numbering">3</span><span class="accordion-title">Moins cher, c'est meilleur ! </span>
+                        </span>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionOne">
+                    <div class="accordion-body">
+                        Menagez votre quartier ! Panier Local offre la possibilité de se grouper pour l'achat en grande quantité afin de profiter des prix les plus avantageux.
+                    </div>
+                </div>
+            </div> <!-- end of item -->
+        </div> <!-- end of accordion-container -->
+        <!-- end of accordion -->
+
+    </div> <!-- end of area-2 -->
+</div> <!-- end of accordion -->
+<!-- end of details 1 -->
+<!-- Details 2 -->
+<div class="tabs">
+    <div class="area-1">
+        <div class="tabs-container">
+
+            <!-- Tabs Links -->
+            <ul class="nav nav-tabs" id="ariaTabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true"><i class="fas fa-th"></i>Expérimentez</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="nav-tab-2" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false"><i class="fas fa-th"></i>C'est simple !</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="nav-tab-3" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false"><i class="fas fa-th"></i>Qualité</a>
+                </li>
+            </ul>
+            <!-- end of tabs links -->
+
+            <!-- Tabs Content -->
+            <div class="tab-content" id="ariaTabsContent">
+
+                <!-- Tab -->
+                <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
+                    <h4><RP>Recettes proposées</RP></h4>
+                    <p>Mon Panier Local propose des <a class="green page-scroll" href="#services">recettes</a> associées à vos produits afin de varier les plaisir sur des produits qui ne sont peut-être pas dans les habitudes directes des consommateurs</p>
+
+                </div> <!-- end of tab-pane -->
+                <!-- end of tab -->
+
+                <!-- Tab -->
+                <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab-2">
+                    <ul class="list-unstyled li-space-lg first">
+                        <li class="media">
+                            <div class="media-bullet">1</div>
+                            <div class="media-body"><strong>Je choisis</strong> mon panier élaboré</div>
+                        </li>
+                        <li class="media">
+                            <div class="media-bullet">2</div>
+                            <div class="media-body"><strong>Je profite</strong>  d'une liste de recettes qui correspondent à mes produits</div>
+                        </li>
+                        <li class="media">
+                            <div class="media-bullet">3</div>
+                            <div class="media-body"><strong>Je reçois</strong>  mon panier de productions locales</div>
+                        </li>
+                    </ul>
+                    <ul class="list-unstyled li-space-lg last">
+                        <li class="media">
+                            <div class="media-bullet">4</div>
+                            <div class="media-body"><strong>Je déguste</strong> en famille, entre amis ou en voisin mes réalisations!</div>
+                        </li>
+                    </ul>
+                </div> <!-- end of tab-pane -->
+                <!-- end of tab -->
+                <!-- Tab -->
+                <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
+                    <p><strong>Nous tenons très à coeur la satisfaction de nos clients.</strong> {# Un gagnant-<a class="green" href="#your-link">with huge potential</a> #}</p>
+                    {#  <p><strong>Notre objectif est d'aider</strong> votre entreprise à atteindre son plein potentiel et à établir une stabilité à long terme pour les parties prenantes <a class="green" href="#your-link">the stakeholders</a></p> #}
+                    <ul class="list-unstyled li-space-lg">
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Un service de livraison de qualité</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Des produits 100% BIO</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Des recettes bientôt disponible pour accompagner vos achats</div>
+                        </li>
+                        {# <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Ask for a quote and start improving your business</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-square"></i>
+                                <div class="media-body">Just fill out the form and we'll call you right away</div>
+                            </li> #}
+                    </ul>
+                </div> <!-- end of tab-pane -->
+                <!-- end of tab -->
+
+            </div> <!-- end of tab-content -->
+            <!-- end of tabs content -->
+
+        </div> <!-- end of tabs-container -->
+    </div><!-- end of area-1 on same line and no space between comments to eliminate margin white space --><div class="area-2"></div> <!-- end of area-2 -->
+</div> <!-- end of tabs -->
+<!-- end of details 2 -->
+<!-- Testimonials -->
+<div class="slider">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Les ravages du gaspillage</h2>
+                <p class="p-heading">Chaque années, c'est 1 555 millions de tonnes de nourriture gaspillée dans le monde (source <a class="green page-scroll" href="https://www.bcg.com/publications/2018/tackling-1.6-billion-ton-food-loss-and-waste-crisis">BGC</a>). </p>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+        <div class="row">
+            <div class="col-lg-12">
+
+                <!-- Card Slider -->
+                <div class="slider-container">
+                    <div class="swiper-container card-slider">
+                        <div class="swiper-wrapper">
+
+                            <!-- Slide -->
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <img class="card-image" src="/home/images/testimonial-1.jpg" alt="alternative">
+                                    <div class="card-body">
+                                        <div class="testimonial-text">90% de toute les tomates comestibles ont été jetées en Australie à cause de leur apparence.</div>
+                                        <div class="testimonial-author">The Guardian, 2017</div>
+                                    </div>
+                                </div>
+                            </div> <!-- end of swiper-slide -->
+                            <!-- end of slide -->
+
+                            <!-- Slide -->
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <img class="card-image" src="/home/images/testimonial-2.jpg" alt="alternative">
+                                    <div class="card-body">
+                                        <div class="testimonial-text">Les bananes sont le fruit le plus gaspillé en magasin en raison de marques brunes mineures.</div>
+                                        <div class="testimonial-author">The Guardian, 2017</div>
+                                    </div>
+                                </div>
+                            </div> <!-- end of swiper-slide -->
+                            <!-- end of slide -->
+
+                            <!-- Slide -->
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <img class="card-image" src="/home/images/testimonial-3.jpg" alt="alternative">
+                                    <div class="card-body">
+                                        <div class="testimonial-text">3 700 milliards de pommes sont gaspillées dans le monde chaque année.</div>
+                                        <div class="testimonial-author">FAO, 2012</div>
+                                    </div>
+                                </div>
+                            </div> <!-- end of swiper-slide -->
+                            <!-- end of slide -->
+
+                            <!-- Slide -->
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <img class="card-image" src="/home/images/testimonial-4.jpg" alt="alternative">
+                                    <div class="card-body">
+                                        <div class="testimonial-text">50% des pommes de terres achetées chaque jour par les foyers britanniques sont jetées, pour un coût annuel de 256 millions d'euros.</div>
+                                        <div class="testimonial-author">The Guardian, 2017</div>
+                                    </div>
+                                </div>
+                            </div> <!-- end of swiper-slide -->
+                            <!-- end of slide -->
+                            <!-- Slide -->
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <img class="card-image" src="/home/images/testimonial-5.jpg" alt="alternative">
+                                    <div class="card-body">
+                                        <div class="testimonial-text">30% des carottes n'arrivent jamais en rayon en Suisse à cause de défauts esthétiques.</div>
+                                        <div class="testimonial-author">FAO, 2017</div>
+                                    </div>
+                                </div>
+                            </div> <!-- end of swiper-slide -->
+                            <!-- end of slide -->
+
+                            <!-- Slide -->
+                            <div class="swiper-slide">
+                                <div class="card">
+                                    <img class="card-image" src="/home/images/testimonial-6.jpg" alt="alternative">
+                                    <div class="card-body">
+                                        <div class="testimonial-text"> Depuis la production jusqu’au traitement des déchets, le cycle de vie de la nourriture d’un Français moyen représente environ 20% du total de ses émissions quotidiennes.</div>
+                                        <div class="testimonial-author">FAO, 2019</div>
+                                    </div>
+                                </div>
+                            </div> <!-- end of swiper-slide -->
+                            <!-- end of slide -->
+
+                        </div> <!-- end of swiper-wrapper -->
+
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <!-- end of add arrows -->
+
+                    </div> <!-- end of swiper-container -->
+                </div> <!-- end of sliedr-container -->
+                <!-- end of card slider -->
+
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of slider -->
+<!-- end of testimonials -->
+<!-- About -->
+<div id="about" class="counter">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-xl-6">
+                <div class="image-container">
+                    <img class="img-fluid" src="/home/images/about.jpg" alt="alternative">
+                </div> <!-- end of image-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-7 col-xl-6">
+                <div class="text-container">
+                    <div class="section-title">A PROPOS</div>
+                    <h2>La priorité à l'anti-gaspillage</h2>
+                    <p>Notre objectif est de permettre à tous l'accès aux meilleurs produits tout en favorisant l'agriculture locale et en se détachant des normes esthétiques des fruits et légumes imposés par les commerces de grande distribution.</p>
+                    <ul class="list-unstyled li-space-lg">
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Un producteur qui vends au juste prix ses produits invendus</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Un consommateur qui profite de produits frais et de saisons </div>
+                        </li>
+                    </ul>
+
+                    <!-- Counter -->
+                    <div id="counter">
+                        <div class="cell">
+                            <div class="counter-value number-count" data-count="41"></div>
+                            <div class="counter-info"> Tonnes de nourriture gaspillée dans le monde chaque <strong>seconde</strong></div>
+                        </div>
+                        <div class="cell">
+                            <div class="counter-value number-count" data-count="42"></div>
+                            <div class="counter-info">Pourcentage de fruits et légumes dans le total de nourriture gaspillée</div>
+                        </div>
+                        <div class="cell">
+                            <div class="counter-value number-count" data-count="25"></div>
+                            <div class="counter-info">Pourcentage de la nourriture mondiale produite jetée sans avoir été consommée</div>
+                        </div>
+                    </div>
+                    <!-- end of counter -->
+
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of counter -->
+<!-- end of about -->
+<!-- Contact -->
+<div id="contact" class="form-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="text-container">
+                    <div class="section-title">CONTACT</div>
+                    <h2> Contactez nous !</h2>
+                    <p></p>
+                    <ul class="list-unstyled li-space-lg">
+                        <li class="address"><i class="fas fa-map-marker-alt"></i>1 rue de la Charrue, 34 000 Montpellier</li>
+                        <li><i class="fas fa-phone"></i><a href="tel:003024630820">04 75 91 92 93</a></li>
+
+                        <li><i class="fas fa-envelope"></i><a href="mailto:antoine.rougeaux@ecoles-wis.net">championsleague@panierlocal.com</a></li>
+                    </ul>
+                    <h3>Suivez nous sur les réseaux !</h3>
+
+                    <span class="fa-stack">
+                            <a href="#your-link">
+                                <span class="hexagon"></span>
+                                <i class="fab fa-facebook-f fa-stack-1x"></i>
+                            </a>
+                        </span>
+                    <span class="fa-stack">
+                            <a href="#your-link">
+                                <span class="hexagon"></span>
+                                <i class="fab fa-twitter fa-stack-1x"></i>
+                            </a>
+                        </span>
+
+                    <span class="fa-stack">
+                            <a href="#your-link">
+                                <span class="hexagon"></span>
+                                <i class="fab fa-instagram fa-stack-1x"></i>
+                            </a>
+                        </span>
+
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-6">
+
+                <!-- Contact Form -->
+                <form id="contactForm" data-toggle="validator" data-focus="false">
+                    <div class="form-group">
+                        <input type="text" class="form-control-input" id="cname" required>
+                        <label class="label-control" for="cname">Nom</label>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control-input" id="cemail" required>
+                        <label class="label-control" for="cemail">Email</label>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control-textarea" id="cmessage" required></textarea>
+                        <label class="label-control" for="cmessage">Votre message</label>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="cterms" value="Agreed-to-Terms" required>J'accèpte les <a href="privacy-policy.html">conditions</a> et les <a href="terms-conditions.html">mentions légales</a>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="form-control-submit-button">Envoyer</button>
+                    </div>
+                    <div class="form-message">
+                        <div id="cmsgSubmit" class="h3 text-center hidden"></div>
+                    </div>
+                </form>
+                <!-- end of contact form -->
+
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of form-2 -->
+<!-- end of contact -->
+<!-- Footer -->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="text-container about">
+                    <h4>Projet Workshop EPSI WIS 2020</h4>
+                    <p class="white">Groupe 12</p>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+            <div class="col-md-2">
+                <div class="text-container">
+                    <h4>Liens</h4>
+                    <ul class="list-unstyled li-space-lg white">
+                        <li>
+                            <a class="white" href="#your-link">EPSI Montpellier</a>
+                        </li>
+                        <li>
+                            <a class="white" href="terms-conditions.html">WIS Montpellier</a>
+                        </li>
+                        <li>
+                            <a class="white" href="privacy-policy.html">Conditions générales</a>
+                        </li>
+                    </ul>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+
+            <div class="col-md-2">
+                <div class="text-container">
+                    <h4>Groupe 14</h4>
+                    <ul class="list-unstyled li-space-lg">
+                        <li>
+                            <a class="white" href="#your-link">Stanley</a>
+                        </li>
+                        <li>
+                            <a class="white" href="#your-link">Alexis</a>
+                        </li>
+                        <li>
+                            <a class="white" href="#your-link">Dalila</a>
+                        </li>
+                        <li>
+                            <a class="white" href="#your-link">Bryan</a>
+                        </li>
+                        <li>
+                            <a class="white" href="#your-link">Leo</a>
+                        </li>
+                        <li>
+                            <a class="white" href="#your-link">Antoine</a>
+                        </li>
+                    </ul>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of footer -->
+</body>
+</html>
+{% endblock %}
